@@ -116,7 +116,7 @@
 								<section id="main_content">
 									<article>
 										<center>
-											<img style="width:60%; height:60%;" src="assets/img/jm.png">
+											<img style="width:60%; height:60%;" src="images/jm.png">
 											<h1>
 												La Guida da 0 a Eroe di Joinmarket
 											</h1>
@@ -255,14 +255,16 @@
 										<h2 id="rules">Setup dell'ambiente di lavoro</h2>
 										<p>
 											Alcuni nodi impostano automaticamente i valori corretti per questi campi all'interno del file joinmarket.cfg Consiglio di ricontrollare manualmente:
-											<pre><li><code>rpc_user = yourusername-as-in-bitcoin.conf</code>
+											<ul>
+												<pre><li><code>rpc_user = yourusername-as-in-bitcoin.conf</code>
                         <li><code>rpc_password = yourpassword-as-in-bitcoin.conf</code>
                         <li><code>rpc_host = localhost #default usually correct</code>
                         <li><code>rpc_port = 8332 # default for mainnet</code><br></pre>
+											</ul>
 											A questo punto potremo procedere con la creazione del nostro wallet all'interno di JoinMarket:<br><br>
 											<code class="language-plaintext highlighter-rouge">python wallet-tool.py generate</code><br><br>
 											Questo comando ci fará inserire una password con cui criptare il wallet e il nome che vogliamo dare ad esso, quando vi chiederá se volete supportare o meno i fidelity bond consiglio di usare l'opzione ´yes´,
-											l'output restituito sará simile a questo:<br>
+											l'output restituito sará simile a questo:<br><br>
 											<pre class="notranslate"><code>
   (jmvenv)$ python wallet-tool.py generate
   Write down this wallet recovery mnemonic on paper:
@@ -294,7 +296,7 @@ python wallet-tool.py wallet.jmdat
 											</ul>
 											ecco un esempio pratico del risultato:
 											<pre>
-            <code style="font-size: 67%">
+            <code style="font-size: 63%">
             JM wallet
 mixdepth	0	xpub6CMAJ67vZWVXuzjzYXUoJgWrmuvFRiqiUG4dwoXNFmJtpTH3WgviANNxGyZYo27zxbMuqhDDym6fnBxmGaYoxr6LHgNDo1eEghkXHTX4Jnx
 external addresses	m/84'/0'/0'/0	xpub6FFUn4AxdqFbnTH2fyPrkLreEkStNnMFb6R1PyAykZ4fzN3LzvkRB4VF8zWrks4WhJroMYeFbCcfeooEVM6n2YRy1EAYUvUxZe6JET6XYaW
@@ -364,212 +366,117 @@ Total balance:	0.00000000
 										</p>
 										<h2 id=¨send¨>Inviare bitcoin con coinjoin singolo o senza</h2>
 										<p>
-											<div class="container">
-												<section id="main_content">
-													<article>
-														<center>
-															<img style="width:60%; height:60%;" src="assets/img/jm.png">
-															<h1>
-																La Guida da 0 a Eroe di Joinmarket
-															</h1>
-															<br>
-														</center>
-														<p>
-															Se avete trovato questa pagina cercando online "Join<b style="color: greenyellow">T</b>market" avete tutta la mia sincera
-															stima. Siete capitati, però, in una guida che tratta un argomento completamente differente, ma estremamente interessante! &#128684;&#127809; <br><br>
-															L'obbiettivo di questo tutorial é quello di illustrare il funzionamento teorico e pratico di JoinMarket.<br><br>
-															Questa guida ha richiesto tantissimo lavoro, tempo e impegno per essere completata ed é a disposizione in modo completamente gratuito. Se hai trovato i contenuti
-															qui presenti interessanti e utili ti invito ad effettuare una donazione di un qualsiasi importo a sostegno del mio progetto di divulgazione. Questo
-															sito non contiene analytics, pubblicità o elementi traccianti grazie a tutti coloro che supportano la mia divulgazione sostenendomi. &#128034; &#128154;
-														</p><br>
-														<center>
-															<span id="lightning"></span>
-														</center><br>
-
-														<br />
-														<h2>Tabella dei contenuti</h2>
-														<ul>
-															<li><a href="#teoria">Definizione teorica Joinmarket</a></li>
-															<li><a href="#install">Installazione</a></li>
-															<li><a href="#conf">File di configurazione</a></li>
-															<li><a href="#rules">Setup</a></li>
-															<li><a href="#send">Inviare bitcoin</a></li>
-															<li><a href="#maker">Fare da Maker</a></li>
-															<li><a href="#tumbler">Tumbler</a></li>
-															<li><a href="#conc">Conclusioni</a></li>
-														</ul>
-														<br>
-														<h2 id="teoria">Definizione teorica Joinmarket</h2>
-														<p>
-															Possiamo definire JoinMarket come uno strumento, o un wallet, che permette di effettuare CoinJoin
-															con altri utenti in maniera totalmente trustless e senza alcun coordinatore centrale.<br>
-															Essendo tutta la parte teorica di questo tool estremamente ampia, ho deciso di affrontarla in una puntata specifica del mio podcast. Consiglio vivamente di proseguire
-															nella lettura dopo aver ascoltato l'episodio, così da assimilare al meglio i concetti di base per utilizzare in maniera corretta questo programma.<br><br>
-															Potete recuperare l
-															Possiamo ora muovere i nostri satoshi. Uno dei comandi principali di questo software é lo script:<br><br>
-															<code class="language-plaintext highlighter-rouge">pyhton sendpayment.py</code><br><br>
-															che ci permetterá di inviare transazioni ad altri indirizzi con o senza coinjoin. Andiamo ad analizzare il suo funzionamento ed alcuni esempi pratici. Di default
-															la formattazione del comando é:
-															<pre><code style="font-size: 80%">python sendpayment.py *opzioni visionabili con --help* *nome del wallet* *ammontare di satoshi* *indirizzo di destinazione*</code></pre>
-															un esempio basic di utilizzo potrebbe essere:<br><br>
-															<code class="language-plaintext highlighter-rouge">python sendpayment.py wallet.jmdat 5000000 1mprGzBA9rQk82Ly41TsmpQGa8UPpZb2w8c</code><br>
-															<blackquote style="color:grey; font-size: 85%"><code class="language-plaintext highlighter">in questo caso andremo ad inviare all'indirizzo 1mprGzBA9rQk82Ly41TsmpQGa8UPpZb2w8c 0.05 Btc
-																	ovvero 5000000 satoshi dal nostro mixdepth 0 (quello di default) andando a scegliere da 4 a 9 controparti per il coinjoin (opzione di default).</code></blackquote><br><br>
-															Per avere maggior controllo su come e quali utxo spendere possiamo andare ad analizzare le opzioni aggiuntive a questo comando:<br><br>
-															<code class="language-plaintext highlighter-rouge">python sendpayment.py -N 5 -m 1 wallet.jmdat 100000000 1mprGzBA9rQk82Ly41TsmpQGa8UPpZb2w8c</code><br>
-															<blackquote style="color:grey; font-size: 85%"><code class="language-plaintext highlighter"> in questo esempio abbiamo aggiunto due specifiche: -N indica con quante controparti
-																	andremo a mixare, -m il mixdepth da cui andremo a prelevare i fondi. Di fatto abbiamo inviato 100.000.000 sats (1 btc) all'indirizzo 1mprGzBA9rQk82Ly41TsmpQGa8UPpZb2w8c
-																	con i fondi presenti nel mixdepth 1 e mixando con 5 controparti.</code></blackquote><br><br>
-															Se mettessimo come valore di invio 0 specificando un mixdepth, joinmarket effettuerá un cosidetto ´sweep´, ovvero invierá tutti i fondi presenti in quel mixdepth consolidandoli tra di loro:<br><br>
-															<code class="language-plaintext highlighter-rouge">python sendpayment.py -N 7 -m 0 wallet.jmdat 0 1mprGzBA9rQk82Ly41TsmpQGa8UPpZb2w8c</code><br>
-															<blackquote style="color:grey; font-size: 85%"><code class="language-plaintext highlighter"> quì abbiamo inviato tutti i fondi dal mixdepth 0 (potevamo anche non specificalo perché é quello di default)
-																	mixando con 7 controparti.</code></blackquote><br><br>
-															Il comando sendpayment serve per muovere fondi da joinmarket a wallet esterni o per inviare satoshi ad una persona aggiungendo un layer di privacy tra noi e lui. Per
-															guadagnare un sufficiente livello di privacy sui nostri UTXO é piú indicato usare il comando tumbler.py che spiegheremo piú avanti in questa guida.<br><br>
-														</p>
-														<h2 id="maker"> Fare da Maker</h2>
-														<p>
-															Lo script che andremo a trattare in questa sezione è:<br><br>
-															<code class="language-plaintext highlighter-rouge"> yg-privacyenhanced.py </code><br><br>
-															Questo programma serve per agire come maker nel marcato di joinmarket. Il software si connetterá al nostro nodo bitcoin ed al mercato interno della piattaforma in cui i maker si presentano come offerenti di
-															liquiditá e i taker cercano le controparti.<br>
-															In caso vogliate usare un fidelity bond potrete crearne uno con questa formattazione:<br><br>
-															<pre><code>python3 wallet-tool.py *nome del wallet* gettimelockaddress *data del blocco espressa in YYYY-MM*</code></pre><br><br>
-															esempio:<br><br>
-															<code class="language-plaintext highlighter-rouge">python3 wallet-tool.py testwallet.jmdat gettimelockaddress 2025-11</code><br><br>
-															l'output che vi verrá restituito sarà un indirizzo bitcoin (ovvero quello su cui dovrete depositare i fondi che volete destinare al fidelity).<br><br>
-															<h3>!!ATTENZIONE!!</h3>
-															Ci sono due cose a cui fare molta attenzione se avete intenzione di creare un FB:
-															<ul>
-																<li>Una volta depositati i fondi, questi non potranno essere piú mossi fino alla scadenza di esso. Prestate attenzione a quanti sats inviate all'indirizzo e a come formattate la data. Non sono ammessi errori!</li>
-																<li>Il fidelity é facilmente riconoscibile onchain, pertanto é consigliabile depositare fondi attraverso un coinjoin e con provenienza non collegata alla vostra identitá. La stessa cosa é consigliabile farla anche una volta che
-																	vorrete
-																	spostare il bond scaduto fuori da JM.</li>
-															</ul>
-															É importante ricordare che é possibile refillare il fidelity con una sola transazione, in caso di multipli UTXO solo il maggiore verrà considerato valido per il FB.<br><br>
-															Trattiamo ora lo script citato all'inizio di questo paragrafo, una volta creato il bond (opzionale) siamo pronti per avviare l'eseguibile per fare da maker su joinmarket.<br>
-															Una volta depositati i satoshi ai vari indirizzi e mixdepth potremo dare il comando:<br><br>
-															<code class="language-plaintext highlighter-rouge">python yg-privacyenhanced.py *nome del wallet*</code><br><br>
-															Da questo momento in poi (dopo qualche minuto di collegamento alla rete) e fino a quando non interromperemo lo script, il nostro client JM comparirà sulla lista dei maker attivi sul protocollo e offrirá la nostra liquiditá
-															a varie controparti per effettuare coinjoin. Non aspettatevi decine di coinjoin al giorno (a meno di fidlity enorme e grande liquiditá depositata sul wallet), ricordate anche che fattori come le FEE richieste e i satoshi
-															depositati influiscono sulla frequenza con cui farete da maker.<br>
-															Eseguendo il comando sottostante potrete vedere lo storico di tutte le transazioni effettuate sul wallet e l'eventuale guadagno (se fate da maker) o spesa di FEE (se siete taker) che avete avuto in tutto l'arco di vita del
-															portafoglio.<br><br>
-															<code class="language-plaintext highlighter-rouge">python wallet-tool.py *nome del wallet* history</code><br><br>
-															Una volta che i vostri satoshi faranno dei coinjoin, si muoveranno da un mixdepth all'altro fino ad arrivare all'ultimo. Una volta superato il quarto torneranno al mixdepth 0, a voi la scelta di quanta privacy ottenere prima di
-															spostarli
-															su un cold wallet, é consigliabile concludere un ciclo completo del wallet.
-														</p>
-														<h2 id="tumbler">Tumbler</h2>
-														<p>
-															Eccoci finalmente alla parte piú succosa di JoinMarket, il tumbler!<br>
-															se avete ascoltato il podcast sapete giá di cosa si tratta. Una raccomandazione prima di inziare: ATTENTI ALLE FEE! Ricordatevi di settare
-															i limiti nel file joinmarket.cfg (come spiegato all'inzio) e valutate di far girare il programma solo quando le fee onchain sono relativamente basse (sotto i 10 sats/vB).<br>
-															Per lanciare il tumbler é necessario aver fermato lo script da maker (se era attivo), dopo potremo far partire il comando:<br><br>
-															<code class="language-plaintext highlighter-rouge">python tumbler.py *nome del wallet* *indirizzo1 su cui ricevere* *indirizzo2 su cui ricevere* *indirizzo3 su cui ricevere*</code><br><br>
-															É fondamentale inserire ALMENO 3 indirizzi di output per il tumbler: questo serve a garantire una buona privacy e a non creare link evidenti tra gli UTXO durante tutto il processo. Come al solito aggiungendo --help al comando é
-															possibile andare a vedere tutti i dettagli aggiuntivi. Andiamo a visionare un esempio piú complesso con regole avanzate:<br><br>
-															<code class="language-plaintext highlighter-rouge">pyhton tumbler.py TestWallet.jmdat -N 7 2 -c 3 1 bc1qz3f80rtv0ux85d7rc06ldtvmpqyfx6ly48c9pa bc1qf3wljw44utyv7qd0z57zvdkfl20y470mva0nes bc1qw48asjpkwm3k2w8cketqhrre0uwq9f7ypwzmxl
-															</code><br>
-															<blackquote style="color:grey; font-size: 85%"><code class="language-plaintext highlighter"> In questo caso abbiamo lanciato uno script di tumbling che non userà il numero di controparti di default (il parametro -N indica che
-																	richiediamo
-																	7 controparti con una varianza massima di 2, quindi un numero di maker random da 5 a 9) e con un numero maggiore di coinjoin per mixdepth (di default questo script effettua un numero random di coinjoin per sezione del wallet che va
-																	da 1 a 3,
-																	usando il comando -c 3 1 invece sará da 2 A 4).In questo modo spenderemo piú sats in fee ma avremo un anonimity set maggiore. </code></blackquote><br><br>
-															É possibile anche aggiungere quanti indirizzi di output si vogliono (minimo 3, non cé un massimo se non il buon senso). Non é invece possibile, per questioni di privacy, decidere come saranno distribuiti i satoshi tra gli indirizzi
-															specificati
-															come output.<br><br>
-															Il tumbler é un processo volutamente lungo, occasionalmente potrebbe capitare che qualcosa smetta di funzionare, nella maggior parte dei casi questo si risolverà in autonomia nel giro di poche ore. In caso di crash totale potremo
-															tentare di riavviarlo
-															con il comando:<br><br>
-															<code class="language-plaintext highlighter-rouge">python tumbler.py --restart</code><br><br>
-															oppure basterá far ripartire un nuovo comando di tumbling. Questo non avvierà lo scheduling del tumbler precedente ma inizierá un nuovo ciclo di mixing.<br>
-															In caso chiudendo il terminale SSH al vostro nodo si interrompa anche lo script potrete sfruttare il programma 'TMUX' installabile con il comando:<br><br>
-															<code class="language-plaintext highlighter-rouge">sudo apt install tmux</code><br><br>
-															Lanciandolo da shell digitando 'tmux' vi si aprirá un terminale che rimarrá attivo in background anche chiudendo la connessione remota. Quando vi ri-connetterete al vostro nodo con il comando: 'tmux attach' ri-aprirete la shell
-															lasciata aperta.
-														</p>
-														<h2 id="conc">Conclusioni</h2>
-														JoinMarket é un software sconfinato e personalizzabile. In questa guida abbiamo scoperto le funzioni principali in modo da rendere possibile per chiunque (o almeno ci ho provato, mi rendo conto che usare questo software non é una
-														passeggiata)
-														l'utilizzo di questo programma. Uno dei maggiori problemi di JM é proprio questo: il numero di persone che lo usano e che fanno da maker. Se pochi utenti sfruttano questo software, la privacy generale (anon-set) si abbassa. Ecco perché
-														spero che questa
-														guida possa incentivare l'uso e vi convinca a scaricare e installare il mio software preferito per fare coinjoin. In caso vogliate approfondire ancora di piú alcuni aspetti vi consiglio di dare una lettura ai vari docs di
-														approfondimento presenti su github, sono
-														vermanete ben fatti e li potete reperire <a href='https://github.com/JoinMarket-Org/joinmarket-clientserver/tree/master/docs'>qui</a>.<br><br>
-														Buon mixing tartarughe!&#128034; &#128154;
-
-
-														<hr />
-													</article>
-												</section>
-											</div>
-
-											<section class="features">
-												<article>
-													<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-													<h3 class="major">Sed feugiat lorem</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-													<a href="#" class="special">Learn more</a>
-												</article>
-												<article>
-													<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-													<h3 class="major">Nisl placerat</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-													<a href="#" class="special">Learn more</a>
-												</article>
-											</section>
-
+											Possiamo ora muovere i nostri satoshi. Uno dei comandi principali di questo software é lo script:<br><br>
+											<code class="language-plaintext highlighter-rouge">pyhton sendpayment.py</code><br><br>
+											che ci permetterá di inviare transazioni ad altri indirizzi con o senza coinjoin. Andiamo ad analizzare il suo funzionamento ed alcuni esempi pratici. Di default
+											la formattazione del comando é:
+											<pre><code style="font-size: 75%">python sendpayment.py *opzioni visionabili con --help* *nome del wallet* *ammontare di satoshi* *indirizzo di destinazione*</code></pre>
+											un esempio basic di utilizzo potrebbe essere:<br><br>
+											<code class="language-plaintext highlighter-rouge">python sendpayment.py wallet.jmdat 5000000 1mprGzBA9rQk82Ly41TsmpQGa8UPpZb2w8c</code><br>
+											<blackquote style="color:lightgrey; font-size: 85%">
+												<p class="language-plaintext highlighter">in questo caso andremo ad inviare all'indirizzo 1mprGzBA9rQk82Ly41TsmpQGa8UPpZb2w8c 0.05 Btc
+													ovvero 5000000 satoshi dal nostro mixdepth 0 (quello di default) andando a scegliere da 4 a 9 controparti per il coinjoin (opzione di default).</p>
+											</blackquote>
+											Per avere maggior controllo su come e quali utxo spendere possiamo andare ad analizzare le opzioni aggiuntive a questo comando:<br><br>
+											<code class="language-plaintext highlighter-rouge">python sendpayment.py -N 5 -m 1 wallet.jmdat 100000000 1mprGzBA9rQk82Ly41TsmpQGa8UPpZb2w8c</code><br>
+											<blackquote style="color:lightgrey; font-size: 85%">
+												<p class="language-plaintext highlighter"> in questo esempio abbiamo aggiunto due specifiche: -N indica con quante controparti
+													andremo a mixare, -m il mixdepth da cui andremo a prelevare i fondi. Di fatto abbiamo inviato 100.000.000 sats (1 btc) all'indirizzo 1mprGzBA9rQk82Ly41TsmpQGa8UPpZb2w8c
+													con i fondi presenti nel mixdepth 1 e mixando con 5 controparti.</p>
+											</blackquote>
+											Se mettessimo come valore di invio 0 specificando un mixdepth, joinmarket effettuerá un cosidetto ´sweep´, ovvero invierá tutti i fondi presenti in quel mixdepth consolidandoli tra di loro:<br><br>
+											<code class="language-plaintext highlighter-rouge">python sendpayment.py -N 7 -m 0 wallet.jmdat 0 1mprGzBA9rQk82Ly41TsmpQGa8UPpZb2w8c</code><br>
+											<blackquote style="color:lightgrey; font-size: 85%">
+												<p class="language-plaintext highlighter"> quì abbiamo inviato tutti i fondi dal mixdepth 0 (potevamo anche non specificalo perché é quello di default)
+													mixando con 7 controparti.</p>
+											</blackquote>
+											Il comando sendpayment serve per muovere fondi da joinmarket a wallet esterni o per inviare satoshi ad una persona aggiungendo un layer di privacy tra noi e lui. Per
+											guadagnare un sufficiente livello di privacy sui nostri UTXO é piú indicato usare il comando tumbler.py che spiegheremo piú avanti in questa guida.<br><br>
+										</p>
+										<h2 id="maker"> Fare da Maker</h2>
+										<p>
+											Lo script che andremo a trattare in questa sezione è:<br><br>
+											<code class="language-plaintext highlighter-rouge"> yg-privacyenhanced.py </code><br><br>
+											Questo programma serve per agire come maker nel marcato di joinmarket. Il software si connetterá al nostro nodo bitcoin ed al mercato interno della piattaforma in cui i maker si presentano come offerenti di
+											liquiditá e i taker cercano le controparti.<br>
+											In caso vogliate usare un fidelity bond potrete crearne uno con questa formattazione:<br><br>
+											<pre><code>python3 wallet-tool.py *nome del wallet* gettimelockaddress *data del blocco espressa in YYYY-MM*</code></pre><br><br>
+											esempio:<br><br>
+											<code class="language-plaintext highlighter-rouge">python3 wallet-tool.py testwallet.jmdat gettimelockaddress 2025-11</code><br><br>
+											l'output che vi verrá restituito sarà un indirizzo bitcoin (ovvero quello su cui dovrete depositare i fondi che volete destinare al fidelity).<br><br>
+											<h3>!!ATTENZIONE!!</h3>
+											Ci sono due cose a cui fare molta attenzione se avete intenzione di creare un FB:
+											<ul>
+												<li>Una volta depositati i fondi, questi non potranno essere piú mossi fino alla scadenza di esso. Prestate attenzione a quanti sats inviate all'indirizzo e a come formattate la data. Non sono ammessi errori!</li>
+												<li>Il fidelity é facilmente riconoscibile onchain, pertanto é consigliabile depositare fondi attraverso un coinjoin e con provenienza non collegata alla vostra identitá. La stessa cosa é consigliabile farla anche una volta che
+													vorrete
+													spostare il bond scaduto fuori da JM.</li>
+											</ul>
+											É importante ricordare che é possibile refillare il fidelity con una sola transazione, in caso di multipli UTXO solo il maggiore verrà considerato valido per il FB.<br><br>
+											Trattiamo ora lo script citato all'inizio di questo paragrafo, una volta creato il bond (opzionale) siamo pronti per avviare l'eseguibile per fare da maker su joinmarket.<br>
+											Una volta depositati i satoshi ai vari indirizzi e mixdepth potremo dare il comando:<br><br>
+											<code class="language-plaintext highlighter-rouge">python yg-privacyenhanced.py *nome del wallet*</code><br><br>
+											Da questo momento in poi (dopo qualche minuto di collegamento alla rete) e fino a quando non interromperemo lo script, il nostro client JM comparirà sulla lista dei maker attivi sul protocollo e offrirá la nostra liquiditá
+											a varie controparti per effettuare coinjoin. Non aspettatevi decine di coinjoin al giorno (a meno di fidlity enorme e grande liquiditá depositata sul wallet), ricordate anche che fattori come le FEE richieste e i satoshi
+											depositati influiscono sulla frequenza con cui farete da maker.<br>
+											Eseguendo il comando sottostante potrete vedere lo storico di tutte le transazioni effettuate sul wallet e l'eventuale guadagno (se fate da maker) o spesa di FEE (se siete taker) che avete avuto in tutto l'arco di vita del
+											portafoglio.<br><br>
+											<code class="language-plaintext highlighter-rouge">python wallet-tool.py *nome del wallet* history</code><br><br>
+											Una volta che i vostri satoshi faranno dei coinjoin, si muoveranno da un mixdepth all'altro fino ad arrivare all'ultimo. Una volta superato il quarto torneranno al mixdepth 0, a voi la scelta di quanta privacy ottenere prima di
+											spostarli
+											su un cold wallet, é consigliabile concludere un ciclo completo del wallet.
+										</p>
+										<h2 id="tumbler">Tumbler</h2>
+										<p>
+											Eccoci finalmente alla parte piú succosa di JoinMarket, il tumbler!<br>
+											se avete ascoltato il podcast sapete giá di cosa si tratta. Una raccomandazione prima di inziare: ATTENTI ALLE FEE! Ricordatevi di settare
+											i limiti nel file joinmarket.cfg (come spiegato all'inzio) e valutate di far girare il programma solo quando le fee onchain sono relativamente basse (sotto i 10 sats/vB).<br>
+											Per lanciare il tumbler é necessario aver fermato lo script da maker (se era attivo), dopo potremo far partire il comando:<br><br>
+											<code class="language-plaintext highlighter-rouge">python tumbler.py *nome del wallet* *indirizzo1 su cui ricevere* *indirizzo2 su cui ricevere* *indirizzo3 su cui ricevere*</code><br><br>
+											É fondamentale inserire ALMENO 3 indirizzi di output per il tumbler: questo serve a garantire una buona privacy e a non creare link evidenti tra gli UTXO durante tutto il processo. Come al solito aggiungendo --help al comando é
+											possibile andare a vedere tutti i dettagli aggiuntivi. Andiamo a visionare un esempio piú complesso con regole avanzate:<br><br>
+											<div><code class="language-plaintext highlighter-rouge">pyhton tumbler.py TestWallet.jmdat -N 7 2 -c 3 1 bc1qz3f80rtv0ux85d7rc06ldtvmpqyfx6ly48c9pa bc1qf3wljw44utyv7qd0z57zvdkfl20y470mva0nes bc1qw48asjpkwm3k2w8cketqhrre0uwq9f7ypwzmxl</code><br>
+												<blackquote style="color:lightgrey; font-size: 85%" class="language-plaintext highlighter"> In questo caso abbiamo lanciato uno script di tumbling che non userà il numero di controparti di default (il parametro -N indica che richiediamo
+													7 controparti con una varianza massima di 2, quindi un numero di maker random da 5 a 9) e con un numero maggiore di coinjoin per mixdepth (di default questo script effettua un numero random di coinjoin per sezione del wallet che va da 1
+													a 3,
+													usando il comando -c 3 1 invece sará da 2 A 4).In questo modo spenderemo piú sats in fee ma avremo un anonimity set maggiore.
+											</blackquote><br><br>
+											É possibile anche aggiungere quanti indirizzi di output si vogliono (minimo 3, non cé un massimo se non il buon senso). Non é invece possibile, per questioni di privacy, decidere come saranno distribuiti i satoshi tra gli indirizzi
+											specificati
+											come output.<br><br>
+											Il tumbler é un processo volutamente lungo, occasionalmente potrebbe capitare che qualcosa smetta di funzionare, nella maggior parte dei casi questo si risolverà in autonomia nel giro di poche ore. In caso di crash totale potremo
+											tentare di riavviarlo
+											con il comando:<br><br>
+											<code class="language-plaintext highlighter-rouge">python tumbler.py --restart</code><br><br>
+											oppure basterá far ripartire un nuovo comando di tumbling. Questo non avvierà lo scheduling del tumbler precedente ma inizierá un nuovo ciclo di mixing.<br>
+											In caso chiudendo il terminale SSH al vostro nodo si interrompa anche lo script potrete sfruttare il programma 'TMUX' installabile con il comando:<br><br>
+											<code class="language-plaintext highlighter-rouge">sudo apt install tmux</code><br><br>
+											Lanciandolo da shell digitando 'tmux' vi si aprirá un terminale che rimarrá attivo in background anche chiudendo la connessione remota. Quando vi ri-connetterete al vostro nodo con il comando: 'tmux attach' ri-aprirete la shell
+											lasciata aperta.
+										</p>
+										<h2 id="conc">Conclusioni</h2>
+										JoinMarket é un software sconfinato e personalizzabile. In questa guida abbiamo scoperto le funzioni principali in modo da rendere possibile per chiunque (o almeno ci ho provato, mi rendo conto che usare questo software non é una
+										passeggiata)
+										l'utilizzo di questo programma. Uno dei maggiori problemi di JM é proprio questo: il numero di persone che lo usano e che fanno da maker. Se pochi utenti sfruttano questo software, la privacy generale (anon-set) si abbassa. Ecco perché
+										spero che questa
+										guida possa incentivare l'uso e vi convinca a scaricare e installare il mio software preferito per fare coinjoin. In caso vogliate approfondire ancora di piú alcuni aspetti vi consiglio di dare una lettura ai vari docs di
+										approfondimento presenti su github, sono
+										vermanete ben fatti e li potete reperire <a href='https://github.com/JoinMarket-Org/joinmarket-clientserver/tree/master/docs'>qui</a>.<br><br>
+										Buon mixing tartarughe!&#128034; &#128154;
+									</article>
+								</section>
 							</div>
-						</div>
+							<!-- Footer -->
+							<section id="footer">
+								<div class="inner">
+									<ul class="copyright">
+										<li>&copy; Copyright un cazzo, non sono comunista.</li>
+										<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+									</ul>
+								</div>
+							</section>
 
-		</section>
-
-		<!-- Footer -->
-		<section id="footer">
-			<div class="inner">
-				<h2 class="major">Get in touch</h2>
-				<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque
-					placerat auctor laoreet.</p>
-				<form method="post" action="#">
-					<div class="fields">
-						<div class="field">
-							<label for="name">Name</label>
-							<input type="text" name="name" id="name" />
 						</div>
-						<div class="field">
-							<label for="email">Email</label>
-							<input type="email" name="email" id="email" />
-						</div>
-						<div class="field">
-							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="4"></textarea>
-						</div>
-					</div>
-					<ul class="actions">
-						<li><input type="submit" value="Send Message" /></li>
-					</ul>
-				</form>
-				<ul class="contact">
-					<li class="icon solid fa-home">
-						Untitled Inc<br />
-						1234 Somewhere Road Suite #2894<br />
-						Nashville, TN 00000-0000
-					</li>
-					<li class="icon solid fa-phone">(000) 000-0000</li>
-					<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-					<li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-					<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
-					<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; Untitled Inc. All rights reserved.</li>
-					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</div>
-		</section>
-
-	</div>
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
