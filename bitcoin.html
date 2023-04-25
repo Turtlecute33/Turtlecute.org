@@ -22,7 +22,7 @@
 		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 
-<body class="is-preload">
+<body style="font-size: 20px;" class="is-preload">
 
 	<!-- Page Wrapper -->
 	<div id="page-wrapper">
@@ -81,7 +81,7 @@
 											Se vi piace il mio lavoro e/o lo trovate utile vi prego di valutare una <a href="supporto.html">donazione</a> per sostenere questo progetto che mi occupa, anche se con mio grande piacere, una buona fetta del mio tempo, buona lettura!
 										</p>
 										<br />
-										<h2>Prefazione</h2>
+										<h2 style="color: orange;">Prefazione</h2>
 										Bitcoin non è facile da spiegare. Non esiste un paragrafo in grado di trasmettere tutte le sue proprietà cruciali.
 										Ogni breve spiegazione è fuorviante in qualche modo.<br />
 										Questo in parte perché nulla come Bitcoin è mai esistito prima, quindi non c’è nulla con cui le persone lo paragonino.
@@ -109,7 +109,7 @@
 												su Bitcoin in italiano, dall'ABC fino ad argomenti piu'complessi)</li>
 										</ul>
 										<br />
-										<h2>Tabella dei contenuti</h2>
+										<h2 style="color: orange;">Tabella dei contenuti</h2>
 										<p>Da ora in poi questa guida si riferisce ad un pubblico con le conoscenze di base riguardo Bitcoin ed il suo funzionamento, in caso di dubbi
 											potete contattarmi tranquillamente tramite i miei contatti presenti nella pagina <a href="supporto.html">supporto</a></p>
 										<ul>
@@ -123,7 +123,7 @@
 											<li><a href="supporto.html">Fai una donazione</a></li>
 										</ul>
 										<br />
-										<h2 id="nodo">Fare un nodo Bitcoin</h2>
+										<h2 style="color: orange;" id="nodo">Fare un nodo Bitcoin</h2>
 										<p>
 											Il primo argomento di vitale importanza da affrontare e'quello dei Full node (<a href="https://cryptonomist.ch/2021/07/04/cosa-sono-i-nodi-di-bitcoin/">?</a>),
 											esistono diversi modi di implementarli piu' o meno facili (<a href="https://github.com/Fillippone/NodoBitcoinforDummies">Guida di Filippone</a>,<a href="https://github.com/rootzoll/raspiblitz">Usando RaspiBlitz</a>, tramite
@@ -135,7 +135,7 @@
 											Per raggiungere l'indipendenza finanziaria completa e partecipare al network e' fondamentale avere un nodo bitcoin, in caso non potessimo averne uno per varie motivazioni ci sono wallet (prossimo argomento trattato),
 											che ci permettono per lo meno di arginare parzialmente i problemi lato privacy.
 										</p>
-										<h2 id="acquisto">Acquistare bitcoin</h2>
+										<h2 style="color: orange;" id="acquisto">Acquistare bitcoin</h2>
 										<p>
 											Esisistono vari modi per acquistare Bitcoin proteggendo la vostra privacy, ognuno con i propri pro e contro,<br />
 											ovviamente eviteremo exchange centralizzati e servizi KYC, lasciare i propri documenti ad enti terzi non e' mai una buona idea
@@ -224,7 +224,7 @@
 
 
 										</p>
-										<h2 id="wallet">I Wallet bitcoin</h2>
+										<h2 style="color: orange;" id="wallet">I Wallet bitcoin</h2>
 										<p>
 											Esistono diverse categorie di wallet, li divideremo per comodità nelle principali:
 											<ul>
@@ -260,7 +260,7 @@
 											il vostro portafoglio connettetevi al vostro nodo ed abilitate TOR (su SBW attivabile dalle impostazioni e su blue abilitato automaticamente se lo si connette ad
 											un nodo con link TOR).
 										</p>
-										<h2 id="tx">Le transazioni</h2>
+										<h2 style="color: orange;" id="tx">Le transazioni</h2>
 										Il primo consiglio che posso darvi quando effettuate transazioni e' quello di aumentare le euristiche coinvolte e fate il possibile per confondere un possibile ente che analizza la blockchain:<br />
 										non inserite output di una transazioni ovvi e con resti minuscoli (esempio: evitate di inviare una transazione da 0.1 BTC, preferite cifre meno 'umane' come per esempio 0.10127644), variate gli orari di invio
 										delle TX e cambiate le impostazioni della transazione stessa spesso (come per esempio usate a volte la funzione <a href="https://www.buybitcoinworldwide.com/rbf/">RBF</a> e a volte no), in questo modo eviterete il
@@ -293,7 +293,7 @@
 											Come fare quindi per 'ripulire' questi resti?
 											ci sono due modi principali e li analizzeremo a breve nelle sezioni successive della guida.
 										</p>
-										<h2 id="coinjoin">Il coinjoin</h2>
+										<h2 style="color: orange;" id="coinjoin">Il coinjoin</h2>
 										<p>
 											In sostanza, un CoinJoin comporta la combinazione di input da diversi utenti in una singola transazione. Prima di spiegare il come (e il perché), diamo un'occhiata
 											alla struttura di una transazione normale.
@@ -312,7 +312,7 @@
 											input più piccoli per ottenere il risultato desiderato di 0,7 BTC.
 											Un'altra supposizione che possiamo fare si basa sul fatto che ogni input viene firmato in modo indipendente.
 											Questa transazione potrebbe avere fino a quattro partecipanti diversi che firmano gli input, e qui troviamo
-											il principio che rende efficaci i CoinJoin.<br />
+											il principio che rende efficaci i CoinJoin.<br /><br>
 											<h3 style="color:orange">Come funziona il coinjoin</h3>
 											L'idea è che più parti si coordinano per creare una transazione, fornendo ciascuna gli input e gli output desiderati. Dato che tutti gli input vengono combinati,
 											diventa impossibile dire con certezza quale output appartiene a quale utente. Considera il diagramma riportato sotto:<br />
@@ -345,7 +345,7 @@
 											aspettare il nuovo aggiornamento di wasabi wallet che permetterà coinjoin con qualsiasi cifra (in arrivo a breve) oppure provare a ri-guadagnare privacy utilizzando
 											Lightning Network (da ora abbreviato in LN) come spiegato nella prossima sezione.<br />
 										</p>
-										<h2 id="ln">Lightning Network</h2>
+										<h2 style="color: orange;" id="ln">Lightning Network</h2>
 										<p>
 											In questo paragrafo non andremo direttamente a spiegare cosa è e come funziona LN in quanto sarebbe davvero troppo lungo e complicato,
 											analizzeremo invece come utilizzarlo praticamente per migliorare la nostra privacy.<br />
@@ -371,7 +371,7 @@
 												USATELO</a>)
 											sempre in piccole transazioni diverse e sempre con importi che non sembrino umani (come spiegato prima).
 										</p>
-										<h2 id="conclusione">Conclusione</h2>
+										<h2 style="color: orange;" id="conclusione">Conclusione</h2>
 										<p>
 											Riassumendo la guida possiamo ripassare i punti fondamentali:<br />
 											Se possibile facciamo girare un full node BTC e LN in casa nostra ed utilizziamo Wasabi come nostro wallet desktop,

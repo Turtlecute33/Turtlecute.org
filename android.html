@@ -64,7 +64,7 @@
 					<!-- End Jekyll SEO tag -->
 					</head>
 
-					<body>
+					<body style="font-size: 20px;" class="is-preload">
 						<div class="container">
             <section id="main_content">
                 <article>
@@ -86,7 +86,7 @@
                         </blackquote><br><br>
                     </figure>
 
-                    <h2>Tabella dei contenuti</h2>
+                    <h2 style="color: greenyellow;">Tabella dei contenuti</h2>
                     <ul>
                         <li><a href="#os">Sistema operativo</a></li>
                         <li><a href="#set">Setup del sistema</a></li>
@@ -101,7 +101,7 @@
                         <li><a href="supporto.html">Donazioni</a></li>
                     </ul>
                     <br />
-                    <h2 id="os">Sistema operativo</h2>
+                    <h2 style="color: greenyellow;" id="os">Sistema operativo</h2>
                     <p>Esistono vari sistemi operativi android privacy oriented (GrapheneOS, CalixOS, etc) in questa guida però tratteremo
                         l’approccio usando come base la LineageOS 12, ma è comunque compatibile con ogni altro sistema operativo AOSP.</p>
                     <h3>!WARNING!</h3>
@@ -122,7 +122,7 @@
                     <p>
                         A questo punto ci troveremo con un dispositivo con un sistema operativo fresco e appena installato.
                     </p>
-                    <h2 id="set">Modifica e setup del sistema</h2>
+                    <h2 style="color: greenyellow;" id="set">Modifica e setup del sistema</h2>
                     <p>
                         Per avere un dispositivo privacy oriented cominceremo con il modificare i vari settings del sistema operativo,
                         qui elenco le principali impostazioni e accorgimenti anche se possono cambiare da dispositivo a dispositivo:
@@ -141,7 +141,7 @@
                     <p>Gestiremo invece dopo i permessi delle applicazioni.</p>
                     <br />
                     <br />
-                    <h2 id="store">Store per il download delle app</h2>
+                    <h2 style="color: greenyellow;" id="store">Store per il download delle app</h2>
                     <p>Essendo ora separati dal mondo google dovremo trovare altri store da cui scaricare le applicazioni, le alternative principali sono:</p>
                     <ul>
                         <li> <a href="https://www.f-droid.org/">F-Droid</a> (store alternativo di app FOSS/Open Source) possibilmente installeremo da qua le applicazioni ma non aspettatevi
@@ -152,7 +152,7 @@
                             ogni volta automaticamente generati da lui,
                             mi raccomando usate la modalità ospite/anonima o sarà inutile).</li>
                     </ul><br />
-                    <h2 id="shelter">Shelter</h2>
+                    <h2 style="color: greenyellow;" id="shelter">Shelter</h2>
                     <p>
                         Ora che abbiamo gli store configurati possiamo procedere al download di <a href="https://f-droid.org/packages/net.typeblog.shelter/">Shelter</a>,
                         se avevate già aperto l'app di Fdroid/Droidify in precedenza dovrebbe aprirvi il link direttamente in app.<br />
@@ -181,7 +181,7 @@
                     nonostante questo la gestione del tutto rimarrà un po' scomoda fino a quando non ci farete l'abitudine.
                     </p>
                     <br />
-                    <h2 id="threat">Gestione del threat model tra i profili</h2>
+                    <h2 style="color: greenyellow;" id="threat">Gestione del threat model tra i profili</h2>
                     <p>
                         Ora che abbiamo due sistemi completamente diversi e isolati andremo ad applicare un threat model differente in entrambi,
                         nel primo (pulito ed opensource) punteremo alla massima privacy facendo passare tutto il traffico dati attraverso TOR e DNScrypt, nel secondo (sporco e con elementi traccianti)
@@ -224,7 +224,7 @@
                     Se invece preferite usare NetGuard consiglio di implementare gli Host file di <a href="https://github.com/EnergizedProtection/block">Energized Protection</a>.
                     </p>
 
-                    <h2 id="app">Applicazioni</h2>
+                    <h2 style="color: greenyellow;" id="app">Applicazioni</h2>
                     <p>Ora che abbiamo gli store e le reti ben configurate passiamo a scaricare alcune app fortemente consigliate:</p>
                     <ul>
                         <li><a href="https://www.f-droid.org/packages/org.dslul.openboard.inputmethod.latin/">OpenBoard</a> (faccio un piccolo discorso su questa app, è una tastiera android opensource esattamente uguale alla Gboard,
@@ -270,7 +270,7 @@
                         Per ulteriori applicazioni, browser e servizi privacy friendly consiglio di dare un occhio a <a href="https://www.privacytools.io/">privacytools</a>, <a href="https://privacyguides.org/providers/">privacyguides</a> o cercare nelle varie
                         categorie su Droidify.
                     </p>
-                    <h2 id="email">Client e provider email</h2>
+                    <h2 style="color: greenyellow;" id="email">Client e provider email</h2>
                     <p>
                         Il discorso su quale sia il miglior client e provider email e' lungo e complesso, la migliore opzione sarebbe hostarsi da soli un email ma non e' sicuramente
                         facile.
@@ -295,7 +295,7 @@
                     </p>
                     <p><blackquote style="color:grey">A questo punto della guida dovreste aver già installato tutte le vostre
                             applicazioni personali e quelle da me indicate e/o consigliate, possiamo agire ora sui vari permessi, in caso installiate in futuro altre app eseguite questa procedura anche per esse.</blackquote></p>
-                    <h2 id="permessi">Gestione dei permessi delle app</h2>
+                    <h2 style="color: greenyellow;" id="permessi">Gestione dei permessi delle app</h2>
                     <p>Come primo passo ci rechiamo nelle impostazioni del nostro telefono e andiamo nella sezione applicazioni → avanzate → gestione permessi e qui rimuoviamo ogni permesso superfluo delle applicazioni (con superfluo intendo che per esempio,
                         un app come whatsapp, ha bisogno dei nostri contatti se vogliamo trovarli, quindi per il corretto funzionamento dell’applicazione conviene lasciarglielo, ma possiamo tranquillamente disabilitare l’accesso ai messaggi in
                         quanto verrà usato solo la prima volta quando faremo il login per velocizzare il primo accesso, dopo di che se lasciato attivo concede a whatsapp la possibilità di spiare tutti i nostri SMS).
@@ -316,7 +316,7 @@
                         quest’ultimo per il funzionamento, lo usano di continuo per condividere nostri dati.
                     </p>
 
-                    <h2 id="cloud">Cloud e Vpn</h2>
+                    <h2 style="color: greenyellow;" id="cloud">Cloud e Vpn</h2>
                     <p>
                         Faccio una piccola sezione a parte per questi due sotto-argomenti:
                         La migliore soluzione cloud sarebbe il self hosting con nextcloud (a mio parere la miglior scelta), in caso ciò non sia possibile la soluzione a mio parere piu semplice e veloce è <a href="http://mega.nz/">Mega.nz</a> (20gb gratis e
@@ -331,7 +331,7 @@
                         Tutte le aziende in questo settore promettono privacy e politiche di no logging ma praticamente il 99% delle VPN più che darci privacy ce la fanno perdere, l’unica che mi sento davvero di consigliarvi è <a href="https://mullvad.net/en/">Mullvad</a> (<a href="http://o54hon2e2vj6c7m3aqqu6uyece65by3vgoxxhlqlsvkmacw6a7m7kiad.onion/en/">onion link</a>),è ovviamente
                         obbligatorio pagarla in bitcoin per avere un privacy maggiore.
                     </p>
-                    <h2 id="conc">Conclusioni Finali</h2>
+                    <h2 style="color: greenyellow;" id="conc">Conclusioni Finali</h2>
                     <p>
                         Seguendo questa guida avremo ridotto drasticamente la condivisione di dati personali, cio’ non garantisce in nessun modo l’anonimato ma solamente aumenta decisamente la privacy e la sicurezza nell’utilizzo del dispositivo.
                         <br />

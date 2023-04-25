@@ -116,7 +116,7 @@
 					<!-- End Jekyll SEO tag -->
 					</head>
 
-					<body>
+					<body style="font-size: 20px;" class="is-preload">
 						<div id="wrapper">
 							<div class="container">
 								<section id="main_content">
@@ -133,12 +133,8 @@
 											qui presenti interessanti e utili ti invito ad effettuare una donazione di un qualsiasi importo a sostegno del mio progetto di divulgazione. Questo
 											sito non contiene analytics, pubblicità o elementi traccianti grazie a tutti coloro che supportano la mia divulgazione sostenendomi. &#128034; &#128154;
 										</p><br>
-										<center>
-											<span id="lightning"></span>
-										</center><br>
-
 										<br />
-										<h2>Tabella dei contenuti</h2>
+										<h2 style="color: greenyellow;">Tabella dei contenuti</h2>
 										<ul>
 											<li><a href="#teoria">Definizione teorica Joinmarket</a></li>
 											<li><a href="#install">Installazione</a></li>
@@ -150,7 +146,7 @@
 											<li><a href="#conc">Conclusioni</a></li>
 										</ul>
 										<br>
-										<h2 id="teoria">Definizione teorica Joinmarket</h2>
+										<h2 style="color: greenyellow;" id="teoria">Definizione teorica Joinmarket</h2>
 										<p>
 											Possiamo definire JoinMarket come uno strumento, o un wallet, che permette di effettuare CoinJoin
 											con altri utenti in maniera totalmente trustless e senza alcun coordinatore centrale.<br>
@@ -169,7 +165,7 @@
 											</ul><br>
 											Da questo punto in poi tutti gli argomenti affrontati nel podcast veranno considerati già "conosciuti" e quindi non verranno ri-trattati.
 										</p><br>
-										<h2 id="install">Installazione</h2>
+										<h2 style="color: greenyellow;" id="install">Installazione</h2>
 										<p></p>
 										<p>Sistemi operativi:</p>
 										<button class="collapsible">Raspiblitz</button>
@@ -214,7 +210,7 @@
 
                     </script>
 										<br>
-										<h2 id="conf">File di configurazione</h2>
+										<h2 style="color: greenyellow;" id="conf">File di configurazione</h2>
 										<p>
 											JoinMarket é un software personalizzabile e con un'infinitá di settaggi; quest'ultimi sono specificati in un file di configurazione presente nella directory principale
 											del programma chiamato ´Joinmarket.cfg´.<br><br>
@@ -255,7 +251,7 @@
 											vostra privacy,
 											occhi aperti e attenzione al massimo!
 										</p>
-										<h2 id="rules">Setup dell'ambiente di lavoro</h2>
+										<h2 style="color: greenyellow;" id="rules">Setup dell'ambiente di lavoro</h2>
 										<p>
 											Alcuni nodi impostano automaticamente i valori corretti per questi campi all'interno del file joinmarket.cfg Consiglio di ricontrollare manualmente:
 											<ul>
@@ -367,7 +363,7 @@ Total balance:	0.00000000
 											ora possiamo procedere a depositare i nostri primi satoshi all'interno di uno o piú indirizzi ricordando che, indipendendentemente da maker o taker, il software
 											non andrá mai a consolidare utxo in mixdepth diversi direttamente, in questo modo potremo tenere separati sats con diverso livello di privacy all'interno del wallet.<br>
 										</p>
-										<h2 id=¨send¨>Inviare bitcoin con coinjoin singolo o senza</h2>
+										<h2 style="color: greenyellow;" id=¨send¨>Inviare bitcoin con coinjoin singolo o senza</h2>
 										<p>
 											Possiamo ora muovere i nostri satoshi. Uno dei comandi principali di questo software é lo script:<br><br>
 											<code class="language-plaintext highlighter-rouge">pyhton sendpayment.py</code><br><br>
@@ -396,7 +392,7 @@ Total balance:	0.00000000
 											Il comando sendpayment serve per muovere fondi da joinmarket a wallet esterni o per inviare satoshi ad una persona aggiungendo un layer di privacy tra noi e lui. Per
 											guadagnare un sufficiente livello di privacy sui nostri UTXO é piú indicato usare il comando tumbler.py che spiegheremo piú avanti in questa guida.<br><br>
 										</p>
-										<h2 id="maker"> Fare da Maker</h2>
+										<h2 style="color: greenyellow;" id="maker"> Fare da Maker</h2>
 										<p>
 											Lo script che andremo a trattare in questa sezione è:<br><br>
 											<code class="language-plaintext highlighter-rouge"> yg-privacyenhanced.py </code><br><br>
@@ -429,7 +425,7 @@ Total balance:	0.00000000
 											spostarli
 											su un cold wallet, é consigliabile concludere un ciclo completo del wallet.
 										</p>
-										<h2 id="tumbler">Tumbler</h2>
+										<h2 style="color: greenyellow;" id="tumbler">Tumbler</h2>
 										<p>
 											Eccoci finalmente alla parte piú succosa di JoinMarket, il tumbler!<br>
 											se avete ascoltato il podcast sapete giá di cosa si tratta. Una raccomandazione prima di inziare: ATTENTI ALLE FEE! Ricordatevi di settare
@@ -457,7 +453,7 @@ Total balance:	0.00000000
 											Lanciandolo da shell digitando 'tmux' vi si aprirá un terminale che rimarrá attivo in background anche chiudendo la connessione remota. Quando vi ri-connetterete al vostro nodo con il comando: 'tmux attach' ri-aprirete la shell
 											lasciata aperta.
 										</p>
-										<h2 id="conc">Conclusioni</h2>
+										<h2 style="color: greenyellow;" id="conc">Conclusioni</h2>
 										JoinMarket é un software sconfinato e personalizzabile. In questa guida abbiamo scoperto le funzioni principali in modo da rendere possibile per chiunque (o almeno ci ho provato, mi rendo conto che usare questo software non é una
 										passeggiata)
 										l'utilizzo di questo programma. Uno dei maggiori problemi di JM é proprio questo: il numero di persone che lo usano e che fanno da maker. Se pochi utenti sfruttano questo software, la privacy generale (anon-set) si abbassa. Ecco perché
@@ -469,6 +465,9 @@ Total balance:	0.00000000
 									</article>
 								</section>
 							</div>
+						</div>
+					</div>
+				</div>
 							<!-- Footer -->
 							<section id="footer">
 								<div class="inner">
