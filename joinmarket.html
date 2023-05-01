@@ -45,6 +45,7 @@
 					<li><a href="android.html">Guida alla privacy Android</a></li>
 					<li><a href="joinmarket.html">Guida a JoinMarket</a></li>
 					<li><a href="bitcoin.html">Guida alla privacy su Bitcoin</a></li>
+					<li><a href="seed.html">Generiamo un seed bitcoin con i dadi</a></li>
 				</ul>
 				<a href="#" class="close">Close</a>
 			</div>
@@ -65,55 +66,53 @@
 
 					<script>
 						function copyMyText() {
-            //select the element with the id "copyMe", must be a text box
-            var textToCopy = document.getElementById("copyMe");
-            //select the text in the text box
-            textToCopy.select();
-            //copy the text to the clipboard
-            document.execCommand("copy");
-        }
-
-    </script>
+							//select the element with the id "copyMe", must be a text box
+							var textToCopy = document.getElementById("copyMe");
+							//select the text in the text box
+							textToCopy.select();
+							//copy the text to the clipboard
+							document.execCommand("copy");
+						}
+					</script>
 
 					<style>
 						.collapsible {
-            background-color: #777;
-            color: white;
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
-        }
+							background-color: #777;
+							color: white;
+							cursor: pointer;
+							padding: 18px;
+							width: 100%;
+							border: none;
+							text-align: left;
+							outline: none;
+							font-size: 15px;
+						}
 
-        .active,
-        .collapsible:hover {
-            background-color: #555;
-        }
+						.active,
+						.collapsible:hover {
+							background-color: #555;
+						}
 
-        .collapsible:after {
-            content: '\002B';
-            color: white;
-            font-weight: bold;
-            float: right;
-            margin-left: 5px;
-        }
+						.collapsible:after {
+							content: '\002B';
+							color: white;
+							font-weight: bold;
+							float: right;
+							margin-left: 5px;
+						}
 
-        .active:after {
-            content: "\2212";
-        }
+						.active:after {
+							content: "\2212";
+						}
 
-        .content {
-            padding: 0 18px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.2s ease-out;
-            background-color: #212121;
-        }
-
-    </style>
+						.content {
+							padding: 0 18px;
+							max-height: 0;
+							overflow: hidden;
+							transition: max-height 0.2s ease-out;
+							background-color: #212121;
+						}
+					</style>
 					<!-- End Jekyll SEO tag -->
 					</head>
 
@@ -195,21 +194,20 @@
 
 										<script>
 											var coll = document.getElementsByClassName("collapsible");
-                        var i;
+											var i;
 
-                        for (i = 0; i < coll.length; i++) {
-                            coll[i].addEventListener("click", function() {
-                                this.classList.toggle("active");
-                                var content = this.nextElementSibling;
-                                if (content.style.maxHeight) {
-                                    content.style.maxHeight = null;
-                                } else {
-                                    content.style.maxHeight = content.scrollHeight + "px";
-                                }
-                            });
-                        }
-
-                    </script>
+											for (i = 0; i < coll.length; i++) {
+												coll[i].addEventListener("click", function() {
+													this.classList.toggle("active");
+													var content = this.nextElementSibling;
+													if (content.style.maxHeight) {
+														content.style.maxHeight = null;
+													} else {
+														content.style.maxHeight = content.scrollHeight + "px";
+													}
+												});
+											}
+										</script>
 										<br>
 										<h2 style="color: greenyellow;" id="conf">File di configurazione</h2>
 										<p>
@@ -440,19 +438,19 @@ Total balance:	0.00000000
 													7 controparti con una varianza massima di 2, quindi un numero di maker random da 5 a 9) e con un numero maggiore di coinjoin per mixdepth (di default questo script effettua un numero random di coinjoin per sezione del wallet che va da 1
 													a 3,
 													usando il comando -c 3 1 invece sará da 2 A 4).In questo modo spenderemo piú sats in fee ma avremo un anonimity set maggiore.
-											</blackquote><br><br>
-											É possibile anche aggiungere quanti indirizzi di output si vogliono (minimo 3, non cé un massimo se non il buon senso). Non é invece possibile, per questioni di privacy, decidere come saranno distribuiti i satoshi tra gli indirizzi
-											specificati
-											come output.<br><br>
-											Il tumbler é un processo volutamente lungo, occasionalmente potrebbe capitare che qualcosa smetta di funzionare, nella maggior parte dei casi questo si risolverà in autonomia nel giro di poche ore. In caso di crash totale potremo
-											tentare di riavviarlo
-											con il comando:<br><br>
-											<code class="language-plaintext highlighter-rouge">python tumbler.py --restart</code><br><br>
-											oppure basterá far ripartire un nuovo comando di tumbling. Questo non avvierà lo scheduling del tumbler precedente ma inizierá un nuovo ciclo di mixing.<br>
-											In caso chiudendo il terminale SSH al vostro nodo si interrompa anche lo script potrete sfruttare il programma 'TMUX' installabile con il comando:<br><br>
-											<code class="language-plaintext highlighter-rouge">sudo apt install tmux</code><br><br>
-											Lanciandolo da shell digitando 'tmux' vi si aprirá un terminale che rimarrá attivo in background anche chiudendo la connessione remota. Quando vi ri-connetterete al vostro nodo con il comando: 'tmux attach' ri-aprirete la shell
-											lasciata aperta.
+												</blackquote><br><br>
+												É possibile anche aggiungere quanti indirizzi di output si vogliono (minimo 3, non cé un massimo se non il buon senso). Non é invece possibile, per questioni di privacy, decidere come saranno distribuiti i satoshi tra gli indirizzi
+												specificati
+												come output.<br><br>
+												Il tumbler é un processo volutamente lungo, occasionalmente potrebbe capitare che qualcosa smetta di funzionare, nella maggior parte dei casi questo si risolverà in autonomia nel giro di poche ore. In caso di crash totale potremo
+												tentare di riavviarlo
+												con il comando:<br><br>
+												<code class="language-plaintext highlighter-rouge">python tumbler.py --restart</code><br><br>
+												oppure basterá far ripartire un nuovo comando di tumbling. Questo non avvierà lo scheduling del tumbler precedente ma inizierá un nuovo ciclo di mixing.<br>
+												In caso chiudendo il terminale SSH al vostro nodo si interrompa anche lo script potrete sfruttare il programma 'TMUX' installabile con il comando:<br><br>
+												<code class="language-plaintext highlighter-rouge">sudo apt install tmux</code><br><br>
+												Lanciandolo da shell digitando 'tmux' vi si aprirá un terminale che rimarrá attivo in background anche chiudendo la connessione remota. Quando vi ri-connetterete al vostro nodo con il comando: 'tmux attach' ri-aprirete la shell
+												lasciata aperta.
 										</p>
 										<h2 style="color: greenyellow;" id="conc">Conclusioni</h2>
 										JoinMarket é un software sconfinato e personalizzabile. In questa guida abbiamo scoperto le funzioni principali in modo da rendere possibile per chiunque (o almeno ci ho provato, mi rendo conto che usare questo software non é una
@@ -467,19 +465,19 @@ Total balance:	0.00000000
 								</section>
 							</div>
 						</div>
-					</div>
 				</div>
-							<!-- Footer -->
-							<section id="footer">
-								<div class="inner">
-									<ul class="copyright">
-										<li>&copy; Copyright un cazzo, non sono comunista.</li>
-										<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-									</ul>
-								</div>
-							</section>
+			</div>
+			<!-- Footer -->
+			<section id="footer">
+				<div class="inner">
+					<ul class="copyright">
+						<li>&copy; Copyright un cazzo, non sono comunista.</li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</section>
 
-						</div>
+	</div>
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
