@@ -125,13 +125,16 @@
 													altererebbe l'ordine in cui stiamo facendo le cose in questa guida: <a href="https://github.com/massmux/bip39checksum"> tool di massimo </a> </p>
 												<p>Ora che hai un terminale sul tuo computer Mac, Linux o Windows 10, digita il comando seguente. Sostituisci le mie cifre binarie con le tue cifre binarie casuali (nota che dovrebbe essere tutta una riga molto lunga, anche se il modo in
 													cui viene visualizzato qui potrebbe sembrare diverso)</p>
-												<center><blockquote></noscript>
-													echo 1010111100111000000011110110001111010111101001010010001
-													0110011110111101000110000101000111111001000101000111100011101
-													0100011001111111000010100011000101011101000101001111111010100
-													10100111101101101100000011011110100110000011101011010010000100
-													01000010000100111 | shasum -a 256 -0
-												</blockquote></center>
+												<blockquote></noscript>
+													echo 10101111001110000000111101100011
+													1101011110100101001000101100111101111
+													0100011000010100011111100100010100011
+													1100011101010001100111111100001010001
+													1000101011101000101001111111010100101
+													0011110110110110000001101111010011000
+													0011101011010010000100010000100001001
+													11 | shasum -a 256 -0
+												</blockquote>
 												<p>Spiegazione del codice: il comando echo ci mostrerá il risultato dell'operazione nel terminale, il comando invece shasum -a spiega al pc che deve eseguire sha256 sui dati da noi inseriti mentre -0 spiega al computer che i dati che
 													stiamo trattando sono binari.
 													<p>Quando eseguo questo comando, il mio hash risultante viene visualizzato sotto il comando. È la riga che inizia con "b184":</p>
