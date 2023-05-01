@@ -125,9 +125,10 @@
 													altererebbe l'ordine in cui stiamo facendo le cose in questa guida: <a href="https://github.com/massmux/bip39checksum"> tool di massimo </a> </p>
 												<p>Ora che hai un terminale sul tuo computer Mac, Linux o Windows 10, digita il comando seguente. Sostituisci le mie cifre binarie con le tue cifre binarie casuali (nota che dovrebbe essere tutta una riga molto lunga, anche se il modo in
 													cui viene visualizzato qui potrebbe sembrare diverso)</p>
-												<blockquote class="wp-block-quote">
-													<p>echo 10101111001110000000111101100011110101111010010100100010110011110111101000110000101000111111001000101000111100011101
-														010001100111111100001010001100010101110100010100111111101010010100111101101101100000011011110100110000011101011010010000100 01000010000100111 | shasum -a 256 -0</p>
+												<blockquote>
+													echo 10101111001110000000111101100011110101111010010100100010110011110111101000110000101000111111001000101000111100011101
+													010001100111111100001010001100010101110100010100111111101010010100111101101101100000011011110100110000011101011010010000100
+													01000010000100111 | shasum -a 256 -0
 												</blockquote>
 												<p>Spiegazione del codice: il comando echo ci mostrerá il risultato dell'operazione nel terminale, il comando invece shasum -a spiega al pc che deve eseguire sha256 sui dati da noi inseriti mentre -0 spiega al computer che i dati che
 													stiamo trattando sono binari.
@@ -145,7 +146,8 @@
 													<p>Nel mio hash, la mia prima cifra, "b", rappresenta 11. E 1 in esadecimale equivale a 1.</p>
 													<p>Ora convertiamo questi due numeri nelle loro rappresentazioni binarie a quattro cifre. Puoi farlo facendo riferimento alla tabella qui sotto:</p>
 													<center class="wp-block-image"><img style="width: 90%; height:90%" src="images/image2.webp"></noscript>
-														<blockquote>'11' in binario  è '1011', '1' è '0001'. Siamo passati da b e 1, a 11 e 1, e infine a 1011 e 0001.</blockquote></center>
+														<blockquote>'11' in binario è '1011', '1' è '0001'. Siamo passati da b e 1, a 11 e 1, e infine a 1011 e 0001.</blockquote>
+													</center>
 												</p>
 												<p>Questi numeri a quattro cifre sono il checksum che aggiungeremo ai nostri bit per completare la nostra 24a parola!</p>
 												<p>Aggiungili alla 24a riga per completare la serie finale di 11 cifre binarie. Ora hai 264 cifre in totale (vedi come viene completata la 24a riga nel diagramma più in basso)</p>
@@ -167,12 +169,13 @@
 												<p>Ora, osserva la tua prima riga di cifre binarie. Ovunque ci sia un &#8220;1&#8221;, aggiungi il numero decimale che si trova direttamente sopra di esso e lo registri sotto la cifra binaria. Dove c'è uno &#8220;0&#8221; ignori il
 													numero
 													sopra. In questo modo:</p>
-													<center class="wp-block-image"><img style="width: 90%; height:90%" src="images/image7.webp"></noscript>
-												<blockquote>In questo esempio, c'è un "1" sotto la colonna 1024, la colonna 256, il 64, il 32, il 16, l'8 e l'1.</blockquote></center>
+												<center class="wp-block-image"><img style="width: 90%; height:90%" src="images/image7.webp"></noscript>
+													<blockquote>In questo esempio, c'è un "1" sotto la colonna 1024, la colonna 256, il 64, il 32, il 16, l'8 e l'1.</blockquote>
+												</center>
 												<p>Aggiungi i numeri decimali per ottenere il totale:</p>
 												<center class="wp-block-image"><img style="width: 90%; height:90%" src="images/image11.webp"></noscript></center>
 												<p>Ora ripeti questo processo per tutte le 24 righe:</p>
-													<center class="wp-block-image"><img style="width: 90%; height:90%" src="images/image5.webp"></noscript>
+												<center class="wp-block-image"><img style="width: 90%; height:90%" src="images/image5.webp"></noscript>
 													<img style="width: 90%; height:90%" src="images/image6.webp"></center>
 												<p><a></a></p>
 												<p>Ora avrai 24 numeri decimali che vanno da 0 e 2047.</p>
@@ -186,19 +189,20 @@
 													l'elenco delle parole viene visualizzato con numeri di riga che iniziano con uno anziché zero. Quindi, mentre "abstract" è l'ottava parola ed è elencata nella riga numero 8, il suo effettivo equivalente numerico BIP 39 è 7.</p>
 												<div class="wp-block-image">
 													<center class="wp-block-image"><img style="width: 90%; height:90%" style="width: 90%; height:90%" src="images/image4.webp"></noscript></center>
-												<p><a></a></p>
-												<p>La mia prima riga di 11 cifre binarie da' come risultato 1401 in decimale. Quindi nell'elenco Github, devo trovare la parola sulla riga 1402 (1401 + 1). otteró la parola "quality"; Procedi a cercare ogni decimale, avendo cura di
-													aggiungere un 1 in più al risultato calcolato in modo che corrisponda alla numerazione delle righe di Github e trova la parola per ciascuna delle 24 righe.</p>
+													<p><a></a></p>
+													<p>La mia prima riga di 11 cifre binarie da' come risultato 1401 in decimale. Quindi nell'elenco Github, devo trovare la parola sulla riga 1402 (1401 + 1). otteró la parola "quality"; Procedi a cercare ogni decimale, avendo cura di
+														aggiungere un 1 in più al risultato calcolato in modo che corrisponda alla numerazione delle righe di Github e trova la parola per ciascuna delle 24 righe.</p>
 													<center class="wp-block-image"><img style="width: 90%; height:90%" src="images/image3.webp"></noscript>
-													<img style="width: 90%; height:90%" src="images/image13.webp"></center
-												<p>Ben fatto se sei arrivato fin qui! Ora hai un seed mnemonico Bitcoin valido di 24 parole. Ora dovresti buttarlo via a meno che tu non abbia utilizzato l'approccio completamente manuale, non puoi usarli per i tuoi bitcoin perché non
-													sono stati creati in un ambiente sicuro!</p>
-												<p>In realtà, prima di buttarli, potresti inserire le parole in un portafoglio hardware o in un portafoglio software e vedere se vengono rifiutate. Se viene rifiutato, hai commesso un errore da qualche parte, il che è molto facile da
-													fare con questo approccio manuale. Se c'è qualche errore ovunque, il checksum non corrisponderà e tutti i portafogli segnaleranno immediatamente un errore.</p>
-												<h6 class="wp-block-heading" id="for-your-real-keys">PER LE TUE CHIAVI REALI</h6>
-												<p>Genera assolutamente le tue chiavi usando il procedimento manuale il piú possibile, nelle parti in cui ti appoggi ad un dispositivo elettronico sfrutta sistemi sicuri, sistemi operativi vergini e valuta di smontare la scheda
+														<img style="width: 90%; height:90%" src="images/image13.webp"></center <p>Ben fatto se sei arrivato fin qui! Ora hai un seed mnemonico Bitcoin valido di 24 parole. Ora dovresti buttarlo via a meno che tu non abbia utilizzato
+													l'approccio completamente manuale, non puoi usarli per i tuoi bitcoin perché non
+													sono stati creati in un ambiente sicuro!
+											</p>
+											<p>In realtà, prima di buttarli, potresti inserire le parole in un portafoglio hardware o in un portafoglio software e vedere se vengono rifiutate. Se viene rifiutato, hai commesso un errore da qualche parte, il che è molto facile da
+												fare con questo approccio manuale. Se c'è qualche errore ovunque, il checksum non corrisponderà e tutti i portafogli segnaleranno immediatamente un errore.</p>
+											<h6 class="wp-block-heading" id="for-your-real-keys">PER LE TUE CHIAVI REALI</h6>
+											<p>Genera assolutamente le tue chiavi usando il procedimento manuale il piú possibile, nelle parti in cui ti appoggi ad un dispositivo elettronico sfrutta sistemi sicuri, sistemi operativi vergini e valuta di smontare la scheda
 												wireless dal tuo pc. Un opzione potrebbe essere installare TailsOS su un disco esterno, smontare la scheda wirless al tuo pc, avviare l'os e mantenerlo disconnesso da internet fino alla fine della procedura. Una volta calcolato il seed
-											spegnere il pc e ri-avviare il computer con la scheda wireless ri-montata. E possibile anche usare dei raspberry come pc air-gapped.</p>
+												spegnere il pc e ri-avviare il computer con la scheda wireless ri-montata. E possibile anche usare dei raspberry come pc air-gapped.</p>
 									</article>
 								</section>
 							</div>
