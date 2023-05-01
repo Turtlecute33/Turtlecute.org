@@ -95,7 +95,7 @@
 													possibile e lascia spazio tra ogni riga per i calcoli manuali. Tutto questo avrà un senso in seguito.</li>
 											</ul>
 											<p>esempio:</p>
-											<center><img style="width: 90%; height:90%" src="images/image8.webp"><img style="width: 90%; height:90%" src="images/image10.webp"></noscript>
+											<center><img style="width:90%: height:90%" src="images/image8.webp"><img style="width:90%: height:90%" src="images/image10.webp"></noscript>
 												<blockquote>Ci sono 256 cifre binarie: 23 serie complete di 11 cifre con la 24 riga che ne richiede solo tre.</blockquote>
 											</center><br>
 											<p>Lo vedremo più chiaramente in seguito ma, per ora, tieni presente che le 11 cifre binarie verranno tradotte in una parola del seed. Per il totale di 256 cifre casuali, possiamo dividere per 11 e ottenere il numero di
@@ -138,7 +138,7 @@
 												<p>Spiegazione del codice: il comando echo ci mostrerá il risultato dell'operazione nel terminale, il comando invece shasum -a spiega al pc che deve eseguire sha256 sui dati da noi inseriti mentre -0 spiega al computer che i dati che
 													stiamo trattando sono binari.
 													<p>Quando eseguo questo comando, il mio hash risultante viene visualizzato sotto il comando. È la riga che inizia con "b184":</p>
-													<center class="wp-block-image"><img src="images/image1.webp"></noscript></center>
+													<center class="wp-block-image"><img style="width:90%: height:90%" src="images/image1.webp"></noscript></center>
 													<p>Ora possiamo iniziare a calcolare il checksum. Prendiamo le prime due cifre dell'output dell'hash, in questo caso &#8220;b&#8221; e &#8220;1&#8221;. Questi sono numeri esadecimali. In esadecimale, invece di visualizzare le cifre da 0
 														a 9, contiamo fino a 15 utilizzando le lettere dell'alfabeto per rappresentare i numeri maggiori di nove:</p>
 													<blockquote class="wp-block-quote">
@@ -150,7 +150,7 @@
 													</blockquote>
 													<p>Nel mio hash, la mia prima cifra, "b", rappresenta 11. E 1 in esadecimale equivale a 1.</p>
 													<p>Ora convertiamo questi due numeri nelle loro rappresentazioni binarie a quattro cifre. Puoi farlo facendo riferimento alla tabella qui sotto:</p>
-													<center class="wp-block-image"><img src="images/image2.webp"></noscript>
+													<center class="wp-block-image"><img style="width:90%: height:90%" src="images/image2.webp"></noscript>
 														<blockquote>'11' in binario è '1011', '1' è '0001'. Siamo passati da b e 1, a 11 e 1, e infine a 1011 e 0001.</blockquote>
 													</center>
 												</p>
@@ -170,18 +170,18 @@
 												<p>Fare questa conversione esclusivamente a mano è più difficile, ma possibile.</p>
 												<p>Nella parte superiore della pagina, scrivi questa sequenza esatta di numeri da destra a sinistra, verticalmente in linea con le cifre binarie sottostanti: "1024" sopra la prima colonna di cifre binarie. Quindi "512" sulla colonna
 													successiva. Poi "256". E così via, dimezzando il numero ogni volta finché non si finisce con "1" sopra l'ultima (undicesima) colonna delle cifre binarie.</p>
-												<center class="wp-block-image"><img src="images/image12.webp"></noscript></center>
+												<center class="wp-block-image"><img style="width:90%: height:90%" src="images/image12.webp"></noscript></center>
 												<p>Ora, osserva la tua prima riga di cifre binarie. Ovunque ci sia un &#8220;1&#8221;, aggiungi il numero decimale che si trova direttamente sopra di esso e lo registri sotto la cifra binaria. Dove c'è uno &#8220;0&#8221; ignori il
 													numero
 													sopra. In questo modo:</p>
-												<center class="wp-block-image"><img src="images/image7.webp"></noscript>
+												<center class="wp-block-image"><img style="width:90%: height:90%" src="images/image7.webp"></noscript>
 													<blockquote>In questo esempio, c'è un "1" sotto la colonna 1024, la colonna 256, il 64, il 32, il 16, l'8 e l'1.</blockquote>
 												</center>
 												<p>Aggiungi i numeri decimali per ottenere il totale:</p>
-												<center class="wp-block-image"><img src="images/image11.webp"></noscript></center>
+												<center class="wp-block-image"><img style="width:90%: height:90%" src="images/image11.webp"></noscript></center>
 												<p>Ora ripeti questo processo per tutte le 24 righe:</p>
-												<center class="wp-block-image"><img src="images/image5.webp"></noscript>
-													<img src="images/image6.webp"></center>
+												<center class="wp-block-image"><img style="width:90%: height:90%" src="images/image5.webp"></noscript>
+													<img style="width:90%: height:90%" src="images/image6.webp"></center>
 												<p><a></a></p>
 												<p>Ora avrai 24 numeri decimali che vanno da 0 e 2047.</p>
 												<h6 class="wp-block-heading" id="step-3-look-up-the-bip-39-words">PASSAGGIO 4 &#8211; CERCA IL BIP 39</h6>
