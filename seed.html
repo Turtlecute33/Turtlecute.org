@@ -75,54 +75,54 @@
 											<p><a rel="noreferrer noopener" href="https://aprycot.media/blog/diy-private-schluessel-fuer-bitcoin-erstellen/" target="_blank">Tedesco</a> 🇩🇪 <br>
 												<a rel="noreferrer noopener" href="https://armantheparman.com/dicev2/" target="_blank">Inglese</a> 🇺🇲 </p>
 											<h6 class="wp-block-heading has-text-align-center">In questo tutorial imparerai a generare la tua chiave privata Bitcoin</h6>
-											<p>Questo progetto ti aiuterà a capire meglio le chiavi Bitcoin e a generarle in autonomia. Avrai bisogno di matita, carta, qualcosa per generare un output casuale in binario (come una moneta o un dado) e un computer. Invece di studiare
-												puramente
-												la teoria dei seed, nella guida di oggi mettiamo un po' le mani 'in pasta' e lavoriamo a livello pratico.</p>
+											<p>Questo progetto ti aiuterà a capire meglio il funzionamento delle chiavi riguardanti Bitcoin e a generarle in autonomia. Avrai bisogno di matita, carta, qualcosa per generare un output casuale in binario (come una moneta o un dado) e un computer. Invece di studiare
+											
+												gli aspetti teorici riguardanti il funzionamento dei seed, nella guida di oggi metteremo le mani 'in pasta' e opereremo con un approccio pratico.</p>
 											<h6 class="wp-block-heading" id="important-preamble">IMPORTANTE PREAMBOLO</h6>
-											<p>Prima di usare direttamente le chiavi generate come seed principale fai pratica con questa guida.<br>
-												Quando crei la tua vera chiave, quella che conterrà Bitcoin, devi generarla su un computer air-gapped. Il dispositivo non deve avere la capacità di connettersi a Internet. Non è sufficiente disattivare
-												temporaneamente la connessione Wi-Fi se si è seriamente interessati alla sicurezza; esistono hacker intelligenti e possono estrarre le tue chiavi private anche se sei temporaneamente disconnesso da Internet.</p>
+											<p>Prima di usare direttamente le chiavi generate, è meglio fare un po' di pratica seguendo i passi di questa guida.<br>
+												Quando crei la tua vera chiave, quella che userai per custodire i tuoi bitcoin, devi generarla su un computer air-gapped. Il dispositivo non deve avere la capacità di connettersi a Internet. Non è sufficiente disattivare
+												temporaneamente la connessione Wi-Fi se si è seriamente interessati alla sicurezza; esistono tecniche sofisticate che consentono di estrarre le tue chiavi private anche se sei temporaneamente disconnesso da Internet.</p>
 											<p>Ok, iniziamo...</p>
 											<h6 class="wp-block-heading" id="step-1-make-a-big-random-binary-number">PASSO 1 &#8211; CREA NUMERI BINARI CON ENTROPIA</h6>
 											<p>É possibile generare entropia lanciando una moneta 256 volte, ma è piu randomico e veloce usare i dadi. Puoi acquistare dadi da casinò per garantire tiri equi e casuali, ma va benissimo usare qualsiasi vecchio dado. Anche se i tuoi
 												dadi
 												non sono perfetti e hanno qualche difetto, fintanto che ne usi diversi alla volta, otterrai una casualità sufficiente.</p>
-											<p>Questa è la procedura (uno dei tanti modi):</p>
+											<p>Questa è la procedura (una delle tante possibili):</p>
 											<ul>
-												<li>Prendi circa quattro dadi (ad esempio da un vecchio gioco da tavolo in giro).</li>
+												<li>Prendi circa quattro dadi (ad esempio da un vecchio gioco da tavolo).</li>
 												<li>Considera i numeri 1, 2 o 3 come zero mentre 4, 5 o 6 saranno un uno. In questo modo otterrai un output binario (solo zeri e uno nel risultato finale) con i dadi (ad es. tira un 3, registra uno zero; tira un
-													6, registra uno).</li>
+													6, registra un uno).</li>
 												<li>Crea 23 righe di 11 cifre. La 24a riga avrà bisogno solo di tre cifre. Per ogni riga, raggruppa le cifre in gruppi di 4-4-3 (vedi immagine sotto) per facilitare la lettura e il calcolo. Mantieni le colonne verticali allineate il più
-													possibile e lascia spazio tra ogni riga per i calcoli manuali. Tutto avrà più senso in seguito.</li>
+													possibile e lascia spazio tra ogni riga per i calcoli manuali. Tutto avrà più senso tra poco.</li>
 											</ul>
 											<p>Esempio:</p>
 											<center><img style="width:90%; height:90%" src="images/image8.webp"><img style="width:90%; height:90%" src="images/image10.webp"></noscript>
 												<blockquote>Ci sono 256 cifre binarie: 23 serie complete di 11 cifre con la 24a riga che ne richiede solo tre.</blockquote>
 											</center><br>
-											<p>Lo vedremo più chiaramente in seguito ma, per ora, tieni presente che le 11 cifre binarie verranno tradotte in una parola del seed. Per il totale di 256 cifre casuali, possiamo dividere per 11 e ottenere il numero di
-												parole del seed. Ma il risultato di 256 diviso 11 non è un numero intero (23 ed avanzano 3 bit).<br>
-												<p>Abbiamo bisogno di altri 8 bit per creare la nostra 24a parola. Una volta che abbiamo 264 bit in totale, tutto si divide in 24 serie di 11, producendo un seed mnemonico di 24 parole. Come vedremo in
+											<p>Per ora, tieni presente che le 11 cifre binarie verranno tradotte in una parola della mnemonic phrase che rappresenterà il tuo seed. Siccome stiamo utilizzando un totale di 256 cifre casuali come entropia, e stiamo dividendo le cifre in gruppi di 11, se dividiamo 256 per 11 ci aspettiamo di ottenere il numero di
+												parole della menmonic phrase. Ma il risultato di 256 diviso 11 non è un numero intero bensì 23 con un resto di 3.<br>
+												<p>Abbiamo bisogno di altre 8 cifre, altri 8 bit, per creare la nostra 24a parola. Una volta che abbiamo 264 bit in totale, tutto si divide in 24 gruppi di 11 cifre, da cui ricavare una mnemonic phrase di 24 parole. Come vedremo in
 													seguito, questi ultimi 8 bit extra avranno un importante ruolo da svolgere.</p>
 												<p><strong>Una nota sulla casualità:</strong></p>
 												<p>Possiamo creare questi 256 bit di dati casuali come preferiamo, purché siano effettivamente entropici. Se non sono randomici, qualcuno potrebbe essere in grado di riprodurre i dati. Sarebbe quindi in grado di ricreare la tua chiave
 													privata e
-													prendere tutti i tuoi Bitcoin. Esempio: se crei 256 bit di tutti zeri (chiaramente non casuali), allora qualcuno sarà in grado di indovinare la tua chiave privata. Ecco la prova: ho generato una chiave privata da quella
+													prendere tutti i tuoi bitcoin. Esempio: se crei 256 bit di tutti zeri (chiaramente non casuali), allora qualcuno sarà in grado di indovinare la tua chiave privata. Ecco la prova: ho generato una chiave privata da quella
 													terribile casualità di tutti zeri e ho trovato il portafoglio esistente di qualcuno. Se non fosse già stato svuotato, avrei potuto rubare i fondi.</p>
 												<center><img style="width: 90%; height:90%" src="images/image9.webp"></noscript>
-													<blockquote>Sapevano chiaramente cosa stavano facendo perché si trattava di una piccola somma e non hanno lasciato satoshi lì per molto tempo. Potrebbe essere stata una dimostrazione, chissà. Ma altre persone hanno creato chiavi private
+													<blockquote>Sapevano chiaramente cosa stavano facendo perché si trattava di una piccola somma che non è stata lasciata lì per molto tempo. Potrebbe essere stata una dimostrazione, chissà. Ma altre persone hanno creato chiavi private
 														non
-														casuali facilmente indovinabili e di conseguenza hanno perso i loro Bitcoin. Ma non preoccuparti, se crei una chiave privata veramente casuale, qualcuno dovrebbe ripetere esattamente i tuoi lanci di dadi binari o lanci di monete e,
+														casuali facilmente indovinabili e di conseguenza hanno perso i loro bitcoin. Ma non preoccuparti, se crei una chiave privata veramente casuale, qualcuno dovrebbe ripetere esattamente i tuoi lanci di dadi binari o lanci di monete e,
 														grazie alla matematica esponenziale, ciò non accadrà prima della fine dell'universo.</blockquote>
 												</center><br>
 												<h6 class="wp-block-heading" id="step-2-calculate-the-checksum">PASSO 2 &#8211; CALCOLARE IL CHECKSUM</h6>
-												<p>Questi ultimi 8 bit mancanti devono essere calcolati per formare quello che viene chiamato il "checksum".</p>
+												<p>Questi ultimi 8 bit mancanti devono essere calcolati per formare quello che viene chiamato "checksum".</p>
 												<p><a href="https://en.wikipedia.org/wiki/Checksum" rel="noreferrer noopener" target="_blank">Cos'è un checksum</a>? Un checksum è il modo in cui i computer sanno che hai commesso un errore di battitura quando inserisci dati come il
-													numero della tua carta di credito o del tuo conto bancario. È utile che il computer ti avverta se hai commesso un errore di battitura nella tua chiave privata!</p>
-												<p>Per calcolare il checksum avrai bisogno di un computer Linux o Mac <a rel="noreferrer noopener" href="https://armantheparman.com/sha256/" target="_blank">(può essere fatto a mano</a><a href="https://armantheparman.com/sha256/" target="_blank"
-													  rel="noreferrer noopener">,</a><a rel="noreferrer noopener" href="https://armantheparman.com/sha256/" target="_blank"> ma è molto difficile &#8211; ecco una guida, per interesse)</a>. Se hai Windows 10, puoi installare l'app Ubuntu
-													(una versione di Linux) dal Microsoft Store. Basta cercare &#8220;Ubuntu&#8221; e installarlo. Utilizzerai il terminale di Ubuntu per eseguire i comandi che seguono. L'app è una sessione temporanea; nessun file viene memorizzato all'interno della stessa.
+													numero della tua carta di credito o del tuo conto bancario o il tuo codice fiscale. Può essere davvero utile che il computer ti avverta se hai commesso un errore di battitura nella tua chiave privata!</p>
+												<p>Per calcolare il checksum avrai bisogno di un computer Linux o Mac <a rel="noreferrer noopener" href="https://armantheparman.com/sha256/" target="_blank">(la procedura può essere fatta a mano</a><a href="https://armantheparman.com/sha256/" target="_blank"
+													  rel="noreferrer noopener">,</a><a rel="noreferrer noopener" href="https://armantheparman.com/sha256/" target="_blank"> ma è molto complicata &#8211; ecco una guida)</a>. Se hai Windows 10, puoi installare l'app Ubuntu
+													(una versione del terminale di Linux) dal Microsoft Store. Basta cercare &#8220;Ubuntu&#8221; e installarlo. Utilizzerai il terminale di Ubuntu per eseguire i comandi che seguono. L'app è una sessione temporanea; nessun file viene memorizzato all'interno della stessa.
 													Ciò significa che avrai una sessione pulita ogni volta che lo esegui.</p>
-												<p>Gli utenti Windows devono eseguire questa soluzione alternativa. Ho provato soluzioni alternative, ma ho riscontrato vari problemi. Un'altra soluzione potrebbe essere usare il tool di Massimo Musumeci che peró
+												<p>Agli utenti Windows consiglio di adottare questa soluzione alternativa. Ne ho provato altre ma ho sempre riscontrato dei problemi. Un'altra soluzione potrebbe essere usare il tool di Massimo Musumeci che peró
 													altererebbe l'ordine con cui stiamo facendo le cose in questa guida: <a href="https://github.com/massmux/bip39checksum"> Tool di Massimo </a> </p>
 												<p>Ora che hai un terminale sul tuo computer Mac, Linux o Windows 10, digita il comando seguente. Sostituisci le mie cifre binarie con le tue cifre binarie casuali (nota che dovrebbe essere tutta una riga molto lunga, anche se il modo in
 													cui viene visualizzato qui potrebbe sembrare diverso)</p>
@@ -136,11 +136,11 @@
 													0011101011010010000100010000100001001
 													11 | shasum -a 256 -0
 												</blockquote>
-												<p>Spiegazione del codice: il comando echo mostrerá il risultato dell'operazione nel terminale, il comando shasum -a comunica al pc di eseguire la funzione di hash sha256 sui dati da noi inseriti mentre -0 spiega al computer che i dati che
+												<p>Spiegazione del codice: il comando echo mostrerà il risultato dell'operazione nel terminale, il comando shasum -a comunica al pc di eseguire la funzione di hash sha256 sui dati da noi inseriti mentre -0 spiega al computer che i dati che
 													stiamo trattando sono binari.
-													<p>Quando eseguo questo comando, il mio hash risultante viene visualizzato sotto il comando. È la riga che inizia con "b184":</p>
+													<p>Eseguendo  questo comando, l'hash risultante viene visualizzato nella riga seguente, che inizierà con "b184":</p>
 													<center class="wp-block-image"><img style="width:90%; height:90%" src="images/image1.webp"></noscript></center>
-													<p>Ora possiamo iniziare a calcolare il checksum. Prendiamo le prime due cifre dell'output dell'hash, in questo caso &#8220;b&#8221; e &#8220;1&#8221;. Questi sono numeri esadecimali. In esadecimale, invece di visualizzare le cifre da 0
+													<p>Ora possiamo iniziare a calcolare il checksum. Prendiamo le prime due cifre dell'output dell'hash, in questo caso &#8220;b&#8221; e &#8220;1&#8221;. Questi sono numeri esadecimali. In esadecimale, invece di utilizzare le cifre da 0
 														a 9, contiamo fino a 15 utilizzando le lettere dell'alfabeto per rappresentare i numeri maggiori di nove:</p>
 													<blockquote class="wp-block-quote">
 														<p>0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f</p>
@@ -160,9 +160,9 @@
 												<h6 class="wp-block-heading" id="step-3-converting-binary-to-decimal">PASSO 3 &#8211; CONVERSIONE DA BINARIO A DECIMALE</h6>
 												<p>Ciascuno dei gruppi di 11 cifre binarie deve essere convertito in un numero decimale.</p>
 												<p>Puoi inserirli in un calcolatore binario-decimale online, ma sarebbe estremamente rischioso per la sicurezza. Ti mostrerò come farlo manualmente.</p>
-												<p>In un sistema numerico binario, ci sono solo 0 e 1. Le altre cifre che conosci (2,3,4,5,6,7,8,9) non esistono. Quindi bisognerá trasformare questi numeri in zeri e uno.</p>
+												<p>In un sistema numerico binario, ci sono solo 0 e 1. Le altre cifre che conosci (2,3,4,5,6,7,8,9) non esistono. Quindi bisognerà trasformare questi numeri in zeri e uno.</p>
 												<p>Con undici cifre binarie, il numero più piccolo possibile è zero (00000000000), il più grande è 2047 (11111111111).</p>
-												<p>Prendiamo ciascuna di queste undici cifre binarie sulla nostra pagina (ogni riga) e le convertiamo in decimale. Puoi farlo manualmente o convertirli dalla riga di comando in Linux, Mac o nell'app Ubuntu.</p>
+												<p>Prendiamo ciascun gruppo di  undici cifre binarie sulla nostra pagina (ogni riga) e convertiamolo in un numero decimale decimale. Puoi farlo manualmente o convertirli dalla riga di comando in Linux, Mac o nell'app Ubuntu.</p>
 												<p>Per il numero 10101111001, devi digitare:</p>
 												<blockquote class="wp-block-quote">
 													<p>echo "$((2#10101111001))"</p>
@@ -189,24 +189,24 @@
 												<p>Il protocollo BIP 39 (Bitcoin Improvement Proposal numero 39) specifica 2048 parole diverse, elencate in ordine alfabetico. Quando questo elenco viene letto, ogni parola può essere identificata dalla sua posizione numerica
 													nell'elenco. I numeri appena calcolati vengono utilizzati per cercare la parola corrispondente. Ad esempio, la prima riga ha prodotto il numero 1401 che equivale alla parola "quality" nell'elenco di parole BIP 39 ordinato.</p>
 												<p>Zero è il valore più piccolo possibile che puoi calcolare per una riga (dal binario 00000000000). In tal caso, selezionerai "abandon", la prima parola nell'elenco.</p>
-												<p>Il numero più grande possibile è 2047 (da 11111111111). La parola corretta sarebbe "zoo", l'ultima parola della lista.</p>
+												<p>Il numero più grande possibile è 2047 (ottenuto dal binario 11111111111). La parola corrispondente è "zoo", l'ultima parola della lista.</p>
 												<p>C'è un problema da tenere presente: i computer contano gli elementi a partire da 0. Quindi il quinto elemento in un elenco è il numero 4 del computer.</p>
 												<p><a href="https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt" rel="noreferrer noopener" target="_blank ">La specifica ufficiale delle parole BIP 39 è su GitHub</a>&nbsp;ma
 													l'elenco delle parole viene visualizzato con numeri di riga che iniziano con uno anziché zero. Quindi, mentre "abstract" è l'ottava parola ed è elencata nella riga numero 8, il suo effettivo equivalente numerico BIP 39 è 7.</p>
 												<div class="wp-block-image">
 													<center class="wp-block-image"><img style="width: 90%; height:90%" src="images/image4.webp"></noscript></center>
 													<p><a></a></p>
-													<p>La mia prima riga di 11 cifre binarie dà come risultato 1401 in decimale. Quindi nell'elenco GitHub, devo trovare la parola sulla riga 1402 (1401 + 1). Otterró la parola "quality". Procedi a cercare ogni decimale, avendo cura di
+													<p>La mia prima riga di 11 cifre binarie dà come risultato 1401 in decimale. Quindi nell'elenco GitHub, devo trovare la parola sulla riga 1402 (1401 + 1). Otterrò la parola "quality". Procedi a cercare ogni decimale, avendo cura di
 														aggiungere un 1 in più al risultato calcolato in modo che corrisponda alla numerazione delle righe di GitHub e trova la parola per ciascuna delle 24 righe.</p>
 													<center class="wp-block-image"><img style="width: 90%; height:90%" src="images/image3.webp"></noscript>
-														<img style="width: 90%; height:90%" src="images/image13.webp"></center <p>Ben fatto se sei arrivato fin qui! Ora hai un seed mnemonico Bitcoin valido di 24 parole. Ora dovresti buttarlo via a meno che tu non abbia utilizzato
-													l'approccio completamente manuale, non puoi usarli per i tuoi Bitcoin perché non
-													sono stati creati in un ambiente sicuro!
+														<img style="width: 90%; height:90%" src="images/image13.webp"></center <p>Ben fatto! Se sei arrivato fin qui! Ora hai una mnemonic phrase Bitcoin valida di 24 parole. Ora puoi buttarlo via. A meno che tu non abbia utilizzato
+													l'approccio completamente manuale, non puoi usarlo per i tuoi Bitcoin perché non
+													è stato creato in un ambiente sicuro!
 											</p>
-											<p>In realtà, prima di buttarli, potresti inserire le parole in un portafoglio hardware o in un portafoglio software e vedere se vengono rifiutate. Se vengono rifiutate, hai commesso un errore da qualche parte, il che è molto facile da
+											<p>In realtà, prima di buttarlo, potresti provare ad inserire le parole in un portafoglio hardware o in un portafoglio software e vedere se vengono rifiutate. Se vengono rifiutate, hai commesso un errore da qualche parte, il che è molto facile da
 												fare con l'approccio manuale. Se c'è qualche errore, il checksum non corrisponderà e tutti i portafogli segnaleranno immediatamente un errore.</p>
 											<h6 class="wp-block-heading" id="for-your-real-keys">PER LE TUE CHIAVI REALI</h6>
-											<p>Genera assolutamente le tue chiavi usando il procedimento manuale il piú possibile, nelle parti in cui ti appoggi ad un dispositivo elettronico sfrutta sistemi sicuri, sistemi operativi vergini e valuta di smontare la scheda
+											<p>Genera assolutamente le tue chiavi usando un procedimento il più possibile manuale e, nelle parti in cui ti appoggi ad un dispositivo elettronico, sfrutta sistemi sicuri, sistemi operativi vergini e valuta di smontare la scheda
 												wireless dal tuo pc. Un'opzione potrebbe essere installare TailsOS su un disco esterno, smontare la scheda wireless dal tuo pc, avviare l'OS e mantenerlo disconnesso da internet fino alla fine della procedura. Una volta calcolato il seed,
 												spegnere il pc e ri-avviare il computer con la scheda wireless ri-montata. E possibile anche usare dei raspberry come pc air-gapped.</p>
 									</article>
