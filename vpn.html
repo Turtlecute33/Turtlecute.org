@@ -14,7 +14,7 @@
 	<meta property="og:title" content="Turtlecute " />
 	<meta name="Turtlecute" content="Privacy android" />
 	<meta property="og:locale" content="it_IT" />
-	<meta property="og:site_name" content="Setup VPn con AdBlock" />
+	<meta property="og:site_name" content="Setup VPN con AdBlock" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:image" content="https://turtlecute33.github.io/privacy.github.io/assets/img/1.png">
 	<meta property="twitter:title" content="Guida alla privacy su android" />
@@ -75,7 +75,7 @@
 										<p><br /></p>
 									</center>
 									<center>
-										<img loading="lazy" style="width:95%; height:95%;" src="images/1.png">
+										<img loading="lazy" style="width:95%; height:95%;" src="images/vpn.webp">
 									</center>
 									<p>Questa vuole essere una guida completa per effettuare il setup di una propria VPN utilizzando Wireguard e che filtra link pubblicitari e tracker grazie ad un filtro di AdBlocking fatto con Pi-Hole.</p>
 									<figure>
@@ -90,22 +90,27 @@
 
 									<h2 style="color: greenyellow;">Tabella dei contenuti</h2>
 									<ul>
-										<li><a href="#os">Sistema operativo</a></li>
-										<li><a href="#set">Setup del sistema</a></li>
-										<li><a href="#store">Store</a></li>
-										<li><a href="#shelter">Shelter</a></li>
-										<li><a href="#threat">Threat model nei due profili</a></li>
-										<li><a href="#app">Applicazioni</a></li>
-										<li><a href="#email">Client e Provider email</a></li>
-										<li><a href="#permessi">Permessi</a></li>
-										<li><a href="#cloud">Cloud e Vpn</a></li>
+										<li><a href="#os">Obbiettivo</a></li>
+										<li><a href="#set">Scelta dell'hosting provider</a></li>
+										<li><a href="#store">Connessione alla VPN tramite SSH</a></li>
+										<li><a href="#shelter">Setup della VPN</a></li>
+										<li><a href="#threat">Setup di PiHole</a></li>
+										<li><a href="#app">Configurazione PiHole e AdLists</a></li>
+										<li><a href="#email">Esportazione delle configurazioni</a></li>
+										<li><a href="#permessi">Connessione di cellulari e computers alla VPN</a></li>
+										<li><a href="#cloud">Test di funzionamento</a></li>
 										<li><a href="#conc">Conclusioni</a></li>
 										<li><a href="supporto.html">Donazioni</a></li>
 									</ul>
 									<br />
-									<h2 style="color: greenyellow;" id="os">Sistema operativo</h2>
-									<p>Esistono vari sistemi operativi Android privacy-oriented (GrapheneOS, CalixOS, etc). In questa guida tratteremo
-										l’approccio usando come base LineageOS 12, ma è comunque compatibile con ogni altro sistema operativo AOSP.</p>
+									<h2 style="color: greenyellow;" id="os">Obbiettivo</h2>
+									<p>L'obbiettivo finale di questa guida sarà quello di self-hostarci una VPN con un filtro per ads e tracker in maniera totalmente autonoma. Questa procedura
+									comporta dei vantaggi e svantaggi rispetto all'utilizzo di una normale VPN commerciale:
+								<h3 style="color:green;">pros</h3>
+								<ul>
+									<li>z
+
+								</p>
 									<h3>!WARNING!</h3>
 									<p>Questa guida è stata pensata e studiata per offrire la massima sicurezza e privacy nell'utilizzo del proprio telefono,
 										procedure come il rooting e lo sblocco del bootloader riducono notevolmente la sicurezza del dispositivo e sono per questo
