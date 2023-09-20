@@ -20,7 +20,8 @@
 	<meta property="twitter:title" content="Guida alla privacy su android" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
 </head>
 
 <body class="is-preload">
@@ -82,7 +83,7 @@
 										<blackquote style="color:grey">
 											La guida è aperta a miglioramenti e consigli, descriverò la configurazione che trovo con il miglior rapporto usabilità/privacy, non sono un esperto di reti e la guida qua presente non vi permetterá
 											di essere magicamente anonimi e irrintracciabili.
-										</br><br>
+											</br><br>
 											Se volete darmi consigli, contribuire alla guida o effettuare traduzioni, potete effettuare
 											una pull request su <a href="https://github.com/Turtlecute33/Turtlecute.org">GitHub</a>.
 										</blackquote><br><br>
@@ -105,265 +106,81 @@
 									<br />
 									<h2 style="color: greenyellow;" id="os">Obbiettivo</h2>
 									<p>L'obbiettivo finale di questa guida sarà quello di self-hostarci una VPN con un filtro per ads e tracker in maniera totalmente autonoma. Questa procedura
-									comporta dei vantaggi e svantaggi rispetto all'utilizzo di una normale VPN commerciale:
-								<h3 style="color:green;">pros</h3>
-								<ul>
-									<li>z
-
-								</p>
-									<h3>!WARNING!</h3>
-									<p>Questa guida è stata pensata e studiata per offrire la massima sicurezza e privacy nell'utilizzo del proprio telefono,
-										procedure come il rooting e lo sblocco del bootloader riducono notevolmente la sicurezza del dispositivo e sono per questo
-										fortemente sconsigliate.</p>
-									<p>Per semplificare i passi per l’installazione di Lineage facciamo un brevissimo riassunto:</p>
-									<ol>
-										<li>Sbloccare il bootloader</li>
-										<li>Flashare una recovery</li>
-										<li>Flashare <a href="https://lineage.microg.org/">Lineage OS</a> versione microG</li>
-									</ol>
-									<blackquote style="color:grey">
-										Attenzione, la versione base senza Google apps è di gran lunga preferibile (e fortemente consigliata), ma utilizzando microG senza aggiungere nessun account
-										Google potremo almeno utilizzare i servizi base di Android senza andare incontro a crash e malfunzionamenti di app dipendenti
-										da essi.
-									</blackquote><br><br>
-									<p>
-										A questo punto ci troveremo con un sistema operativo fresco e appena installato.
-									</p>
-									<h2 style="color: greenyellow;" id="set">Modifica e setup del sistema</h2>
-									<p>
-										Per avere un dispositivo privacy-oriented cominceremo con il modificare i vari settings del sistema operativo,
-										elenchiamo le principali impostazioni e accorgimenti, anche se questi possono cambiare da dispositivo a dispositivo:
-									</p>
+										comporta dei vantaggi e svantaggi rispetto all'utilizzo di una normale VPN commerciale:
+									<h3 style="color:green;">pros</h3>
 									<ul>
-										<li>Disabilitare bluetooth e posizione ogni volta che non li utilizziamo</li>
-										<li>Attivare la privacy nel blocco schermo e un metodo di protezione del dispotivo
-											(pin e notifiche nascoste con telefono bloccato)</li>
-										<li>Disabilitare tutti i dati telemetrici</li>
-										<li>Abilitare se disattivata la criptazione del dispositivo</li>
-										<li>Disabilitare i backup</li>
-										<li>Rifiutare ogni volta, se possibile, la condivisione di dati di telemetria e crash in tutte le app installate</li>
-										<li>Ricordarci di disattivare il debug USB ogni volta che lo utilizziamo (disabilitato di default),
-											in quanto espone a grossi rischi di sicurezza</li>
+										<li>
+											Non doversi fidare di un provider VPN il cui modello di business, purtroppo, spesso è vendere i nostri dati personali
+										</li>
+										<li>
+											Possibilità di inserire filtri per pubblicità e trackers, alcune VPN offrono questo servizio ma spesso di qualità molto precaria
+										</li>
+										<li>
+											Personalizzazione dell'esperienza: volete una vpn piu veloce? dei filtri pubblicitari specifici? vorreste condividerla con tutta la famiglia? con una
+											vostra vpn potete gestirvi nel modo che preferite
+										</li>
+										<li>
+											Possibilità di scegliere la nazione e quindi anche la sede legale dei server da noleggiare (e sfruttare le migliori nazioni per privacy informatica)
+										</li>
 									</ul>
-									<p>Gestiremo in seguito i permessi delle applicazioni.</p>
-									<br />
-									<br />
-									<h2 style="color: greenyellow;" id="store">Store per il download delle app</h2>
-									<p>Essendo ora separati dal mondo Google dovremo trovare altri store da cui scaricare le applicazioni, le alternative principali sono:</p>
+									<h3 style="color:red;">contro</h3>
 									<ul>
-										<li> <a href="https://www.f-droid.org/">F-Droid</a>: store alternativo di app FOSS/open source.<br />
-											Possibilmente installeremo da qua le applicazioni, ma non aspettatevi
-											di trovare Instagram o Facebook, contiene solo app open source, quindi al massimo troverete delle loro alternative FOSS.</li>
-										<li><a href="https://www.f-droid.org/packages/com.looker.droidify/">Droid-ify</a>: fork di F-Droid com una grafica più curata e alcune funzioni aggiuntive,
-											a mio parere la migliore alternativa se cercate una UI un po' più elegante.</li>
-										<li><a href="https://files.auroraoss.com/AuroraStore/Stable/">Aurora Store</a>: vi permette di usare il vecchio store Google ma attraverso account fittizi e
-											automaticamente generati all'avvio dell'app,
-											mi raccomando usate la modalità ospite/anonima o sarà inutile.</li>
-									</ul><br />
-									<h2 style="color: greenyellow;" id="shelter">Shelter</h2>
+										<li>
+											meno anon set sull'indirizzo IP (a meno che voi non condividiate la vostra vpn con molti familiari e amici sarete gli unici ad utilizzare l'indirizzo IP in uscita della VPN,
+											questo è uno svantaggio in quanto anche se esso non è direttamente collegato a voi è comunque un codice univoco che solo voi sfruttate ed usate. È quindi non ottimo per la
+											privacy in quanto rende piu facile tracciarvi)
+										</li>
+										<li>
+											Anche se non regalate dati ad un fornitore VPN nella maggior parte dei casi farete il set-up di questo sistema su una VPS (server a noleggio), sposterete quindi il vostro trust
+											da un fornitore commerciale di questo servizio ad uno che noleggia server (che vedrà il vostro indirizzo IP quando utilizzate la vpn). È quindi fondamentale scegliere correttamente
+											il provider di server o eseguire questo setup su una macchina connessa ad una rete internet non instestata a voi.
+										</li>
+									</ul>
+									<h2 style="color: greenyellow;" id="set">Scelta dell'hosting provider</h2>
 									<p>
-										Ora che abbiamo gli store configurati possiamo procedere al download di <a href="https://f-droid.org/packages/net.typeblog.shelter/">Shelter</a>.
-										Se avevate già aperto F-Droid/Droid-ify in precedenza dovrebbe aprirvi il link direttamente in app.<br />
-										Shelter è un'applicazione open source che ci permette di creare un work profile, ovvero un secondo profilo nel telefono che funziona contemporaneamente al primo ma in modo
-										totalmente isolato e indipendente<br /><br />
-										Immaginate un tavolo (il nosto sistema operativo) su cui poggiano due scatole completamente chiuse e sigillate (i nostri due profili),
-										queste due sono completamente indipendenti e separate, ma usano una base comune. Se l'OS del nostro telefono è il primo ad essere sporco e pieno di app traccianti
-										come i Google Play Services, l'utilizzo di Shelter diventa in buona parte inutile. Nel caso in cui non vogliate cambiare ROM, usate almeno questo <a href="https://github.com/0x192/universal-android-debloater">Android Debloater</a>
-										che vi permette di disabilitare in pochi e semplici tap le principali app tossiche per la privacy incluse nei maggiori sistemi operativi di default
-										(ATTENZIONE disabilitate le app, non disinstallatele, o rischierete di corrompere il sistema se avete il telefono criptato).<br /><br />
-										Una volta aperto Shelter si aprirà un menu di configurazione del profilo di lavoro, una volta attivato accederemo all'interfaccia dell'app, che è divisa in 2 sezioni:<br />
-										<ul>
-											<li><b>Main</b>: il profilo principale in cui installeremo solo app open source o senza accesso ad internet.</li>
-											<li><b>Shelter</b>: la sezione in cui isoleremo tutte le applicazioni malevole e traccianti come social, app bancarie o closed source.</li>
-										</ul>
-										I 2 profili sono perfettamente separati e vedremo le app installate in quello principale come normali icone; quelle installate nel profilo di lavoro invece
-										presenteranno un piccolo badge che le distingue dalle altre, esse coesisteranno all'interno dello stesso launcher.
-										Per installare le app nel profilo desiderato ci basterà usare uno di questi 3 metodi:<br><br>
-										<ul>
-											<li>Dall'app Shelter clonare un'app da un profilo ad un altro (o dai settings usare la funzione installa APK).</li>
-											<li>Scaricare le app da uno store installato in quel profilo (installate Droid-ify sul profilo principale e pulito mentre Aurora in quello sporco e con le app traccianti).</li>
-											<li>Installare APK scaricati da internet (se possibile scaricate tutto da Droid-ify in quanto è MOLTO piu sicuro).</li>
-										</ul>
-										I due sistemi saranno perfettamente isolati, cosa abbastanza scomoda per la gestione dei contatti, galleria, file, ecc.. in quanto ognuno avrà i suoi.
-										Nelle impostazioni di Shelter è possibile attivare una funzione che permette solo all'utente di far parzialmente parlare i due sistemi per la condivisione dei file.
-										Nonostante questo la gestione del tutto rimarrà un po' scomoda fino a quando non ci farete l'abitudine.
+										Con hosting provider s'intende l'azienda che vi fornirà il server su cui fare il set-up presente in questa guida. È fondamentale trovare un hosting con una sede
+										legale che tutela la vostra privacy (stati interessanti possono essere quelli fuori dai 5 eyes, fuori dalla nato o che hanno buone politiche sui dati informatici. Buoni esempi sono islanda, svezia, gibilterra, ecc),
+										che sembra essere affidabile (non ha fatto leak di dati per piccolezze o sembra lottare per dare meno dati possibili alle autorità) e che richieda meno dati personali possibili per
+										utilizzare il proprio servizio (pagamenti in bitcoin, dominio tor, login senza conferme telefoniche, ecc).
+										<br />
+										In questa guida vi consiglierò un paio di hosting provider, spesso quelli piccoli o con politiche di privacy interessanti sono più costosi delle grosse hosting company.
+										È importante guardare anche che servizi ci vengono offerti per scegliere il server più adatto alle nostre necessità (potenza, capacità e velocità di banda, ecc).
+										<br />
+									<ul>
+										<li>
+											<a href="https://1984.hosting/">1984 Hosting</a>è un sito che offre vari servizi (domini, vps, dns, ecc), ha sede legale in islanda (molto interessante per l'aspetto di Privacy
+											informatica) e offre server con 1 core, 1 GB di ram e 1TB di banda a 100Mb/s per circa 4.50 euro oppure lo stesso server con un po' più di ram e il doppio di banda a 9 euro al mese.
+											Penso che questo vps provider sia molto interessante, accetta pagamenti in bitcoin e il servizio clienti nelle mie esperienze passate è sempre stato abbastanza efficiente (24/48h per avere supporto).
+										</li>
+										<li>
+											<a href="https://njal.la/">Njalla</a> è un vecchissimo ma ancora attivo servizio di hosting, vpn, domini con sede legale a nevis (caraibi) e la maggior parte dei server
+											situata in svezia. Come prezzi è leggermente piu cara di 1984 ma offre server leggermente piu potenti e con un po più di banda: 1 Core, 1.5 GB RAM, 15 GB Disk, 1.5 TB Traffic per circa 15 euro
+											(anche qua pagabili in bitcoin). È possibile usare questo servizio anche navigando attraverso il suo dominio tor.
+										</li>
+									</ul>
+									esistono tanti altri servizi di VPS con differenti costi e trade-off dal punto di vista di privacy, sicurezza, costi ecc.. Potete tranquillamente fare un paio di ricerche online e non utilizzare obbligatoriamente
+									quelli da me sopra citati.<br />
+									una volta scelto il servizio di hosting consiglio caldamente di proseguire acquistando una macchina con sopra una distribuzione debian based (debian o ubuntu) e settando una password di accesso complessa.
 									</p>
-									<br />
-									<h2 style="color: greenyellow;" id="threat">Gestione del threat model tra i profili</h2>
+									<h2 style="color: greenyellow;" id="set">Connessione al server VPS con SSH</h2>
 									<p>
-										Ora che abbiamo due sistemi completamente diversi e isolati, applicheremo un threat model differente in entrambi.
-										Nel primo (pulito ed open source) punteremo alla massima privacy facendo passare tutto il traffico dati attraverso Tor e DNScrypt, nel secondo (sporco e con elementi traccianti)
-										invece punteremo a ridurre il più possibile il leak dei nostri dati, coscienti di utilizzare comunque applicazioni che probabilmente hanno già i nostri dati personali
-										(andremo quindi a limitare il più possibile pubblicità e trackers).<br /><br />
-										Come prima cosa ci concentriamo sul main profile ed scarichiamo <a href="https://www.f-droid.org/packages/pan.alexander.tordnscrypt.stable/">Invizible Pro</a>,
-										applicazione che reindirizza tutto il traffico sotto Tor e con anche ulteriori protezioni.<br />
-										Una volta aperta l'applicazione dal menù in alto a destra con i 3 puntini attiviamo la modalità VPN.
-										Rechiamoci quindi nelle impostazioni del telefono nella sezione <b>Rete -> Avanzate/VPN -> Invizible Pro</b>, qui attiviamo la modalità 'VPN sempre attiva' e
-										'blocca connessioni senza VPN', in questo modo tutto il traffico passerà attraverso Invizible ed eviteremo qualsiasi leak di dati.<br /><br />
-										Ora che abbiamo impostato correttamente la rete andiamo a modificare alcune impostazioni all'interno di Invizible:
-										<ul>
-											<li>
-												In <b>DNSCrypt settings</b> nella terza sezione abilitiamo require_dnssec, nolog and nofilter, questo ci permetterà di usare sempre i
-												migliori server DNS possibili.
-											</li>
-											<li>
-												Nella sezione <b>Fast Settings</b> abilitiamo 'avvia DNSCrypt all'avvio' e 'avvia TOR all'avvio', in questo modo saremo sempre protetti al 100%.
-											</li>
-											<li>
-												Sempre in <b>Fast Settings</b>, in fondo, abilitiamo l'update automatico attraverso TOR (facoltativo).
-											</li>
-											<li>
-												Nelle impostazioni rechiamoci in <b>Common Settings</b> e abilitiamo tutte e 3 le protezioni della sezione <b>MITM attack detection</b>,
-												queste proteggeranno il nostro dispositivo quando connessi a Wi-FI pubblici.
-											</li>
-											<li>
-												Infine rechiamoci nella categoria <b>Firewall</b> e disabilitiamo l'accesso ad internet a tutte le applicazioni che non ne hanno bisogno (come per esempio la galleria, la tastiera, i giochi offline, ecc)
-											</li>
-										</ul>
-										A questo punto il main profile è pronto per essere usato, ci possiamo ora dedicare al profilo di lavoro, quello con le applicazioni closed source.<br />
-										Qui possiamo adottare due diverse tecniche per la protezione dei dati:</p>
-									<ul>
-										<li>Usare una VPN in caso cerchiamo protezione verso il nostro ISP (tramite essa possiamo anche filtrare pubblicità e tracker).</li>
-										<li>Usare <a href"https://github.com/M66B/NetGuard/releases">NetGuard </a> per bloccare l'acceso ad internet alle applicazioni che non lo necessitano ed aggiungere il blocco delle pubblicità e tracker tramite l'implementazione di un Host
-											  filter.</li> </ul> Entrambe le opzioni sono valide, la decisione dipende principalmente dalla vostra volontà o meno di usare un servizio VPN. In caso vogliate approfondire l'argomento potete dare un occhio anticipatamente alla <a href="#cloud">sezione
-												apposita</a>.<br />
-											Se invece preferite usare NetGuard consiglio di implementare gli Host file di <a href="https://github.com/EnergizedProtection/block">Energized Protection</a>.
-											</p>
+										Come molti sapranno, per connettersi a server remoti, solitamente si utilizza SSH: un protocollo integrato nel terminale di linux con cui connettersi a server o pc remoti.
+										per collegarci alla nostra VPS apriamo un terminale su un qualsiasi nostro pc e diamo il comando:<br /><br />
+										<code>ssh [nome utente]@[indirizzo ip]</code><br /><br />
+										un esempio potrebbe essere: ssh root@192.34.33.256 (root è solitamente il nome utente mentre il numero seguente è l'indirizzo IP del server, solitamente è possibile trovarlo
+										nelle informazioni della macchina da voi acquistata sul sito di hosting). Una volta dato il comando basterà inserire la password precedentemente impostata per fare l'accesso al server.<br /><br />
+										Una volta connessi in SSH possiamo dare il comando:<br /><br />
+										<code>sudo apt update && apt upgrade -y</code><br /><br />
+										in modo da aggiornare tutti i pacchetti del nostro sistema operativo.<br />
+										In questa guida andremo a seguire un set-up per la sicurezza del nostro server semplice e minimale (in modo che si adatti a tutti gli utenti), se volete usare set-up piu avanzati vi consiglio di
+										cercare online come effettuare login sul proprio server utilizzando una chiave pubblica ssh.<br /><br />
+										Andiamo infine a dare il comando:<br /><br />
+										<code>sudo apt install fail2ban</code><br /><br />
+										per andare ad installare questo leggerissimo software che permette di limitare l'accesso in caso di troppe password errate sul nostro server (e quindi migliorare leggermente la sicurezza di esso).
+									</p>
+									<h2 style="color: greenyellow;" id="set">Set-up della VPN</h2>
 
-											<h2 style="color: greenyellow;" id="app">Applicazioni</h2>
-											<p>Ora che abbiamo gli store e le reti ben configurate passiamo a scaricare alcune app fortemente consigliate:</p>
-											<ul>
-												<li><a href="https://www.f-droid.org/packages/org.dslul.openboard.inputmethod.latin/">OpenBoard</a>: tastiera Android open source esattamente uguale alla Gboard (faccio un piccolo discorso su questa app,
-													so che molti sono abituati a Gboard o SwiftKey ma per l’amor del cielo evitatele, ho provato a bloccare vari processi e l’accesso ad internet alla tastiera, ma analizzando
-													i dati scambiati con la mia rete ho notato che riusciva comunque a comunicare con i server Google. Per favore usate OpenBoard o altre tastiere open source offline).</li>
-												<li><a href="https://www.bromite.org/">Bromite</a>: a mio parere il miglior broswer Android, purtroppo Firefox e tutti i suoi fork non supportano su Android l'isolamento delle pagine,
-													questo crea un enorme problema di sicurezza, Bromite invece è basato su Chromium e anche se non supporta le estensioni, ha già internamente abilitato un ad block che supporta liste personalizzate e
-													possiede anche vari tweak anti-fingerprinting.</li>
-												<li><a href="https://android.izzysoft.de/repo/apk/com.saggitt.omega">Omega launcher</a>: ottimo launcher open source, fork di quello AOSP ma con piu' personalizzazioni, si integra perfettamente anche con Shelter creando 2 menu'
-													delle applicazioni.</li>
-												<br />
-												<p style="color:grey">A questo punto possiamo procedere al download delle applicazioni facendo attenzione al profilo nel quale le installiamo, personalmente
-													uso F-Droid sul sistema pulito e Aurora in quello con le app traccianti, vi lascio una piccola lista di app open source e privacy-oriented che potrebbero tornarvi utili:</p>
-												<br />
-												<li><a href="https://www.f-droid.org/packages/com.beemdevelopment.aegis/">Aegis</a>: alternativa open source ed offline a Authy/Google Authenticator</li>
-												<li><a href="https://f-droid.org/packages/de.danoeh.antennapod/">AntennaPod</a>: lettore di podcast totalmente open source, usa come fonte i principali lettori podcast esistenti</li>
-												<li><a href="https://github.com/bitwarden/mobile/releases">Bitwarden</a>: miglior password manager, estremamente sicuro, consente anche il self-hosting</li>
-												<li><a href="https://f-droid.org/packages/de.cloneapps.crypto_prices">Crypto Prices</a>: alternativa a CoinMarketCap</li>
-												<li><a href="https://www.f-droid.org/packages/com.pitchedapps.frost/">Frost</a>: per quanto disprezzi e sconsigli l’utilizzo di Facebook, se proprio non riuscite a farne a meno consiglio di utilizzare Frost,
-													un client open source per Facebook</li>
-												<li><a href="https://f-droid.org/it/packages/cf.theonewiththebraid.guerrilla_mail/">Guerrilla Mail</a>: client per Guerrilla Mail, una temp mail per gli spam</li>
-												<li><a href="https://www.f-droid.org/packages/ml.docilealligator.infinityforreddit/">Infinity</a>: client di ottima qualità di Reddit, a mio parere meglio dell'app originale!</li>
-												<li><a href="https://www.f-droid.org/packages/org.proninyaroslav.libretorrent/">LibreTorrent</a>: semplice, comodo e veloce client Torrent per Android</li>
-												<li><a href="https://f-droid.org/packages/com.lesspass.android/">LessPass</a>: permette di generare password derivate dalla combinazione di sito + nome utente + una password fissa, l'eccellenza per avere password
-													sicure</li>
-												<li><a href="https://molly.im/">Molly</a>: una versione hardened e ripulita dal codice Google di Signal, portebbe essere una buona idea registrarsi con una SIM comprata senza documenti se legale nel vostro stato</li>
-												<li><a href="https://nekogram.app/">Nekogram</a>: client per Telegram che non si appoggia ai servizi Google ed implementa PGP</li>
-												<li><a href="https://www.f-droid.org/packages/org.schabi.newpipe/">NewPipe</a>: client di PeerTube, tutti i video di YouTube ma senza Google!</li>
-												<li><a href="https://f-droid.org/en/packages/com.nextcloud.client/">Nextcloud</a>: client per usare e syncare nextcloud, a mio parere il miglior software per farsi un server multimediale in casa</li>
-												<li><a href="https://www.f-droid.org/packages/org.sufficientlysecure.keychain/">OpenKeychain</a>: app per gestire le nostre chiavi PGP o per integrarle nelle applicazioni di messaggistica/e-mail</li>
-												<li><a href="https://www.f-droid.org/packages/com.btcontract.wallet/">Simple Bitcoin Wallet</a>: wallet open source leggero, veloce e dalla ottima UI per gestire i vostri Bitcoin</li>
-												<li><a href="https://www.f-droid.org/packages/io.simplelogin.android.fdroid/">SimpleLogin</a>: una sorta di proxy e-mail anti-spam, crea delle e-mail esca con cui registrarvi ai siti che automaticamente girano le e-mail ad altri
-													indirizzi da voi scelti, in questo modo non dovrete dare la vostra e-mail a siti esterni. Inoltre potete eliminare o sospendere le e-mail esca quando volete in modo da interrompere la ricezione delle e-mail sul vostro account
-													principale)</li>
-												<li><a href="https://f-droid.org/packages/com.brentpanther.bitcoinwidget/">Simple Crypto Widget</a>: per avere i prezzi aggiornati della vosta criptoval...COFF COFF di Bitcoin sulla vostra home page</li>
-												<li><a href="https://www.f-droid.org/packages/com.simplemobiletools.filemanager.pro/">Simple File Manager</a>: file manager dall’ottima grafica e con permessi root opzionali</li>
-												<li><a href="https://www.torproject.org/download/#downloads-alpha">Tor Browser</a>: broswer Tor ufficiale con libreria Tor integrata, utile per navigare online senza rivelare l’indirizzo IP, non garantisce un anonimato al 100% come ogni
-													cosa ma è un ottimo scudo per la privacy, utile per navigare nei siti .onion</li>
-												<li><a href="https://github.com/Treecord/Treecord">Treecord</a>: versione con tracker bloccati del client Discord per Android</li>
-												<li><a href="https://www.f-droid.org/packages/de.ph1b.audiobook/">Voice</a>: lettore offline e opensource di audiolibri</li>
-											</ul>
-											<p>
-												Per ulteriori applicazioni, browser e servizi privacy friendly consiglio di dare un occhio a <a href="https://www.privacytools.io/">privacytools</a>, <a href="https://privacyguides.org/providers/">privacyguides</a> o cercare nelle varie
-												categorie su Droid-ify.
-											</p>
-											<h2 style="color: greenyellow;" id="email">Client e provider email</h2>
-											<p>
-												Il discorso su quale sia il miglior client e provider email è lungo e complesso, la migliore opzione sarebbe hostarsi da soli un'email, ma non e' sicuramente
-												facile.
-												<br />
-												<br />
-												In caso volessimo un servizio rapido e comodo ma in cui dobbiamo riporre fiducia consiglio <a href="https://github.com/ProtonMail/proton-mail-android/releases">Proton Mail</a>,
-												da usare solo tramite Tor, oppure <a href="https://www.f-droid.org/packages/de.tutao.tutanota/">Tutanota</a>, che sembra essere un'azienda più
-												trasparente, ma dichiara di loggare gli indirizi IP degli utenti; personalmente eviterei l'uso di entrambi questi provider in quanto promettono anonimato ma gia' in passato
-												non hanno rispettato questa clausola e potrebbero essere degli honeypot(<a href="https://it.wikipedia.org/wiki/Honeypot" )>?</a>). Entrambe però auto-criptano i messaggi verso le email
-												dello stesso provider (Tutanota con Tutanota e Proton con Proton).
-												<br />
-												<br />
-												Un'opzione molto valida è quella di usare come client (quindi come app su cui riceviamo le mail) <a href="https://f-droid.org/en/packages/com.fsck.k9/">
-													K-9 Mail</a> e come provider (quindi come servizio email da collegare a K-9) o un servizio a pagamento come <a href="https://email.faircode.eu/">FairEmail</a> o provare
-												a contattare/farci invitare da qualche gruppo/collettivo privacy friendly o anarchico come <a href="https://riseup.net/">Riseup</a>, <a href="https://esiliati.org/">Esiliati</a> o <a href="https://www.autistici.org/">Autistici</a>,
-												quest'ultimo però in passato ha subito vari hack, quindi consiglio altre alternative.
-												<br />
-												<br />
-												Molto interessante all'interno delle impostazioni di K-9 è l'opzione di auto-criptazione delle email:
-												importando una chiave PGP da OpenKeychain (app sopra trattata), è possibile criptare automaticamente le email verso le persone che a loro volta hanno importato una chiave PGP.
-												Dopo una prima email non criptata, K-9 importa la public key dell'altra persona permettendoci così di scambiare email criptate senza doversi passare le chiavi (da abilitare nei settings di K-9).
-											</p>
-											<p>
-												<blackquote style="color:grey">A questo punto della guida dovreste aver già installato tutte le vostre
-													applicazioni personali e quelle da me indicate o consigliate, possiamo agire ora sui vari permessi. In caso installiate in futuro altre app, eseguite questa procedura anche per esse.</blackquote>
-											</p>
-											<h2 style="color: greenyellow;" id="permessi">Gestione dei permessi delle app</h2>
-											<p>Come primo passo ci rechiamo nelle impostazioni del nostro telefono e andiamo nella sezione Applicazioni → Avanzate → Gestione permessi e qui rimuoviamo ogni permesso superfluo delle applicazioni (ad esempio
-												un'app come WhatsApp ha bisogno dei nostri contatti se vogliamo trovarli, quindi per il corretto funzionamento della stessa conviene lasciarglielo, ma possiamo tranquillamente disabilitare l’accesso ai messaggi in
-												quanto verrà usato solo la prima volta quando faremo il login per velocizzare il primo accesso, dopodiché se lasciato attivo concede a WhatsApp la possibilità di spiare tutti i nostri SMS).
-												<br />
-												<br />
-												Prestiamo particolare attenzione ai permessi di geolocalizzazione, fotocamera e microfono.
-												<br />
-												<br />
-												Quando un'app ci chiede un permesso che non è utile o siete consapevoli di usare saltuariamente, concedete il permesso ‘solo per questa volta', in modo che non ne abbia continuo accesso.
-												<br />
-												<br />
-												Dopo aver modificato tutti i permessi andiamo anche a disabilitare l’accesso ad internet a tutte le applicazioni che non necessitano della rete (per esempio i vari file manager, calcolatrici, agende, note, tastiere, ecc). Possiamo farlo
-												comodamente andando nelle informazioni di un'applicazione → Dati e rete → disabilitiamo ‘Accesso alla rete’.
-												<br />
-												<br />
-												In caso vogliate essere ulteriormente certi del blocco di internet a queste app, potete usare servizi come i precedentemente trattati NetGuard e Invizible per bloccarle dietro un firewall. Non sottovalutate l’accesso ad internet delle
-												app,
-												molte, nonostante non ne abbiano bisogno 												per il loro funzionamento, lo usano di continuo per condividere nostri dati.
-											</p>
 
-											<h2 style="color: greenyellow;" id="cloud">Cloud e Vpn</h2>
-											<p>
-												Faccio una piccola sezione a parte per questi due sotto-argomenti:
-												La migliore soluzione cloud sarebbe il self hosting con Nextcloud (a mio parere la miglior scelta). In caso ciò non sia possibile, la soluzione a mio parere piu semplice e veloce è <a href="http://mega.nz/">Mega.nz</a> (20 GB gratis e
-												5 GB di bandwith ed accetta
-												pagamento in bitcoin per i pro plans). Se vogliamo invece una sicurezza aggiuntiva possiamo usare un cloud con il supporto a WebDav come Icedrive in combinazione con <a href="https://cryptomator.org/">Cryptomator</a> (programma che
-												cripta i file prima dell’upload in cloud).
-												<br />
-												<br />
-												Il discorso VPN invece è particolare, una VPN teoricamente cripta il nostro traffico e lo fa passare attraverso un suo nodo mettendosi tra noi e il nostro ISP dandoci maggiore privacy verso di esso ma obbligandoci a fidarci del
-												servizio VPN stesso.
-												<br />
-												Tutte le aziende in questo settore promettono privacy e politiche di no-logging, ma praticamente il 99% delle VPN più che darci privacy ce la fanno perdere. L’unica che mi sento davvero di consigliarvi è <a href="https://mullvad.net/en/">Mullvad</a>
-												(<a href="http://o54hon2e2vj6c7m3aqqu6uyece65by3vgoxxhlqlsvkmacw6a7m7kiad.onion/en/">onion link</a>), è ovviamente
-												obbligatorio pagarla in bitcoin per avere maggiore privacy.
-											</p>
-											<h2 style="color: greenyellow;" id="conc">Conclusioni Finali</h2>
-											<p>
-												Seguendo questa guida avremo ridotto drasticamente la condivisione di dati personali, tuttavia ciò non garantisce in nessun modo l’anonimato ma aumenta decisamente la privacy e la sicurezza nell’utilizzo del dispositivo.
-												<br />
-												<br />
-												L’utilizzo di MicroG lascia comunque che una piccola quantità di dati venga inviata a
-												dei
-												server Google, ma se seguite correttamente ciò che ho scritto sopra i dati inviati saranno davvero pochi e non più riconducibili direttamente alla vostra identità.
-												<br />
-												Se voleste verificare quali app comunicano con internet e/o condividono vostri dati, potete utilizzare applicazioni come <a href="https://github.com/emanuele-f/PCAPdroid">PCAPdroid</a> per analizzare il traffico dati creando una VPN
-												fittizia con cui filtrate il flusso di dati proveniente dal
-												vostro cellulare. Un'altra opzione è usare Wireshark sul vostro pc mentre siete connessi con il cellulare al Wi-Fi.
-												<br />
-												<br />
-												Altri ottimi posti per rimanere aggiornati in ambito privacy e degoogle sono vari subreddit:
-												<ul>
-													<b>
-														<li><a href="https://www.reddit.com/r/degoogle/">DEGOOGLE</a></li>
-														<li><a href="https://www.reddit.com/r/privacytools/">PRIVACYTOOLS</a></li>
-														<li><a href="https://www.reddit.com/r/privacy/">PRIVACY</a></li>
-													</b>
-												</ul>
-												<br />
-												<blockquote>"Dire che la privacy e' inutile perché non si ha nulla da nascondere è come dire che la libertà di parola è inutile perché non si ha nulla da dire".</blockquote>
 								</article>
 							</section>
 						</div>
