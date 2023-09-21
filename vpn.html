@@ -78,14 +78,20 @@
 									<center>
 										<img loading="lazy" style="width:95%; height:95%;" src="images/vpn.webp">
 									</center>
-									<p>Questa vuole essere una guida completa per effettuare il setup di una propria VPN utilizzando Wireguard e che filtra link pubblicitari e tracker grazie ad un filtro di AdBlocking fatto con Pi-Hole.</p>
+									<p>Questa vuole essere una guida completa per effettuare il setup di una propria VPN
+										utilizzando Wireguard e che filtra link pubblicitari e tracker grazie ad un
+										filtro di AdBlocking fatto con Pi-Hole.</p>
 									<figure>
 										<blackquote style="color:grey">
-											La guida è aperta a miglioramenti e consigli, descriverò la configurazione che trovo con il miglior rapporto usabilità/privacy, non sono un esperto di reti e la guida qua presente non vi permetterá
+											La guida è aperta a miglioramenti e consigli, descriverò la configurazione
+											che trovo con il miglior rapporto usabilità/privacy, non sono un esperto di
+											reti e la guida qua presente non vi permetterá
 											di essere magicamente anonimi e irrintracciabili.
 											</br><br>
-											Se volete darmi consigli, contribuire alla guida o effettuare traduzioni, potete effettuare
-											una pull request su <a href="https://github.com/Turtlecute33/Turtlecute.org">GitHub</a>.
+											Se volete darmi consigli, contribuire alla guida o effettuare traduzioni,
+											potete effettuare
+											una pull request su <a
+												href="https://github.com/Turtlecute33/Turtlecute.org">GitHub</a>.
 										</blackquote><br><br>
 									</figure>
 
@@ -105,80 +111,177 @@
 									</ul>
 									<br />
 									<h2 style="color: greenyellow;" id="os">Obbiettivo</h2>
-									<p>L'obbiettivo finale di questa guida sarà quello di self-hostarci una VPN con un filtro per ads e tracker in maniera totalmente autonoma. Questa procedura
-										comporta dei vantaggi e svantaggi rispetto all'utilizzo di una normale VPN commerciale:
+									<p>L'obbiettivo finale di questa guida sarà quello di self-hostarci una VPN con un
+										filtro per ads e tracker in maniera totalmente autonoma. Questa procedura
+										comporta dei vantaggi e svantaggi rispetto all'utilizzo di una normale VPN
+										commerciale:
 									<h3 style="color:green;">pros</h3>
 									<ul>
 										<li>
-											Non doversi fidare di un provider VPN il cui modello di business, purtroppo, spesso è vendere i nostri dati personali
+											Non doversi fidare di un provider VPN il cui modello di business,
+											purtroppo,
+											spesso è vendere i nostri dati personali
 										</li>
 										<li>
-											Possibilità di inserire filtri per pubblicità e trackers, alcune VPN offrono questo servizio ma spesso di qualità molto precaria
+											Possibilità di inserire filtri per pubblicità e trackers, alcune VPN
+											offrono
+											questo servizio ma spesso di qualità molto precaria
 										</li>
 										<li>
-											Personalizzazione dell'esperienza: volete una vpn piu veloce? dei filtri pubblicitari specifici? vorreste condividerla con tutta la famiglia? con una
+											Personalizzazione dell'esperienza: volete una vpn piu veloce? dei filtri
+											pubblicitari specifici? vorreste condividerla con tutta la famiglia? con
+											una
 											vostra vpn potete gestirvi nel modo che preferite
 										</li>
 										<li>
-											Possibilità di scegliere la nazione e quindi anche la sede legale dei server da noleggiare (e sfruttare le migliori nazioni per privacy informatica)
+											Possibilità di scegliere la nazione e quindi anche la sede legale dei
+											server
+											da noleggiare (e sfruttare le migliori nazioni per privacy informatica)
 										</li>
 									</ul>
 									<h3 style="color:red;">contro</h3>
 									<ul>
 										<li>
-											meno anon set sull'indirizzo IP (a meno che voi non condividiate la vostra vpn con molti familiari e amici sarete gli unici ad utilizzare l'indirizzo IP in uscita della VPN,
-											questo è uno svantaggio in quanto anche se esso non è direttamente collegato a voi è comunque un codice univoco che solo voi sfruttate ed usate. È quindi non ottimo per la
+											meno anon set sull'indirizzo IP (a meno che voi non condividiate la
+											vostra
+											vpn con molti familiari e amici sarete gli unici ad utilizzare
+											l'indirizzo
+											IP in uscita della VPN,
+											questo è uno svantaggio in quanto anche se esso non è direttamente
+											collegato
+											a voi è comunque un codice univoco che solo voi sfruttate ed usate. È
+											quindi
+											non ottimo per la
 											privacy in quanto rende piu facile tracciarvi)
 										</li>
 										<li>
-											Anche se non regalate dati ad un fornitore VPN nella maggior parte dei casi farete il set-up di questo sistema su una VPS (server a noleggio), sposterete quindi il vostro trust
-											da un fornitore commerciale di questo servizio ad uno che noleggia server (che vedrà il vostro indirizzo IP quando utilizzate la vpn). È quindi fondamentale scegliere correttamente
-											il provider di server o eseguire questo setup su una macchina connessa ad una rete internet non instestata a voi.
+											Anche se non regalate dati ad un fornitore VPN nella maggior parte dei
+											casi
+											farete il set-up di questo sistema su una VPS (server a noleggio),
+											sposterete quindi il vostro trust
+											da un fornitore commerciale di questo servizio ad uno che noleggia
+											server
+											(che vedrà il vostro indirizzo IP quando utilizzate la vpn). È quindi
+											fondamentale scegliere correttamente
+											il provider di server o eseguire questo setup su una macchina connessa
+											ad
+											una rete internet non instestata a voi.
 										</li>
 									</ul>
 									<h2 style="color: greenyellow;" id="set">Scelta dell'hosting provider</h2>
 									<p>
-										Con hosting provider s'intende l'azienda che vi fornirà il server su cui fare il set-up presente in questa guida. È fondamentale trovare un hosting con una sede
-										legale che tutela la vostra privacy (stati interessanti possono essere quelli fuori dai 5 eyes, fuori dalla nato o che hanno buone politiche sui dati informatici. Buoni esempi sono islanda, svezia, gibilterra, ecc),
-										che sembra essere affidabile (non ha fatto leak di dati per piccolezze o sembra lottare per dare meno dati possibili alle autorità) e che richieda meno dati personali possibili per
-										utilizzare il proprio servizio (pagamenti in bitcoin, dominio tor, login senza conferme telefoniche, ecc).
+										Con hosting provider s'intende l'azienda che vi fornirà il server su cui
+										fare il
+										set-up presente in questa guida. È fondamentale trovare un hosting con una
+										sede
+										legale che tutela la vostra privacy (stati interessanti possono essere
+										quelli
+										fuori dai 5 eyes, fuori dalla nato o che hanno buone politiche sui dati
+										informatici. Buoni esempi sono islanda, svezia, gibilterra, ecc),
+										che sembra essere affidabile (non ha fatto leak di dati per piccolezze o
+										sembra
+										lottare per dare meno dati possibili alle autorità) e che richieda meno dati
+										personali possibili per
+										utilizzare il proprio servizio (pagamenti in bitcoin, dominio tor, login
+										senza
+										conferme telefoniche, ecc).
 										<br />
-										In questa guida vi consiglierò un paio di hosting provider, spesso quelli piccoli o con politiche di privacy interessanti sono più costosi delle grosse hosting company.
-										È importante guardare anche che servizi ci vengono offerti per scegliere il server più adatto alle nostre necessità (potenza, capacità e velocità di banda, ecc).
+										In questa guida vi consiglierò un paio di hosting provider, spesso quelli
+										piccoli o con politiche di privacy interessanti sono più costosi delle
+										grosse
+										hosting company.
+										È importante guardare anche che servizi ci vengono offerti per scegliere il
+										server più adatto alle nostre necessità (potenza, capacità e velocità di
+										banda,
+										ecc).
 										<br />
 									<ul>
 										<li>
-											<a href="https://1984.hosting/">1984 Hosting</a>è un sito che offre vari servizi (domini, vps, dns, ecc), ha sede legale in islanda (molto interessante per l'aspetto di Privacy
-											informatica) e offre server con 1 core, 1 GB di ram e 1TB di banda a 100Mb/s per circa 4.50 euro oppure lo stesso server con un po' più di ram e il doppio di banda a 9 euro al mese.
-											Penso che questo vps provider sia molto interessante, accetta pagamenti in bitcoin e il servizio clienti nelle mie esperienze passate è sempre stato abbastanza efficiente (24/48h per avere supporto).
+											<a href="https://1984.hosting/">1984 Hosting</a>è un sito che offre
+											vari
+											servizi (domini, vps, dns, ecc), ha sede legale in islanda (molto
+											interessante per l'aspetto di Privacy
+											informatica) e offre server con 1 core, 1 GB di ram e 1TB di banda a
+											100Mb/s
+											per circa 4.50 euro oppure lo stesso server con un po' più di ram e
+											il
+											doppio di banda a 9 euro al mese.
+											Penso che questo vps provider sia molto interessante, accetta
+											pagamenti in
+											bitcoin e il servizio clienti nelle mie esperienze passate è sempre
+											stato
+											abbastanza efficiente (24/48h per avere supporto).
 										</li>
 										<li>
-											<a href="https://njal.la/">Njalla</a> è un vecchissimo ma ancora attivo servizio di hosting, vpn, domini con sede legale a nevis (caraibi) e la maggior parte dei server
-											situata in svezia. Come prezzi è leggermente piu cara di 1984 ma offre server leggermente piu potenti e con un po più di banda: 1 Core, 1.5 GB RAM, 15 GB Disk, 1.5 TB Traffic per circa 15 euro
-											(anche qua pagabili in bitcoin). È possibile usare questo servizio anche navigando attraverso il suo dominio tor.
+											<a href="https://njal.la/">Njalla</a> è un vecchissimo ma ancora
+											attivo
+											servizio di hosting, vpn, domini con sede legale a nevis (caraibi) e
+											la
+											maggior parte dei server
+											situata in svezia. Come prezzi è leggermente piu cara di 1984 ma
+											offre
+											server leggermente piu potenti e con un po più di banda: 1 Core, 1.5
+											GB RAM,
+											15 GB Disk, 1.5 TB Traffic per circa 15 euro
+											(anche qua pagabili in bitcoin). È possibile usare questo servizio
+											anche
+											navigando attraverso il suo dominio tor.
 										</li>
 									</ul>
-									esistono tanti altri servizi di VPS con differenti costi e trade-off dal punto di vista di privacy, sicurezza, costi ecc.. Potete tranquillamente fare un paio di ricerche online e non utilizzare obbligatoriamente
+									esistono tanti altri servizi di VPS con differenti costi e trade-off dal
+									punto di
+									vista di privacy, sicurezza, costi ecc.. Potete tranquillamente fare un paio
+									di
+									ricerche online e non utilizzare obbligatoriamente
 									quelli da me sopra citati.<br />
-									una volta scelto il servizio di hosting consiglio caldamente di proseguire acquistando una macchina con sopra una distribuzione debian based (debian o ubuntu) e settando una password di accesso complessa.
+									una volta scelto il servizio di hosting consiglio caldamente di proseguire
+									acquistando una macchina con sopra una distribuzione debian based (debian o
+									ubuntu)
+									e settando una password di accesso complessa.
 									</p>
 									<h2 style="color: greenyellow;" id="set">Connessione al server VPS con SSH</h2>
 									<p>
-										Come molti sapranno, per connettersi a server remoti, solitamente si utilizza SSH: un protocollo integrato nel terminale di linux con cui connettersi a server o pc remoti.
-										per collegarci alla nostra VPS apriamo un terminale su un qualsiasi nostro pc e diamo il comando:<br /><br />
+										Come molti sapranno, per connettersi a server remoti, solitamente si
+										utilizza
+										SSH: un protocollo integrato nel terminale di linux con cui connettersi a
+										server
+										o pc remoti.
+										per collegarci alla nostra VPS apriamo un terminale su un qualsiasi nostro
+										pc e
+										diamo il comando:<br /><br />
 										<code>ssh [nome utente]@[indirizzo ip]</code><br /><br />
-										un esempio potrebbe essere: ssh root@192.34.33.256 (root è solitamente il nome utente mentre il numero seguente è l'indirizzo IP del server, solitamente è possibile trovarlo
-										nelle informazioni della macchina da voi acquistata sul sito di hosting). Una volta dato il comando basterà inserire la password precedentemente impostata per fare l'accesso al server.<br /><br />
+										un esempio potrebbe essere: ssh root@192.34.33.256 (root è solitamente il
+										nome
+										utente mentre il numero seguente è l'indirizzo IP del server, solitamente è
+										possibile trovarlo
+										nelle informazioni della macchina da voi acquistata sul sito di hosting).
+										Una
+										volta dato il comando basterà inserire la password precedentemente impostata
+										per
+										fare l'accesso al server.<br /><br />
 										Una volta connessi in SSH possiamo dare il comando:<br /><br />
 										<code>sudo apt update && apt upgrade -y</code><br /><br />
 										in modo da aggiornare tutti i pacchetti del nostro sistema operativo.<br />
-										In questa guida andremo a seguire un set-up per la sicurezza del nostro server semplice e minimale (in modo che si adatti a tutti gli utenti), se volete usare set-up piu avanzati vi consiglio di
-										cercare online come effettuare login sul proprio server utilizzando una chiave pubblica ssh.<br /><br />
+										In questa guida andremo a seguire un set-up per la sicurezza del nostro
+										server
+										semplice e minimale (in modo che si adatti a tutti gli utenti), se volete
+										usare
+										set-up piu avanzati vi consiglio di
+										cercare online come effettuare login sul proprio server utilizzando una
+										chiave
+										pubblica ssh.<br /><br />
 										Andiamo infine a dare il comando:<br /><br />
 										<code>sudo apt install fail2ban</code><br /><br />
-										per andare ad installare questo leggerissimo software che permette di limitare l'accesso in caso di troppe password errate sul nostro server (e quindi migliorare leggermente la sicurezza di esso).
+										per andare ad installare questo leggerissimo software che permette di
+										limitare
+										l'accesso in caso di troppe password errate sul nostro server (e quindi
+										migliorare leggermente la sicurezza di esso).
 									</p>
 									<h2 style="color: greenyellow;" id="set">Set-up della VPN</h2>
+									<p>
+										Ora che abbiamo effettuato tutte le procedure preliminari per rendere piú sicura e aggiornata
+										la nostra VPS possiamo procedere 
+									</p>
 
 
 								</article>
