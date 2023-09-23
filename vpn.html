@@ -70,9 +70,6 @@
 						<section id="main_content">
 							<article>
 								<center>
-									<p><br /></p>
-								</center>
-								<center>
 									<img loading="lazy" style="width:95%; height:95%;" src="images/vpn.webp">
 								</center>
 								<p>Questa vuole essere una guida completa per effettuare il setup di una propria VPN
@@ -165,6 +162,7 @@
 										una rete internet non instestata a voi.
 									</li>
 								</ul>
+								</p>
 								<h2 style="color: greenyellow;" id="set">Scelta dell'hosting provider</h2>
 								<p>
 									Con hosting provider s'intende l'azienda che vi fornirà il server su cui
@@ -236,7 +234,7 @@
 								ubuntu)
 								e settando una password di accesso complessa.
 								</p>
-								<h2 style="color: greenyellow;" id="set">Connessione al server VPS con SSH</h2>
+								<h2 style="color: greenyellow;" id="store">Connessione al server VPS con SSH</h2>
 								<p>
 									Come molti sapranno, per connettersi a server remoti, solitamente si
 									utilizza
@@ -274,7 +272,7 @@
 									l'accesso in caso di troppe password errate sul nostro server (e quindi
 									migliorare leggermente la sicurezza di esso).
 								</p>
-								<h2 style="color: greenyellow;" id="set">Set-up della VPN</h2>
+								<h2 style="color: greenyellow;" id="shelter">Set-up della VPN</h2>
 								<p>
 									Ora che abbiamo effettuato tutte le procedure preliminari per rendere piú sicura
 									e aggiornata
@@ -334,9 +332,38 @@ chmod +x wireguard-install.sh
     private-address: fe80::/10
 										</code>
 									</pre>
+									andiamo quindi a riavviare unbound:<br><br>
+									<code>sudo service unbound restart</code><br><br>
+									a questo punto abbiamo correttamente prepato il dns locale, andiamo a configurare pi-hole per parlare
+									con unbound correttamente:<br><br>
+									<code>nano /etc/pihole/setupVars.conf</code><br><br>
+									potete editare o sostituire il vostro file di config con quello sottostante avendo accortezza di 
+									inserire i dati che nel box qua sotto ho inerito tra parentesi graffe:<br><br>
+									<pre>
+										<code>
+WEBPASSWORD=<a style="color: orange;">{lasciate quella presente nel file di default}</a>
+BLOCKING_ENABLED=true
+WEBUIBOXEDLAYOUT=traditional
+WEBTHEME=default-dark
+PIHOLE_INTERFACE=wg0
+IPV4_ADDRESS=<a style="color: orange;">{mette l'indirizzo IP della vostra VPS esempio:123.24.223.11} </a>
+QUERY_LOGGING=true
+INSTALL_WEB_SERVER=true
+INSTALL_WEB_INTERFACE=true
+LIGHTTPD_ENABLED=true
+CACHE_SIZE=0
+DNSMASQ_LISTENING=local
+DNS_FQDN_REQUIRED=true
+DNS_BOGUS_PRIV=true
+DNSSEC=false
+REV_SERVER=false
+PIHOLE_DNS_1=127.0.0.1#5335
 
+										</code>
+									</pre>
+									a questo punto re-buildiamo pihole con il seguente comando:<br><br>
+									<code>pihole -r</code>
 
-								</p>
 
 								</p>
 							</article>
