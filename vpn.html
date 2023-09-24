@@ -332,14 +332,16 @@ chmod +x wireguard-install.sh
     private-address: fe80::/10
 										</code>
 									</pre>
-									andiamo quindi a riavviare unbound:<br><br>
-									<code>sudo service unbound restart</code><br><br>
-									a questo punto abbiamo correttamente prepato il dns locale, andiamo a configurare pi-hole per parlare
-									con unbound correttamente:<br><br>
-									<code>nano /etc/pihole/setupVars.conf</code><br><br>
-									potete editare o sostituire il vostro file di config con quello sottostante avendo accortezza di 
-									inserire i dati che nel box qua sotto ho inerito tra parentesi graffe:<br><br>
-									<pre>
+								andiamo quindi a riavviare unbound:<br><br>
+								<code>sudo service unbound restart</code><br><br>
+								a questo punto abbiamo correttamente prepato il dns locale, andiamo a configurare
+								pi-hole per parlare
+								con unbound correttamente:<br><br>
+								<code>nano /etc/pihole/setupVars.conf</code><br><br>
+								potete editare o sostituire il vostro file di config con quello sottostante avendo
+								accortezza di
+								inserire i dati che nel box qua sotto ho inerito tra parentesi graffe:<br><br>
+								<pre>
 										<code>
 WEBPASSWORD=<a style="color: orange;">{lasciate quella presente nel file di default}</a>
 BLOCKING_ENABLED=true
@@ -361,11 +363,35 @@ PIHOLE_DNS_1=127.0.0.1#5335
 
 										</code>
 									</pre>
-									a questo punto re-buildiamo pihole con il seguente comando:<br><br>
-									<code>pihole -r</code>
-
-
+								a questo punto re-buildiamo pihole con il seguente comando:<br><br>
+								<code>pihole -r</code><br>
 								</p>
+								<h2 style="color: greenyellow;" id="app">Configurazione PiHole e AdLists</h2>
+								<p>
+									La parte a riga di comando é ormai finita, ce l'hai fatta guerriero! &#127881;
+									A livello teorico in questo momento é gia tutto funzionante, andiamo peró prima di
+									utilizzare la VPN ad aggiungere dei filtri per la pubblicita!<br>
+									Aprite un browser qualsiasi web e nella barra di ricerca digitate:<br><br>
+									<code>http://{indirizzo ip della vpn}/admin</code><br>
+									esempio: http://84.177.121.221/admin<br><br>
+									A questo punto dovreste vedere la pagina di login di Pi-Hole (il nostro sistema di
+									filtro pubblicitá, tracker e analytics). Come password dovete usare quella che ci eravamo salvati 
+									precedentemente (e che ci venive generata in fase di installazione). Una volta effettuato l'accesso 
+									avrete davanti questa schermata:<br><br>
+									<img src="images/dashboard.webp">
+								</p>
+
+
+
+
+
+
+
+
+
+
+
+
 							</article>
 						</section>
 					</div>
