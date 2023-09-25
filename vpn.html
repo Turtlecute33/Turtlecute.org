@@ -375,17 +375,55 @@ PIHOLE_DNS_1=127.0.0.1#5335
 									<code>http://{indirizzo ip della vpn}/admin</code><br>
 									esempio: http://84.177.121.221/admin<br><br>
 									A questo punto dovreste vedere la pagina di login di Pi-Hole (il nostro sistema di
-									filtro pubblicitá, tracker e analytics). Come password dovete usare quella che ci eravamo salvati 
-									precedentemente (e che ci venive generata in fase di installazione). Una volta effettuato l'accesso 
+									filtro pubblicitá, tracker e analytics). Come password dovete usare quella che ci
+									eravamo salvati
+									precedentemente (e che ci venive generata in fase di installazione). Una volta
+									effettuato l'accesso
 									avrete davanti questa schermata:<br><br>
-									<img src="images/dashboard.webp">
+									<img src="images/dashboard.webp"><br><br>
+									Andiamo ora nella sezione "AdLists" ed aggiugniamo delle liste di vari domain da
+									bloccare (o meglio,
+									il link ad alcune di queste liste). Di questo argomento si puó discorrere ore, il
+									concetto di base é che se aggiuongiamo decine di di fonti a caso bloccheremo
+									tantissimo...troppo,
+									andando quindi a far smettere di funzionare molti siti web o funzioni di
+									applicazioni su nostri
+									dispositivi. Conviene usare poche liste e tendenzialmente fatte da persone di cui ci
+									fidiamo
+									almeno parzialmente. Vi lascio qua sotto alcune delle principali e piu famose, in
+									caso vogliate
+									ampliare la sezione vi lascio l'onore di farlo in autonomia in quanto in base alle
+									configurazioni ci
+									potrebbero essere diversi pro o contro.<br>
+								<pre>
+										<code>
+https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+https://adaway.org/hosts.txt
+https://v.firebog.net/hosts/AdguardDNS.txt
+https://v.firebog.net/hosts/Easyprivacy.txt
+https://winhelp2002.mvps.org/hosts.txt
+										</code>
+									</pre>
+								una volta inserite le varie blocklist muoviamoci nella sezione: tools > update gravity
+								ed andiamo ad avviare il processo di attivazione delle varie liste. In caso di problemi
+								con
+								alcuni siti (io per esempio in passato con alcune liste avevo avuto problemi con i link
+								"t.co"
+								di twitter) basterá aggiungere il sito alla sezione "whitelist" in modo da escludero dai
+								siti
+								da bloccare. Ogni volta che effettuate modifiche andate poi a fare update gravity per
+								renderle
+								effettive.
 								</p>
+								<h2 style="color: greenyellow;" id="email">Esportazione delle configurazioni</h2>
+								<p>
+									Andiamo ora ad attivare la configurazione sui nostri dispositivi. Iniziamo dai
+									telefoni:<br><br>
+									Installiamo sul nostro dispositivo l'applicazione <a
+										href="https://www.wireguard.com/install/">Wireguard</a>, una volta fatto apriamo
+									il terminale della nostra VPS e diamo il comando:<br><br>
 
-
-
-
-
-
+								</p>
 
 
 
