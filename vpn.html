@@ -98,10 +98,8 @@
 									<li><a href="#threat">Setup di PiHole</a></li>
 									<li><a href="#app">Configurazione PiHole e AdLists</a></li>
 									<li><a href="#email">Esportazione delle configurazioni</a></li>
-									<li><a href="#permessi">Connessione di cellulari e computers alla VPN</a></li>
 									<li><a href="#cloud">Test di funzionamento</a></li>
 									<li><a href="#conc">Conclusioni</a></li>
-									<li><a href="supporto.html">Donazioni</a></li>
 								</ul>
 								<br />
 								<h2 style="color: greenyellow;" id="os">Obbiettivo</h2>
@@ -404,7 +402,7 @@ https://v.firebog.net/hosts/Easyprivacy.txt
 https://winhelp2002.mvps.org/hosts.txt
 										</code>
 									</pre>
-								una volta inserite le varie blocklist muoviamoci nella sezione: tools > update gravity
+								una volta inserite le varie blocklist muoviamoci nella sezione: tools → update gravity
 								ed andiamo ad avviare il processo di attivazione delle varie liste. In caso di problemi
 								con
 								alcuni siti (io per esempio in passato con alcune liste avevo avuto problemi con i link
@@ -422,14 +420,58 @@ https://winhelp2002.mvps.org/hosts.txt
 									Installiamo sul nostro dispositivo l'applicazione <a
 										href="https://www.wireguard.com/install/">Wireguard</a>, una volta fatto apriamo
 									il terminale della nostra VPS e diamo il comando:<br><br>
+									<code>bash wireguard-install.sh</code><br><br>
+									selezioniamo "add new client", diamo un nome a scelta, selezioniamo come DNS
+									"current system resolver". Ora ci verrá mostrato un QRcode, con la nosta app mobile
+									di wireguard andiamo a scannerizzarlo, dopo averlo fatto ci dovrebbe mostrare una
+									schermata del genere:<br>
+									<center><img src="images/wireguard.webp"></center><br>
+									nella sezione "DNS servers" andiamo ad inserire l'indirizzo ip della nostra VPS,
+									verifichiamo che nella sezione "Endpoint" sia presente lo stesso indirizzo IP piú la
+									scritta ":51820" che indica la porta, fatto questo ci basterá salvare e attivare la
+									VPN!<br><br>
 
+									Per i pc la procedura é simile, ci basterá installare wireguard (sia su windows che
+									su linux),
+									generare la configurazione sulla nostra VPS con il comando sopra spiegato nella
+									procedura android e poi andarlo a copiare su windows nell'interfaccia grafica di
+									wireguard mentre su linux
+									a salvarlo in un file con estensione .conf nella cartella "/etc/wireguard" del
+									nostro pc (per esemepio vpn.conf) ed attivare la vpn con il comando a
+									terminale:<br><br>
+									<code>sudo wg-quick up {nome del file .conf}</code><br><br>
+									mentre per spegnerela:<br><br>
+									<code>sudo wg-quick down {nome del file .conf} </code><br><br>
+									anche su pc prestiamo attenzione ad avere modificato le due sezioni indicate nella
+									parte di android con l'indirizzo IP del nostro server.
 								</p>
-
-
-
-
-
-
+								<h2 style="color: greenyellow;" id="cloud">Test di funzionamento</h2>
+								<p>
+									Ora che abbiamo pronta e attiva la nostra VPN andiamo a testare che funzioni tutto
+									correttamente. Prima di tutto su un qualsiasi browser visitiamo il sito <a
+										href="https://vpntesting.com/">VPN testing</a> e avviamo un test. Verificate che
+									tutti gli indirizzi IP e localizzazioni che vi vengono mostrate a schermo non siano
+									quelle del vostro paese di origine ma del server VPN.<br><br>
+									Se tutto é corretto procediamo al test non della VPN stessa ma del adblocker
+									visitando il sito <a href="https://d3ward.github.io/toolz/adblock.html">AdBlock
+										test</a> eseguite un test. Se il risultato finale é maggiore del 70/80% vuol
+									dire che tutto funziona corettamente (aggiungendo piu o meno blacklist a Pi-Hole i
+									risultati di questo test potrebbero variare). Prestate attenzione a disattivare
+									temporaneamente eventuali estensioni di AdBlock delk vostro browser per non avere
+									risultati falsati. Anche il browser che utilizzate pootrebbe influire sui risultati
+									del test.<br><br>
+									Se entrambi i test vengono passati correttamente sei un vero drago e sei riuscito a
+									seguire perfettamente questa guida!!
+								</p>
+								<h2 style="color: greenyellow;" id="conc">Conclusioni</h2>
+								<p>
+									Questo é uno dei tanti set-up possibili per crearsi una server VPN. Come ogni tipo
+									di configurazione é possibile eseguire modifiche per adattare il servizio ai propri
+									trade-off, quello presentato in questa guida é, a mio parere, un buon bilanciamento
+									tra sicurezza, funzionalitá e privacy. Se hai proposte di miglioramento, hai trovato
+									errori o hai proposte per questa guida puoi aiutarmi e far sentire la tua voce sul
+									<a href="https://github.com/Turtlecute33/Turtlecute.org"> repository github</a>.
+								</p>
 							</article>
 						</section>
 					</div>
