@@ -169,7 +169,7 @@
 									legale che tutela la vostra privacy (stati interessanti possono essere
 									quelli
 									fuori dai 5 eyes, fuori dalla nato o che hanno buone politiche sui dati
-									informatici. Buoni esempi sono islanda, svezia, gibilterra, ecc),
+									informatici. Buoni esempi sono islanda, svezia,svizzera, gibilterra, ecc),
 									che sembra essere affidabile (non ha fatto leak di dati per piccolezze o
 									sembra
 									lottare per dare meno dati possibili alle autorità) e che richieda meno dati
@@ -189,7 +189,7 @@
 									<br />
 								<ul>
 									<li>
-										<a href="https://1984.hosting/">1984 Hosting</a>è un sito che offre
+										<a href="https://1984.hosting/">1984 Hosting</a> é un sito che offre
 										vari
 										servizi (domini, vps, dns, ecc), ha sede legale in islanda (molto
 										interessante per l'aspetto di Privacy
@@ -237,8 +237,8 @@
 									utilizza
 									SSH: un protocollo integrato nel terminale di linux con cui collegarsi a
 									server
-									o pc remoti.
-									per connetterci alla nostra VPS apriamo un terminale su un qualsiasi nostro
+									o pc distanti.
+									Per connetterci alla nostra VPS apriamo un terminale su un qualsiasi nostro
 									pc e
 									diamo il comando:<br /><br />
 									<code>ssh [nome utente]@[indirizzo ip]</code><br /><br />
@@ -365,10 +365,10 @@ PIHOLE_DNS_1=127.0.0.1#5335
 								</p>
 								<h2 style="color: greenyellow;" id="app">Configurazione PiHole e AdLists</h2>
 								<p>
-									La parte a riga di comando é ormai finita, ce l'hai fatta guerriero! &#127881;
+									La parte a riga di comando é ormai finita, ce l'hai fatta guerriero! &#127881;<br>
 									A livello teorico in questo momento é gia tutto funzionante, andiamo peró prima di
 									utilizzare la VPN ad aggiungere dei filtri per la pubblicita!<br>
-									Aprite un browser qualsiasi web e nella barra di ricerca digitate:<br><br>
+									Aprite un browser qualsiasi e nella barra di ricerca digitate:<br><br>
 									<code>http://{indirizzo ip della vpn}/admin</code><br>
 									esempio: http://84.177.121.221/admin<br><br>
 									A questo punto dovreste vedere la pagina di login di Pi-Hole (il nostro sistema di
@@ -378,10 +378,10 @@ PIHOLE_DNS_1=127.0.0.1#5335
 									effettuato l'accesso
 									avrete davanti questa schermata:<br><br>
 									<img src="images/dashboard.webp"><br><br>
-									Andiamo ora nella sezione "AdLists" ed aggiugniamo delle liste di vari domain da
+									Andiamo ora nella sezione "AdLists" ed aggiungiamo delle liste di vari domain da
 									bloccare (o meglio,
 									il link ad alcune di queste liste). Di questo argomento si puó discorrere ore, il
-									concetto di base é che se aggiuongiamo decine di di fonti a caso bloccheremo
+									concetto di base é che se aggiungiamo decine di di fonti a caso bloccheremo
 									tantissimo...troppo,
 									andando quindi a far smettere di funzionare molti siti web o funzioni di
 									applicazioni su nostri
@@ -389,7 +389,7 @@ PIHOLE_DNS_1=127.0.0.1#5335
 									fidiamo
 									almeno parzialmente. Vi lascio qua sotto alcune delle principali e piu famose, in
 									caso vogliate
-									ampliare la sezione vi lascio l'onore di farlo in autonomia in quanto in base alle
+									ampliare la sezione vi lascio l'onere di farlo in autonomia in quanto in base alle
 									configurazioni ci
 									potrebbero essere diversi pro o contro.<br>
 								<pre>
@@ -433,7 +433,7 @@ https://winhelp2002.mvps.org/hosts.txt
 									Per i pc la procedura é simile, ci basterá installare wireguard (sia su windows che
 									su linux),
 									generare la configurazione sulla nostra VPS con il comando sopra spiegato nella
-									procedura android e poi andarlo a copiare su windows nell'interfaccia grafica di
+									procedura android e poi andarlo a copiare: su windows nell'interfaccia grafica di
 									wireguard mentre su linux
 									a salvarlo in un file con estensione .conf nella cartella "/etc/wireguard" del
 									nostro pc (per esemepio vpn.conf) ed attivare la vpn con il comando a
@@ -453,20 +453,20 @@ https://winhelp2002.mvps.org/hosts.txt
 									quelle del vostro paese di origine ma del server VPN.<br><br>
 									Se tutto é corretto procediamo al test non della VPN stessa ma del adblocker
 									visitando il sito <a href="https://d3ward.github.io/toolz/adblock.html">AdBlock
-										test</a> eseguite un test. Se il risultato finale é maggiore del 70/80% vuol
+										test</a>. Se il risultato finale é maggiore del 70/80% vuol
 									dire che tutto funziona correttamente (aggiungendo piu o meno blacklist a Pi-Hole i
 									risultati di questo test potrebbero variare). Prestate attenzione a disattivare
-									temporaneamente eventuali estensioni di AdBlock delk vostro browser per non avere
-									risultati falsati. Anche il browser che utilizzate pootrebbe influire sui risultati
+									temporaneamente eventuali estensioni di AdBlock del vostro browser per non avere
+									risultati falsati. Anche il browser che utilizzate potrebbe influire sui risultati
 									del test.<br><br>
-									Se entrambi i test vengono passati correttamente sei un vero drago e sei riuscito a
+									Se entrambem le prove vengono passate correttamente sei un vero drago e sei riuscito a
 									seguire perfettamente questa guida!!
 								</p>
 								<h2 style="color: greenyellow;" id="conc">Conclusioni</h2>
 								<p>
 									Questo é uno dei tanti set-up possibili per crearsi una server VPN. Come ogni tipo
 									di configurazione é possibile eseguire modifiche per adattare il servizio ai propri
-									trade-off, quello presentato in questa guida é, a mio parere, un buon bilanciamento
+									trade-off. Quello presentato in questa guida é, a mio parere, un buon bilanciamento
 									tra sicurezza, funzionalitá e privacy. Se hai proposte di miglioramento, hai trovato
 									errori o hai proposte per questa guida puoi aiutarmi e far sentire la tua voce sul
 									<a href="https://github.com/Turtlecute33/Turtlecute.org"> repository github</a>.
