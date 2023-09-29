@@ -275,9 +275,9 @@
 									e aggiornata
 									la nostra VPS possiamo procedere al vero set-up, andiamo ad installare wireguard
 									con i seguenti comandi:<br>
-								<pre><code>curl -O https://raw.githubusercontent.com/angristan/wireguard-install/master/wireguard-install.sh
+								<code>curl -O https://raw.githubusercontent.com/angristan/wireguard-install/master/wireguard-install.sh
 chmod +x wireguard-install.sh
-./wireguard-install.sh</code></pre>
+./wireguard-install.sh</code>
 								a questo punto andiamo anche ad installare pi-hole (il software che useremo come
 								filtro pubblicitá, tracker e analytics):<br><br>
 								<code>curl -sSL https://install.pi-hole.net | bash</code><br><br>
@@ -294,7 +294,7 @@ chmod +x wireguard-install.sh
 								ed andiamo a configurarlo con:<br><br>
 								<code>nano /etc/unbound/unbound.conf.d/pi-hole.conf</code><br><br>
 								Incollate questa configurazione all'interno del file:<br>
-								<pre>
+								
 										<code>
     server:
     verbosity: 0
@@ -328,7 +328,7 @@ chmod +x wireguard-install.sh
     private-address: fd00::/8
     private-address: fe80::/10
 										</code>
-									</pre>
+									
 								andiamo quindi a riavviare unbound:<br><br>
 								<code>sudo service unbound restart</code><br><br>
 								a questo punto abbiamo correttamente prepato il dns locale, andiamo a configurare
@@ -338,7 +338,7 @@ chmod +x wireguard-install.sh
 								potete editare o sostituire il vostro file di config con quello sottostante avendo
 								accortezza di
 								inserire i dati che nel box qua sotto ho inerito tra parentesi graffe:<br><br>
-								<pre>
+								
 										<code>
 WEBPASSWORD=<a style="color: orange;">{lasciate quella presente nel file di default}</a>
 BLOCKING_ENABLED=true
@@ -359,7 +359,7 @@ REV_SERVER=false
 PIHOLE_DNS_1=127.0.0.1#5335
 
 										</code>
-									</pre>
+									
 								a questo punto re-buildiamo pihole con il seguente comando:<br><br>
 								<code>pihole -r</code><br>
 								</p>
@@ -392,7 +392,7 @@ PIHOLE_DNS_1=127.0.0.1#5335
 									ampliare la sezione vi lascio l'onere di farlo in autonomia in quanto in base alle
 									configurazioni ci
 									potrebbero essere diversi pro o contro.<br>
-								<pre>
+								
 										<code>
 https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
 https://adaway.org/hosts.txt
@@ -400,7 +400,7 @@ https://v.firebog.net/hosts/AdguardDNS.txt
 https://v.firebog.net/hosts/Easyprivacy.txt
 https://winhelp2002.mvps.org/hosts.txt
 										</code>
-									</pre>
+									
 								una volta inserite le varie blocklist muoviamoci nella sezione: tools → update gravity
 								ed andiamo ad avviare il processo di attivazione delle varie liste. In caso di problemi
 								con
