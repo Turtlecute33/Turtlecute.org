@@ -434,11 +434,12 @@ https://winhelp2002.mvps.org/hosts.txt
 
 									Per i pc la procedura è simile, ci basterá installare Wireguard, generare la configurazione 
 									sulla VPS (usate il comando spiegato sopra, nella procedura android), per poi copiarla nel pc:
-- Su Windows, la configurazione è da inserire nell'interfaccia grafica di Wireguard
-- Su Linux, la configurazione è da salvare in un file con estensione .conf nella cartella /etc/wireguard (ad esempio, vpn.conf), per poi attivare la VPN col comando da terminale:<br><br>
+									<ul>
+<li>Su Windows, la configurazione è da inserire nell'interfaccia grafica di Wireguard</li>
+<li>Su Linux, la configurazione è da salvare in un file con estensione .conf nella cartella /etc/wireguard (ad esempio, vpn.conf), per poi attivare la VPN col comando da terminale:<br><br>
 									<code>sudo wg-quick up {nome del file .conf}</code><br><br>
 									mentre per spegnerela:<br><br>
-									<code>sudo wg-quick down {nome del file .conf} </code><br><br>
+									<code>sudo wg-quick down {nome del file .conf} </code></li></ul><br><br>
 									anche su pc prestiamo attenzione ad avere modificato le due sezioni indicate nella
 									parte di android con l'indirizzo IP del nostro server.
 								</p>
