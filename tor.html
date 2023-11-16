@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html lang="it">
 
 <head>
@@ -73,8 +68,39 @@
                                 <center>
                                     <img style="width:95%; height:95%;" src="images/tor.png">
                                 </center>
-                                <p>Questa vuole essere una guida completa per lanciare un nodo a supporto della rete tor. Prima di iniziare spieghiamo in breve cos</p>
-                                <figure>
+                                <p>Questa vuole essere una guida completa per lanciare un nodo a supporto della rete
+                                    tor. Prima di iniziare spieghiamo in breve cos'è questo protocollo: <br>
+
+                                    La rete Tor, acronimo di "The Onion Router", è una rete di comunicazione anonima
+                                    progettata per aumentare la privacy e la sicurezza degli utenti su Internet. Il suo
+                                    nome deriva dal concetto di "cebolla" o "onion", poiché il suo funzionamento si basa
+                                    su diverse strati di crittografia, simili agli strati di una cipolla.
+
+                                    Il principale obiettivo di Tor è rendere difficile il tracciamento delle attività
+                                    online degli utenti, proteggendo la loro identità e la loro posizione. La rete
+                                    funziona instradando il traffico Internet attraverso una serie di server volontari,
+                                    noti come "nodi Tor", gestiti da volontari distribuiti in tutto il mondo. Ogni nodo
+                                    Tor rimuove uno strato di crittografia, rivelando solo l'indirizzo IP del nodo
+                                    precedente, rendendo difficile risalire all'origine del traffico.
+
+                                    Grazie a questo approccio stratificato, Tor fornisce un grado significativo di
+                                    anonimato agli utenti, ma è importante notare che non offre una sicurezza totale e
+                                    può essere vulnerabile a attacchi in alcuni scenari. Nonostante ciò, la rete Tor è
+                                    ampiamente utilizzata da giornalisti, attivisti per i diritti umani e utenti che
+                                    cercano di preservare la loro privacy online.
+
+                                    per ulteriori informazioni ho fatto anche <a
+                                        href="https://open.spotify.com/episode/2pc9gy07lJkhajX83ZaVDy?si=muiGO-3CTWuAveDbUYuHHA">una
+                                        puntata del podcast</a> a
+                                    riguardo!</p>
+
+                                <center><iframe style="border-radius:12px"
+                                    src="https://open.spotify.com/embed/episode/2pc9gy07lJkhajX83ZaVDy?utm_source=generator"
+                                    width="100%" height="352" frameBorder="0" allowfullscreen=""
+                                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                    loading="lazy"></iframe>
+                                </center>
+
                                     <blackquote style="color:grey">
                                         La guida è aperta a miglioramenti e consigli, descriverò la configurazione
                                         che trovo con il miglior rapporto usabilità/privacy, non sono un esperto di
@@ -83,8 +109,11 @@
                                         <br><br>
                                         Se volete darmi consigli, contribuire alla guida o effettuare traduzioni,
                                         potete effettuare
-                                        una pull request su <a href="https://github.com/Turtlecute33/Turtlecute.org">GitHub</a> e supportare
-                                        lo sviluppo di queste guide con una <a href="https://priorato.btcpayserver.it/i/BFg7UG7Zu8eAaRz3EiXgQJ">donazione</a>.
+                                        una pull request su <a
+                                            href="https://github.com/Turtlecute33/Turtlecute.org">GitHub</a> e
+                                        supportare
+                                        lo sviluppo di queste guide con una <a
+                                            href="https://priorato.btcpayserver.it/i/BFg7UG7Zu8eAaRz3EiXgQJ">donazione</a>.
                                     </blackquote><br><br>
                                 </figure>
 
@@ -105,51 +134,52 @@
                                     filtro per ads e tracker in maniera totalmente autonoma. Questa procedura
                                     comporta dei vantaggi e svantaggi rispetto all'utilizzo di una normale VPN
                                     commerciale:
-                                    <h3 style="color:green;">pros</h3>
-                                    <ul>
-                                        <li>
-                                            Non doversi fidare di un provider VPN il cui modello di business,
-                                            purtroppo,
-                                            spesso è vendere i nostri dati personali
-                                        </li>
-                                        <li>
-                                            Possibilità di inserire filtri per pubblicità e trackers; alcune VPN
-                                            offrono
-                                            questo servizio, ma spesso di qualità molto precaria
-                                        </li>
-                                        <li>
-                                            Personalizzazione dell'esperienza: volete una VPN piu veloce? Dei filtri
-                                            pubblicitari specifici? Vorreste condividerla con tutta la famiglia? Con
-                                            una
-                                            vostra VPN potete gestirvi nel modo che preferite
-                                        </li>
-                                        <li <p>
-                                            Ora che abbiamo effettuato tutte le procedure preliminari per rendere piú sicura
-                                            e aggiornata
-                                            la nostra VPS possiamo procedere al vero setup, andiamo ad installare wireguard
-                                            con i seguenti comandi:<br>
-                                            <pre style:"font-size: 90%;"><code>
+                                <h3 style="color:green;">pros</h3>
+                                <ul>
+                                    <li>
+                                        Non doversi fidare di un provider VPN il cui modello di business,
+                                        purtroppo,
+                                        spesso è vendere i nostri dati personali
+                                    </li>
+                                    <li>
+                                        Possibilità di inserire filtri per pubblicità e trackers; alcune VPN
+                                        offrono
+                                        questo servizio, ma spesso di qualità molto precaria
+                                    </li>
+                                    <li>
+                                        Personalizzazione dell'esperienza: volete una VPN piu veloce? Dei filtri
+                                        pubblicitari specifici? Vorreste condividerla con tutta la famiglia? Con
+                                        una
+                                        vostra VPN potete gestirvi nel modo che preferite
+                                    </li>
+                                    <li <p>
+                                        Ora che abbiamo effettuato tutte le procedure preliminari per rendere piú sicura
+                                        e aggiornata
+                                        la nostra VPS possiamo procedere al vero setup, andiamo ad installare wireguard
+                                        con i seguenti comandi:<br>
+                                        <pre style:"font-size: 90%;"><code>
 curl -O https://raw.githubusercontent.com/angristan/wireguard-install/master/wireguard-install.sh
 chmod +x wireguard-install.sh
 ./wireguard-install.sh</code></pre>
-                                            a questo punto andiamo anche ad installare pi-hole (il software che useremo come
-                                            filtro pubblicitá, tracker e analytics):<br><br>
-                                            <code>curl -sSL https://install.pi-hole.net | bash</code><br><br>
-                                            durante l'installazione scegliete come interfaccia di rete "wg0", usate l'opzione
-                                            custom dns (non così importante, alla peggio la andiamo comunque a sovrascrivere
-                                            dopo), abilitate la 'web interface' e salvatevi la password per il login che vi
-                                            verrá data di default (ci servirá in seguito).<br><br>
-                                            Andiamo ora ad installare unbound, un software per avere un DNS resolver locale
-                                            veloce (per fare una semplificazione ci servirá per avere il nostro setup finale
-                                            completo, efficente e veloce).<br><br>
-                                            <code>
+                                        a questo punto andiamo anche ad installare pi-hole (il software che useremo come
+                                        filtro pubblicitá, tracker e analytics):<br><br>
+                                        <code>curl -sSL https://install.pi-hole.net | bash</code><br><br>
+                                        durante l'installazione scegliete come interfaccia di rete "wg0", usate
+                                        l'opzione
+                                        custom dns (non così importante, alla peggio la andiamo comunque a sovrascrivere
+                                        dopo), abilitate la 'web interface' e salvatevi la password per il login che vi
+                                        verrá data di default (ci servirá in seguito).<br><br>
+                                        Andiamo ora ad installare unbound, un software per avere un DNS resolver locale
+                                        veloce (per fare una semplificazione ci servirá per avere il nostro setup finale
+                                        completo, efficente e veloce).<br><br>
+                                        <code>
                                                 sudo apt install unbound
                                             </code><br><br>
-                                            ed andiamo a configurarlo con:<br><br>
-                                            <code>nano /etc/unbound/unbound.conf.d/pi-hole.conf</code><br><br>
-                                            Incollate questa configurazione all'interno del file:<br>
+                                        ed andiamo a configurarlo con:<br><br>
+                                        <code>nano /etc/unbound/unbound.conf.d/pi-hole.conf</code><br><br>
+                                        Incollate questa configurazione all'interno del file:<br>
 
-                                            <pre style:"font-size: 99%;"><code>
+                                        <pre style:"font-size: 99%;"><code>
     server:
     verbosity: 0
     interface: 127.0.0.1
@@ -183,17 +213,19 @@ chmod +x wireguard-install.sh
     private-address: fe80::/10
 										</code></pre>
 
-                                            andiamo quindi a riavviare unbound:<br><br>
-                                            <code>sudo service unbound restart</code><br><br>
-                                            a questo punto abbiamo correttamente prepato il dns locale, andiamo a configurare
-                                            pi-hole per parlare
-                                            con unbound correttamente:<br><br>
-                                            <code>nano /etc/pihole/setupVars.conf</code><br><br>
-                                            potete editare o sostituire il vostro file di config con quello sottostante avendo
-                                            accortezza di
-                                            inserire i dati che nel box qua sotto ho inerito tra parentesi graffe:<br><br>
+                                        andiamo quindi a riavviare unbound:<br><br>
+                                        <code>sudo service unbound restart</code><br><br>
+                                        a questo punto abbiamo correttamente prepato il dns locale, andiamo a
+                                        configurare
+                                        pi-hole per parlare
+                                        con unbound correttamente:<br><br>
+                                        <code>nano /etc/pihole/setupVars.conf</code><br><br>
+                                        potete editare o sostituire il vostro file di config con quello sottostante
+                                        avendo
+                                        accortezza di
+                                        inserire i dati che nel box qua sotto ho inerito tra parentesi graffe:<br><br>
 
-                                            <pre style:"font-size: 99%;"><code>
+                                        <pre style:"font-size: 99%;"><code>
 WEBPASSWORD=<a style="color: orange;">{lasciate quella presente nel file di default}</a>
 BLOCKING_ENABLED=true
 WEBUIBOXEDLAYOUT=traditional
@@ -213,7 +245,7 @@ REV_SERVER=false
 PIHOLE_DNS_1=127.0.0.1#5335
 
 										</code></pre>
-                                </p>
+                                        </p>
                             </article>
                         </section>
                     </div>
