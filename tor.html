@@ -128,7 +128,7 @@
                                 analizziamo i rischi e benefici di installare un nodo su una propria rete domestica
                                 oppure su un server a noleggio.
                                 </p>
-                                <h2>style="color: greenyellow;" id="set">Valutazione dei rischi</h2>
+                                <h2 style="color: greenyellow;" id="set">Valutazione dei rischi</h2>
                                 <p>
                                     L'installazione di un nodo Tor, che sia su una rete domestica o su un server a
                                     noleggio online, richiede una valutazione attenta delle esigenze individuali. Nel
@@ -219,14 +219,37 @@
                                         banda a disposizione (10.15 TB).
                                     </li>
                                     <li>
-                                        <a href="https://www.trabia.com/">Trabia</a> è un VPS provider in moldavia, ha ottimi prezzi, vps non
+                                        <a href="https://www.trabia.com/">Trabia</a> è un VPS provider in moldavia, ha
+                                        ottimi prezzi, vps non
                                         molto potenti ma banda ILLIMITATA, una vera rarità a questi prezzi. Lato privacy
                                         bene ma non benissimo, accettano bitcoin ma vi chiedono di inserire un po di
                                         dati personali. Per esperienza personale i dati possono essere tutti falsi ma
-                                        devono risultare credibili (mette un indirizzo e luogo veri, nomi e cognomi credibili, ecc).
+                                        devono risultare credibili (mette un indirizzo e luogo veri, nomi e cognomi
+                                        credibili, ecc).
                                     </li>
                                 </ul>
                                 Dopo aver acquistato un eventuale VPS possiamo passare direttamente alla configurazione!
+                                <h2 style="color: greenyellow;" id="store">Setup del nodo con script automatizzato</h2>
+                                <p>
+                                    Iniziamo la guida con il metodo a mio parere più veloce ed efficente, quello con lo
+                                    script bash da me sviluppato. I requisiti sono avere un qualsiasi pc, vps o
+                                    raspberry pronto e con installato Debian o Ubuntu. Una volta collegati alla shell
+                                    del vostro pc (che da ora indicherà qualsiasi opzione abbiate scelto tra hardware
+                                    casalingo o VPS), ricordate che se avete una vps online con accesso root dovete
+                                    omettere la parola sudo all'inizio delle righe sottostanti. Potete ora lanciare i seguenti
+                                    comandi:<br>
+                                    <code>
+                                        sudo apt-get update & apt-get upgrade -y
+                                        sudo apt install git
+                                        git clone https://github.com/Turtlecute33/Tor-node-script.git
+                                        cd Tor-node-script
+                                        chmod +x tor.sh 
+                                        ./tor.sh
+                                    </code>
+                                    
+                                </p>
+
+
 
 
 
