@@ -73,7 +73,7 @@
 
                                     La rete Tor, acronimo di "The Onion Router", è una rete di comunicazione anonima
                                     progettata per aumentare la privacy e la sicurezza degli utenti su Internet. Il suo
-                                    nome deriva dal concetto di "cebolla" o "onion", poiché il suo funzionamento si basa
+                                    nome deriva dal concetto di "onion", poiché il suo funzionamento si basa
                                     su diverse strati di crittografia, simili agli strati di una cipolla. <br>
 
                                     Il principale obiettivo di Tor è rendere difficile il tracciamento delle attività
@@ -92,141 +92,150 @@
                                     per ulteriori informazioni consiglio caldamente l'ascolto di questa puntata:</p><br>
 
                                 <center><iframe style="border-radius:12px"
-                                    src="https://open.spotify.com/embed/episode/2pc9gy07lJkhajX83ZaVDy?utm_source=generator"
-                                    width="100%" height="352" frameBorder="0" allowfullscreen=""
-                                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                                    loading="lazy"></iframe>
+                                        src="https://open.spotify.com/embed/episode/2pc9gy07lJkhajX83ZaVDy?utm_source=generator"
+                                        width="100%" height="352" frameBorder="0" allowfullscreen=""
+                                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                        loading="lazy"></iframe>
                                 </center>
 
                                 <h2 style="color: greenyellow;">Tabella dei contenuti</h2>
                                 <ul>
                                     <li><a href="#os">Obiettivo</a></li>
                                     <li><a href="#set">Valutazione dei rischi</a></li>
-                                    <li><a href="#store">elta dell'hosting provider</a></li>
-                                    <li><a href="#shelter">Setup della VPN</a></li>
-                                    <li><a href="#app">Configurazione PiHole e AdLists</a></li>
-                                    <li><a href="#email">Esportazione delle configurazioni</a></li>
+                                    <li><a href="#store">Scelta dell'hosting provider</a></li>
+                                    <li><a href="#shelter">Setup del nodo con script automatizzatop</a></li>
+                                    <li><a href="#app">Setup del nodo compilando tutto da sorgente</a></li>
+                                    <li><a href="#email">Verifiche post installazione</a></li>
                                     <li><a href="#cloud">Test di funzionamento</a></li>
                                     <li><a href="#conc">Conclusioni</a></li>
                                 </ul>
                                 <br />
                                 <h2 style="color: greenyellow;" id="os">Obiettivo</h2>
-                                <p>L'obiettivo finale di questa guida sarà quello di self-hostarci una VPN con un
-                                    filtro per ads e tracker in maniera totalmente autonoma. Questa procedura
-                                    comporta dei vantaggi e svantaggi rispetto all'utilizzo di una normale VPN
-                                    commerciale:
-                                <h3 style="color:green;">pros</h3>
+                                <p>L'obiettivo finale di questa guida sarà quello di hostare un nodo Tor (in locale o su
+                                    una VPS) valutando i vari benefici e rischi. Alla fine di questa guida starai
+                                    ufficialmente aiutando il network dando anche tu il tuo contributo rendendolo piu
+                                    sicuro e resistente ad attacchi.<br>
+                                    Ci saranno 2 modi per seguire questa guida:<br>
                                 <ul>
                                     <li>
-                                        Non doversi fidare di un provider VPN il cui modello di business,
-                                        purtroppo,
-                                        spesso è vendere i nostri dati personali
+                                        Con script automatizzato creato da me (consigliato)
                                     </li>
                                     <li>
-                                        Possibilità di inserire filtri per pubblicità e trackers; alcune VPN
-                                        offrono
-                                        questo servizio, ma spesso di qualità molto precaria
+                                        Compilando tutto da sorgente (piu complicato)
+                                    </li>
+                                </ul>
+                                prima di procedere però con l'installazione vera e propria nella prossima sezione
+                                analizziamo i rischi e benefici di installare un nodo su una propria rete domestica
+                                oppure su un server a noleggio.
+                                </p>
+                                <h2>style="color: greenyellow;" id="set">Valutazione dei rischi</h2>
+                                <p>
+                                    L'installazione di un nodo Tor, che sia su una rete domestica o su un server a
+                                    noleggio online, richiede una valutazione attenta delle esigenze individuali. Nel
+                                    contesto di una rete domestica, uno dei principali vantaggi risiede nel completo
+                                    controllo dell'infrastruttura, permettendo la personalizzazione delle configurazioni
+                                    in base alle proprie necessità. Inoltre, l'esecuzione di un nodo Tor in ambito
+                                    domestico può risultare più economica, specialmente se si dispone già dell'hardware
+                                    necessario.<br><br>
+
+                                    Tuttavia, sono presenti alcuni svantaggi da prendere in considerazione. Le
+                                    connessioni domestiche spesso presentano limiti di larghezza di banda, influenzando
+                                    la velocità complessiva del nodo Tor. Inoltre, la connessione a Internet potrebbe
+                                    non garantire sempre un livello di affidabilità ottimale, e l'assegnazione di
+                                    indirizzi IP dinamici da parte dei provider potrebbe rendere il nodo meno stabile
+                                    nel tempo. Un ultimo sventaggio da notare è che lanciando un nodo nella propria rete
+                                    domestica si ammette pubblicamente di avere un nodo tor in casa, cosa che per alcuni
+                                    amanti della privacy può comoportare un noioso problema da affrontare.<br><br>
+
+                                    D'altra parte, l'utilizzo di un server a noleggio online offre vantaggi come una
+                                    larghezza di banda elevata, maggiore affidabilità e la possibilità di avere un
+                                    indirizzo IP statico. Tuttavia, questa opzione comporta costi mensili più elevati e
+                                    potrebbe limitare il controllo diretto sull'hardware rispetto a una soluzione
+                                    domestica.<br><br>
+
+                                    Va inoltre considerato che la gestione remota di un server a noleggio potrebbe
+                                    richiedere la conformità alle leggi e alle politiche del paese in cui il server è
+                                    ospitato. In conclusione, la scelta tra un nodo Tor su rete domestica e su server a
+                                    noleggio online dipende da vari fattori, tra cui il livello desiderato di controllo
+                                    locale, il budget disponibile, la larghezza di banda necessaria e la conformità alle
+                                    leggi locali.<br><br>
+
+                                    Per riassumere: un nodo casalingo fornisce una maggiore sicurezza e
+                                    decentralizzazione al network, i principali svantaggi sono che si leaka il fatto che
+                                    si sta runnando un nodo tor presso il proprio domicilio e si potrebbe avere qualche
+                                    difficoltà in più a gestrire i vari permessi della rete locale. Quando invece si
+                                    parla di server a noleggio online (più avanti nella guida ve ne consiglierò alcuni)
+                                    la configurazione sarà piu facile e veloce a fronte però di costi piu alti e un
+                                    minor controllo diretto sull'hardware.
+                                </p>
+                                <h2 style="color: greenyellow;" id="store">Scelta dell'hosting provider</h2>
+                                <p>
+                                    Quando ci si appresta a noleggiare una Virtual Private Server (VPS) per ospitare un
+                                    nodo Tor, è fondamentale porre attenzione a diversi parametri al fine di garantire
+                                    un'esperienza affidabile e sicura:<br><br>
+
+                                    In primo luogo, la larghezza di banda fornita dalla VPS gioca un ruolo cruciale,
+                                    influenzando direttamente la velocità e la stabilità del nodo. Una larghezza di
+                                    banda adeguata è essenziale per gestire in modo efficiente il traffico
+                                    sulla rete Tor.<br><br>
+
+                                    La località del server rappresenta un ulteriore aspetto da valutare attentamente. La
+                                    scelta di una posizione geografica strategica può migliorare le prestazioni
+                                    complessive del nodo, riducendo la latenza per gli utenti che si connettono
+                                    attraverso di esso. Ha anche importanti ripercussioni in quanto in base alla
+                                    giurisdizione cambiano anche le leggi informatiche a cui deve sottostare il vostro
+                                    provider.<br><br>
+
+                                    La politica sulla privacy del fornitore di VPS è altrettanto critica. Verificare che
+                                    il provider rispetti la privacy degli utenti e non registri o monitori attività
+                                    sensibili è essenziale per mantenere un nodo utile alla rete.<br>
+                                    Inoltre, è consigliabile optare per una VPS con un indirizzo IP statico (quasi tutte
+                                    lo forniscono), poiché ciò
+                                    contribuirà a garantire la stabilità del nodo Tor nel lungo periodo.<br><br>
+
+                                    Infine, esaminare le opzioni di sicurezza fornite dal provider, come firewall e
+                                    crittografia, rappresenta un aspetto fondamentale per proteggere il nodo Tor da
+                                    potenziali minacce esterne.<br><br>
+
+                                    Attraverso una valutazione accurata di questi parametri, è possibile selezionare una
+                                    VPS che soddisfi i requisiti necessari per ospitare in modo affidabile e sicuro un
+                                    nodo Tor.<br><br>
+                                    Ecco un elenco di quelle a mio parere migliori per hostare un nodo:<br>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.vpsbg.eu/aff/1e5d9e">VPSbG</a> a mio parere il miglior
+                                        rapporto tra potenza, banda,
+                                        privacy, usabilità e metodi di pagamento accettati. Non il più economico ma
+                                        quello che offre la miglior esperienza d'uso. Server in bulgaria e accettano sia
+                                        middle che exit node (se configurati correttamente, il mio script lo fa già in
+                                        automatico).
                                     </li>
                                     <li>
-                                        Personalizzazione dell'esperienza: volete una VPN piu veloce? Dei filtri
-                                        pubblicitari specifici? Vorreste condividerla con tutta la famiglia? Con
-                                        una
-                                        vostra VPN potete gestirvi nel modo che preferite
+                                        <a href="https://www.urdn.com.ua/index.html">UDN</a> ovvero Ukranian Data
+                                        Network offre VPS in maniera davvero
+                                        super privacy, e con super privacy intendo che l'unico modo per comprarne una è
+                                        scrivere ad uno degli admin su XMPP, non cè altro modo per acquistare e non cè
+                                        nessun account da creare. VPS a buon prezzo, non molto potenti ma con molta
+                                        banda a disposizione (10.15 TB).
                                     </li>
-                                    <li <p>
-                                        Ora che abbiamo effettuato tutte le procedure preliminari per rendere piú sicura
-                                        e aggiornata
-                                        la nostra VPS possiamo procedere al vero setup, andiamo ad installare wireguard
-                                        con i seguenti comandi:<br>
-                                        <pre style:"font-size: 90%;"><code>
-curl -O https://raw.githubusercontent.com/angristan/wireguard-install/master/wireguard-install.sh
-chmod +x wireguard-install.sh
-./wireguard-install.sh</code></pre>
-                                        a questo punto andiamo anche ad installare pi-hole (il software che useremo come
-                                        filtro pubblicitá, tracker e analytics):<br><br>
-                                        <code>curl -sSL https://install.pi-hole.net | bash</code><br><br>
-                                        durante l'installazione scegliete come interfaccia di rete "wg0", usate
-                                        l'opzione
-                                        custom dns (non così importante, alla peggio la andiamo comunque a sovrascrivere
-                                        dopo), abilitate la 'web interface' e salvatevi la password per il login che vi
-                                        verrá data di default (ci servirá in seguito).<br><br>
-                                        Andiamo ora ad installare unbound, un software per avere un DNS resolver locale
-                                        veloce (per fare una semplificazione ci servirá per avere il nostro setup finale
-                                        completo, efficente e veloce).<br><br>
-                                        <code>
-                                                sudo apt install unbound
-                                            </code><br><br>
-                                        ed andiamo a configurarlo con:<br><br>
-                                        <code>nano /etc/unbound/unbound.conf.d/pi-hole.conf</code><br><br>
-                                        Incollate questa configurazione all'interno del file:<br>
+                                    <li>
+                                        <a href="https://www.trabia.com/">Trabia</a> è un VPS provider in moldavia, ha ottimi prezzi, vps non
+                                        molto potenti ma banda ILLIMITATA, una vera rarità a questi prezzi. Lato privacy
+                                        bene ma non benissimo, accettano bitcoin ma vi chiedono di inserire un po di
+                                        dati personali. Per esperienza personale i dati possono essere tutti falsi ma
+                                        devono risultare credibili (mette un indirizzo e luogo veri, nomi e cognomi credibili, ecc).
+                                    </li>
+                                </ul>
+                                Dopo aver acquistato un eventuale VPS possiamo passare direttamente alla configurazione!
 
-                                        <pre style:"font-size: 99%;"><code>
-    server:
-    verbosity: 0
-    interface: 127.0.0.1
-    port: 5335
-    do-ip4: yes
-    do-udp: yes
-    do-tcp: yes
-    do-ip6: yes
-    prefer-ip6: no
-    harden-glue: yes
-    harden-dnssec-stripped: yes
-    use-caps-for-id: no
-    edns-buffer-size: 1472
-    prefetch: yes
-    prefetch-key: yes
-    minimal-responses: yes
-    cache-min-ttl: 300
-    cache-max-ttl: 86400
-    serve-expired: yes
-    msg-cache-size: 50m
-    rrset-cache-size: 100m
-    num-threads: 1
-    so-reuseport: yes
-    so-rcvbuf: 4m
-    so-sndbuf: 4m
-    private-address: 192.168.0.0/16
-    private-address: 169.254.0.0/16
-    private-address: 172.16.0.0/12
-    private-address: 10.0.0.0/8
-    private-address: fd00::/8
-    private-address: fe80::/10
-										</code></pre>
 
-                                        andiamo quindi a riavviare unbound:<br><br>
-                                        <code>sudo service unbound restart</code><br><br>
-                                        a questo punto abbiamo correttamente prepato il dns locale, andiamo a
-                                        configurare
-                                        pi-hole per parlare
-                                        con unbound correttamente:<br><br>
-                                        <code>nano /etc/pihole/setupVars.conf</code><br><br>
-                                        potete editare o sostituire il vostro file di config con quello sottostante
-                                        avendo
-                                        accortezza di
-                                        inserire i dati che nel box qua sotto ho inerito tra parentesi graffe:<br><br>
 
-                                        <pre style:"font-size: 99%;"><code>
-WEBPASSWORD=<a style="color: orange;">{lasciate quella presente nel file di default}</a>
-BLOCKING_ENABLED=true
-WEBUIBOXEDLAYOUT=traditional
-WEBTHEME=default-dark
-PIHOLE_INTERFACE=wg0
-IPV4_ADDRESS=<a style="color: orange;">{mette l'indirizzo IP della vostra VPS esempio:123.24.223.11} </a>
-QUERY_LOGGING=true
-INSTALL_WEB_SERVER=true
-INSTALL_WEB_INTERFACE=true
-LIGHTTPD_ENABLED=true
-CACHE_SIZE=0
-DNSMASQ_LISTENING=local
-DNS_FQDN_REQUIRED=true
-DNS_BOGUS_PRIV=true
-DNSSEC=false
-REV_SERVER=false
-PIHOLE_DNS_1=127.0.0.1#5335
 
-										</code></pre>
-                                        </p>
+
+
+                                </p>
+
+
                             </article>
                         </section>
                     </div>
