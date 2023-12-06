@@ -292,7 +292,7 @@ sudo ./tor.sh
                                 Complimenti avete finito! In caso di errori durante lo script potete aprire issue sul <a
                                     href="https://github.com/Turtlecute33/Tor-node-script">mio github</a> o
                                 ricontrollare che le cose scritte nel file etc/tor/torrc siano corrette. Potete ora
-                                saltare direttamente alla sezione sui controllli post installazione.
+                                saltare direttamente alla sezione sui <a href="#email">controlli post installazione</a>.
                                 </p>
                                 <h2 style="color: greenyellow;" id="store">Setup del nodo da sorgente</h2>
                                 <p>
@@ -504,7 +504,18 @@ ExitPolicy reject *:*
                                         esempi: "700 GB", "2 TB","1200 GB", ecc..
                                     </li>
                                 </ol>
+                                fatto il nostro caro nodino Tor è pronto!
                                 </p>
+                                <h2 style="color: greenyellow;" id="email">Verifiche post installazione</h2>
+                                <p>
+                                    Bravissimo eroe!<br>
+                                    Che tu abbia fatto tutto a manina o che tu abbia usato il mio script automatzzato hai ufficialmente creato un nodo Tor! Prima di eseguire tutti i controlli del caso iniziamo riavviando il servizio Tor sul nostro pc (ogni volta che modifichiamo il file etc/tor/torrc dobbiamo riavviare il servizio per applicare le modifiche):<br>
+                                    <code>
+                                        systemctl restart tor@default
+                                    </code>
+                                    
+                                </p>
+
 
 
 
