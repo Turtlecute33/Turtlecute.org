@@ -11,7 +11,7 @@
     <meta property="og:locale" content="it_IT" />
     <meta property="og:site_name" content="Setup Nodo Tor" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://turtlecute33.github.io/Turtlecute.org/images/tor.jpg">
+    <meta name="twitter:image" content="https://turtlecute33.github.io/Turtlecute.org/images/torino.webp">
     <meta property="twitter:title" content="Guida al setup di un nodo relay per la rete tor" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript>
@@ -66,7 +66,7 @@
                         <section id="main_content">
                             <article>
                                 <center>
-                                    <img style="width:95%; height:95%;" src="images/tor.png">
+                                    <img style="width:95%; height:95%;" src="images/torino.webp">
                                 </center>
                                 <p>Questa vuole essere una guida completa per lanciare un nodo a supporto della rete
                                     tor. Prima di iniziare spieghiamo in breve cos'è questo protocollo: <br>
@@ -91,11 +91,7 @@
 
                                     per ulteriori informazioni consiglio caldamente l'ascolto di questa puntata:</p><br>
 
-                                <center><iframe style="border-radius:12px"
-                                        src="https://open.spotify.com/embed/episode/2pc9gy07lJkhajX83ZaVDy?utm_source=generator"
-                                        width="100%" height="352" frameBorder="0" allowfullscreen=""
-                                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                                        loading="lazy"></iframe>
+                                <center><iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/2pc9gy07lJkhajX83ZaVDy?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                                 </center>
 
                                 <h2 style="color: greenyellow;">Tabella dei contenuti</h2>
@@ -116,17 +112,17 @@
                                     ufficialmente aiutando il network dando anche tu il tuo contributo rendendolo piu
                                     sicuro e resistente ad attacchi.<br>
                                     Ci saranno 2 modi per seguire questa guida:<br>
-                                <ul>
-                                    <li>
-                                        Con script automatizzato creato da me (consigliato)
-                                    </li>
-                                    <li>
-                                        Compilando tutto da sorgente (piu complicato)
-                                    </li>
-                                </ul>
-                                prima di procedere però con l'installazione vera e propria nella prossima sezione
-                                analizziamo i rischi e benefici di installare un nodo su una propria rete domestica
-                                oppure su un server a noleggio.
+                                    <ul>
+                                        <li>
+                                            Con script automatizzato creato da me (consigliato)
+                                        </li>
+                                        <li>
+                                            Compilando tutto da sorgente (piu complicato)
+                                        </li>
+                                    </ul>
+                                    prima di procedere però con l'installazione vera e propria nella prossima sezione
+                                    analizziamo i rischi e benefici di installare un nodo su una propria rete domestica
+                                    oppure su un server a noleggio.
                                 </p>
                                 <h2 style="color: greenyellow;" id="set">Valutazione dei rischi</h2>
                                 <p>
@@ -201,47 +197,47 @@
                                     VPS che soddisfi i requisiti necessari per ospitare in modo affidabile e sicuro un
                                     nodo Tor.<br><br>
                                     Ecco un elenco di quelle a mio parere migliori per hostare un nodo:<br>
-                                <ul>
-                                    <li>
-                                        <a href="https://www.vpsbg.eu/aff/1e5d9e">VPSbG</a> a mio parere il miglior
-                                        rapporto tra potenza, banda,
-                                        privacy, usabilità e metodi di pagamento accettati. Non il più economico ma
-                                        quello che offre la miglior esperienza d'uso. Server in bulgaria e accettano sia
-                                        middle che exit node (se configurati correttamente, il mio script lo fa già in
-                                        automatico).
-                                    </li>
-                                    <li>
-                                        <a href="https://www.urdn.com.ua/index.html">UDN</a> ovvero Ukranian Data
-                                        Network offre VPS in maniera davvero
-                                        super privacy, e con super privacy intendo che l'unico modo per comprarne una è
-                                        scrivere ad uno degli admin su XMPP, non cè altro modo per acquistare e non cè
-                                        nessun account da creare. VPS a buon prezzo, non molto potenti ma con molta
-                                        banda a disposizione (10.15 TB).
-                                    </li>
-                                    <li>
-                                        <a href="https://www.trabia.com/">Trabia</a> è un VPS provider in moldavia, ha
-                                        ottimi prezzi, vps non
-                                        molto potenti ma banda ILLIMITATA, una vera rarità a questi prezzi. Lato privacy
-                                        bene ma non benissimo, accettano bitcoin ma vi chiedono di inserire un po di
-                                        dati personali. Per esperienza personale i dati possono essere tutti falsi ma
-                                        devono risultare credibili (mette un indirizzo e luogo veri, nomi e cognomi
-                                        credibili, ecc).
-                                    </li>
-                                </ul>
-                                Dopo aver acquistato un eventuale VPS possiamo passare direttamente alla
-                                configurazione!<br><br>
-                                <h2 style="color: greenyellow;" id="store">Setup del nodo con script automatizzato
-                                    (consigliato)</h2>
-                                <p>
-                                    Iniziamo la guida con il metodo a mio parere più veloce ed efficente, quello con lo
-                                    script bash da me sviluppato. I requisiti sono avere un qualsiasi pc, vps o
-                                    raspberry pronto e con installato Debian o Ubuntu. Una volta collegati alla shell
-                                    del vostro pc (che da ora indicherà qualsiasi opzione abbiate scelto tra hardware
-                                    casalingo o VPS), ricordate che se avete una vps online con accesso root dovete
-                                    omettere la parola sudo all'inizio delle righe sottostanti. Potete ora lanciare i
-                                    seguenti
-                                    comandi:<br>
-                                <pre><code>
+                                    <ul>
+                                        <li>
+                                            <a href="https://www.vpsbg.eu/aff/1e5d9e">VPSbG</a> a mio parere il miglior
+                                            rapporto tra potenza, banda,
+                                            privacy, usabilità e metodi di pagamento accettati. Non il più economico ma
+                                            quello che offre la miglior esperienza d'uso. Server in bulgaria e accettano sia
+                                            middle che exit node (se configurati correttamente, il mio script lo fa già in
+                                            automatico).
+                                        </li>
+                                        <li>
+                                            <a href="https://www.urdn.com.ua/index.html">UDN</a> ovvero Ukranian Data
+                                            Network offre VPS in maniera davvero
+                                            super privacy, e con super privacy intendo che l'unico modo per comprarne una è
+                                            scrivere ad uno degli admin su XMPP, non cè altro modo per acquistare e non cè
+                                            nessun account da creare. VPS a buon prezzo, non molto potenti ma con molta
+                                            banda a disposizione (10.15 TB).
+                                        </li>
+                                        <li>
+                                            <a href="https://www.trabia.com/">Trabia</a> è un VPS provider in moldavia, ha
+                                            ottimi prezzi, vps non
+                                            molto potenti ma banda ILLIMITATA, una vera rarità a questi prezzi. Lato privacy
+                                            bene ma non benissimo, accettano bitcoin ma vi chiedono di inserire un po di
+                                            dati personali. Per esperienza personale i dati possono essere tutti falsi ma
+                                            devono risultare credibili (mette un indirizzo e luogo veri, nomi e cognomi
+                                            credibili, ecc).
+                                        </li>
+                                    </ul>
+                                    Dopo aver acquistato un eventuale VPS possiamo passare direttamente alla
+                                    configurazione!<br><br>
+                                    <h2 style="color: greenyellow;" id="store">Setup del nodo con script automatizzato
+                                        (consigliato)</h2>
+                                    <p>
+                                        Iniziamo la guida con il metodo a mio parere più veloce ed efficente, quello con lo
+                                        script bash da me sviluppato. I requisiti sono avere un qualsiasi pc, vps o
+                                        raspberry pronto e con installato Debian o Ubuntu. Una volta collegati alla shell
+                                        del vostro pc (che da ora indicherà qualsiasi opzione abbiate scelto tra hardware
+                                        casalingo o VPS), ricordate che se avete una vps online con accesso root dovete
+                                        omettere la parola sudo all'inizio delle righe sottostanti. Potete ora lanciare i
+                                        seguenti
+                                        comandi:<br>
+                                        <pre><code>
 sudo apt-get update & apt-get upgrade -y
 sudo apt install git
 git clone https://github.com/Turtlecute33/Tor-node-script.git
@@ -250,124 +246,121 @@ chmod +x tor.sh
 sudo ./tor.sh
                                     </code></pre>
 
-                                Queste righe di codice eseguono le seguenti operazioni: aggiornano il
-                                sistema operativo (Ubuntu o derivati), installano Git, clonano il repository da github,
-                                accedono alla directory clonata, concedono i permessi di esecuzione allo script, ed
-                                infine eseguono tor.sh.<br><br>
-                                A questo punto lo script tor partirà, aggiornerà il vostro sistema operativo, installerà
-                                tutte le dipendenze, verificherà le firme pgp, installerà tor e vi chiederà alcuni input
-                                per personalizzare la vostra esperienza:<br>
-                                <ol>
-                                    <li><b>Middle Relay o Exit?</b><br>
-                                        Nella puntata del podcast affronto le differenze tra questi due tipi di nodi, il
-                                        middle è più facile da gestire, non comporta particolari rischi ed è quello più
-                                        consigliato per l'utente comune. L'exit relay è la versione hardcore per utenti
-                                        un po più esperti del relay precedente. Se non sei un utente esperto selezione
-                                        l'opzione middle relay digitando il numero ad essa assegnato.</li>
-                                    <li>
-                                        <b>Nickname:</b><br>
-                                        In questa sezione dobbiamo digitare il nome che vogliamo dare al nostro nodo
-                                        tor. Evitate nomi troppo lunghi e non usate spazi, gli unici caratteri
-                                        consentiti sono lettere, numeri e underscore.
-                                    </li>
-                                    <li>
-                                        <b>Email:</b><br>
-                                        Questa sezione dovrebbe essere usata per dare un contatto con cui scrivervi in
-                                        caso di problemi sul vostro nodo molto gravi alla Tor foundation. Attenzione,
-                                        state esponendo un email online collegata ad un nodo tor. 3 opzioni potrebbero
-                                        essere: mettere un vostro contatto ma scritto in modo strano in modo che bot
-                                        online non riconoscano la scritta come email (esempio
-                                        [turtlecute][@][horsefucker].[org]), scrivere "redacted" per non mettere dati
-                                        oppure lasciare un indirizzo bitcoin/lightning per donazioni (non ve ne
-                                        arriveranno probabilmente).
-                                    </li>
-                                    <li><b>Bandwidth:</b><br>
-                                        In questo campo dovremo esprimere la banda settimanale concessa al nodo. Le
-                                        unita di misura usabili sono (MB / GB / TB), se avete 1 TB di banda disponibile
-                                        sul vostro nodo potreste scrivere nel campo banda (che si intende come
-                                        settimanale) 250 GB (che per 4 settimane fa 1 TB al mese). rispettate la
-                                        formattatura numero, spazio, unità di misura.
-                                    </li>
-                                </ol>
-                                Complimenti avete finito! In caso di errori durante lo script potete aprire issue sul <a
-                                    href="https://github.com/Turtlecute33/Tor-node-script">mio github</a> o
-                                ricontrollare che le cose scritte nel file etc/tor/torrc siano corrette. Potete ora
-                                saltare direttamente alla sezione sui <a href="#email">controlli post installazione</a>.
-                                </p>
-                                <h2 style="color: greenyellow;" id="store">Setup del nodo da sorgente</h2>
-                                <p>
-                                    Se intraprendete questa strada perdonatemi ma non potrò assistervi in quanto i
-                                    possibili errori che potete fare nel percorso sono tanti e difficili da trovare. In
-                                    questa sezione della guida rifaremo tutto ciò che il mio script fa in automatico ma
-                                    a mano, questa guida è scritta per sistemi operativi basati su debia, se volete
-                                    usare un altro tipo di OS sul <a
-                                        href="https://community.torproject.org/relay/setup/">sito del TorProject</a> ci
-                                    sono guide per ogni sistema. <br><br>
-                                    Prerequisiti:<br>
-                                <ul>
-                                    <li>
-                                        Avere un pc debian based pronto all'uso e con shell aperta
-                                    </li>
-                                    <li>
-                                        Abilitare gli aggiornamenti automatici del pc, potete seguire <a
-                                            href="https://community.torproject.org/relay/setup/guard/debian-ubuntu/updates">questa
-                                            guida</a> per attivarli, non è un passo obbligatorio ma molto, molto,
-                                        mooooooolto consigliato. In caso saltiate questa sezione dovrete manualmente
-                                        ogni 1/2 mesi accedere al nodo Tor ed aggiornarlo manualmente.
-                                    </li>
-                                    <li>
-                                        installare tor aggiungendo il repository e la chiave PGP:<br>
+                                        Queste righe di codice eseguono le seguenti operazioni: aggiornano il
+                                        sistema operativo (Ubuntu o derivati), installano Git, clonano il repository da github,
+                                        accedono alla directory clonata, concedono i permessi di esecuzione allo script, ed
+                                        infine eseguono tor.sh.<br><br>
+                                        A questo punto lo script tor partirà, aggiornerà il vostro sistema operativo, installerà
+                                        tutte le dipendenze, verificherà le firme pgp, installerà tor e vi chiederà alcuni input
+                                        per personalizzare la vostra esperienza:<br>
                                         <ol>
+                                            <li><b>Middle Relay o Exit?</b><br>
+                                                Nella puntata del podcast affronto le differenze tra questi due tipi di nodi, il
+                                                middle è più facile da gestire, non comporta particolari rischi ed è quello più
+                                                consigliato per l'utente comune. L'exit relay è la versione hardcore per utenti
+                                                un po più esperti del relay precedente. Se non sei un utente esperto selezione
+                                                l'opzione middle relay digitando il numero ad essa assegnato.</li>
                                             <li>
-                                                Installate le dipendenze:
-                                                <pre><code>
+                                                <b>Nickname:</b><br>
+                                                In questa sezione dobbiamo digitare il nome che vogliamo dare al nostro nodo
+                                                tor. Evitate nomi troppo lunghi e non usate spazi, gli unici caratteri
+                                                consentiti sono lettere, numeri e underscore.
+                                            </li>
+                                            <li>
+                                                <b>Email:</b><br>
+                                                Questa sezione dovrebbe essere usata per dare un contatto con cui scrivervi in
+                                                caso di problemi sul vostro nodo molto gravi alla Tor foundation. Attenzione,
+                                                state esponendo un email online collegata ad un nodo tor. 3 opzioni potrebbero
+                                                essere: mettere un vostro contatto ma scritto in modo strano in modo che bot
+                                                online non riconoscano la scritta come email (esempio
+                                                [turtlecute][@][horsefucker].[org]), scrivere "redacted" per non mettere dati
+                                                oppure lasciare un indirizzo bitcoin/lightning per donazioni (non ve ne
+                                                arriveranno probabilmente).
+                                            </li>
+                                            <li><b>Bandwidth:</b><br>
+                                                In questo campo dovremo esprimere la banda settimanale concessa al nodo. Le
+                                                unita di misura usabili sono (MB / GB / TB), se avete 1 TB di banda disponibile
+                                                sul vostro nodo potreste scrivere nel campo banda (che si intende come
+                                                settimanale) 250 GB (che per 4 settimane fa 1 TB al mese). rispettate la
+                                                formattatura numero, spazio, unità di misura.
+                                            </li>
+                                        </ol>
+                                        Complimenti avete finito! In caso di errori durante lo script potete aprire issue sul <a href="https://github.com/Turtlecute33/Tor-node-script">mio github</a> o
+                                        ricontrollare che le cose scritte nel file etc/tor/torrc siano corrette. Potete ora
+                                        saltare direttamente alla sezione sui <a href="#email">controlli post installazione</a>.
+                                    </p>
+                                    <h2 style="color: greenyellow;" id="store">Setup del nodo da sorgente</h2>
+                                    <p>
+                                        Se intraprendete questa strada perdonatemi ma non potrò assistervi in quanto i
+                                        possibili errori che potete fare nel percorso sono tanti e difficili da trovare. In
+                                        questa sezione della guida rifaremo tutto ciò che il mio script fa in automatico ma
+                                        a mano, questa guida è scritta per sistemi operativi basati su debia, se volete
+                                        usare un altro tipo di OS sul <a href="https://community.torproject.org/relay/setup/">sito del TorProject</a> ci
+                                        sono guide per ogni sistema. <br><br>
+                                        Prerequisiti:<br>
+                                        <ul>
+                                            <li>
+                                                Avere un pc debian based pronto all'uso e con shell aperta
+                                            </li>
+                                            <li>
+                                                Abilitare gli aggiornamenti automatici del pc, potete seguire <a href="https://community.torproject.org/relay/setup/guard/debian-ubuntu/updates">questa
+                                                    guida</a> per attivarli, non è un passo obbligatorio ma molto, molto,
+                                                mooooooolto consigliato. In caso saltiate questa sezione dovrete manualmente
+                                                ogni 1/2 mesi accedere al nodo Tor ed aggiornarlo manualmente.
+                                            </li>
+                                            <li>
+                                                installare tor aggiungendo il repository e la chiave PGP:<br>
+                                                <ol>
+                                                    <li>
+                                                        Installate le dipendenze:
+                                                        <pre><code>
 apt install apt-transport-https
                                                 </code></pre>
-                                            </li>
-                                            <li>
-                                                controllate il nome della vostra distribuzione e appuntatevi il nome
-                                                (esempi: bookworm, focal-fossa, bullseye, ecc)
-                                                <pre><code>
+                                                    </li>
+                                                    <li>
+                                                        controllate il nome della vostra distribuzione e appuntatevi il nome
+                                                        (esempi: bookworm, focal-fossa, bullseye, ecc)
+                                                        <pre><code>
 lsb_release -c
                                                 </code></pre>
-                                            </li>
-                                            <li>
-                                                Create un nuovo file nella cartella /etc/apt/sources.list.d/ chiamato
-                                                tor.list (per farlo usate il comando: nano
-                                                /etc/apt/sources.list.d/tor.list) ed inserite le righe sottostanti
-                                                ricordandovi di sostituire il tag distribution con il nome che vi
-                                                eravate appuntati poco fa.
-                                                <pre><code>
+                                                    </li>
+                                                    <li>
+                                                        Create un nuovo file nella cartella /etc/apt/sources.list.d/ chiamato
+                                                        tor.list (per farlo usate il comando: nano
+                                                        /etc/apt/sources.list.d/tor.list) ed inserite le righe sottostanti
+                                                        ricordandovi di sostituire il tag distribution con il nome che vi
+                                                        eravate appuntati poco fa.
+                                                        <pre><code>
 deb     [signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org <DISTRIBUTION> main
 deb-src [signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org <DISTRIBUTION> main
                                                 </code></pre>
-                                            </li>
-                                            <li>
-                                                Aggiungi le chiavi PGP e il repository di tor con questo comando:
-                                                <pre><code>
+                                                    </li>
+                                                    <li>
+                                                        Aggiungi le chiavi PGP e il repository di tor con questo comando:
+                                                        <pre><code>
 wget -qO- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | tee /usr/share/keyrings/tor-archive-keyring.gpg >/dev/null
                                                 </code></pre>
-                                            </li>
-                                            <li>
-                                                Aggiorna i repository e installa tor:
-                                                <pre><code>
+                                                    </li>
+                                                    <li>
+                                                        Aggiorna i repository e installa tor:
+                                                        <pre><code>
 apt update
 apt install tor deb.torproject.org-keyring
                                                 </code></pre>
+                                                    </li>
+                                                </ol>
                                             </li>
-                                        </ol>
-                                    </li>
-                                </ul>
-                                A questo punto andiamo a modificare il file di configurazione di tor con il comando:
-                                nano etc/tor/torrc ed in base a se volete fare un middle o exit relay andate a copiare
-                                una delle configurazioni sottostanti.<br><br>
-                                <b> Attenzione!! </b> Dopo avere copia incollato la configurazione ci sono dei parametri
-                                da modificare, saranno elencati piu avanti dopo la sezione con i due esempi qua sotto.
-                                <br><br>
-                                <ul>
-                                    <li>
-                                        <b>Middle relay</b><br>
-                                        <pre>
+                                        </ul>
+                                        A questo punto andiamo a modificare il file di configurazione di tor con il comando:
+                                        nano etc/tor/torrc ed in base a se volete fare un middle o exit relay andate a copiare
+                                        una delle configurazioni sottostanti.<br><br>
+                                        <b> Attenzione!! </b> Dopo avere copia incollato la configurazione ci sono dei parametri
+                                        da modificare, saranno elencati piu avanti dopo la sezione con i due esempi qua sotto.
+                                        <br><br>
+                                        <ul>
+                                            <li>
+                                                <b>Middle relay</b><br>
+                                                <pre>
                                             <code>
 Nickname $nickname
 ContactInfo $contact_info
@@ -379,10 +372,10 @@ ExitRelay 0
 SocksPort 0 
                                             </code>
                                         </pre>
-                                    </li>
-                                    <li>
-                                        <b>Exit relay</b><br>
-                                        <pre>
+                                            </li>
+                                            <li>
+                                                <b>Exit relay</b><br>
+                                                <pre>
                                             <code>
 Nickname $nickname
 ContactInfo $contact_info
@@ -474,47 +467,50 @@ ExitPolicy accept *:64738     # Mumble
 ExitPolicy reject *:*
                                             </code>
                                         </pre>
-                                    </li>
-                                </ul>
-                                In entrambe le configurazioni sono presenti 3 campi che vanno modificati personalmente:
-                                <ol>
-                                    <li>
-                                        <b>$Nickname:</b><br>
-                                        In questa sezione dobbiamo digitare il nome che vogliamo dare al nostro nodo
-                                        tor. Evitate nomi troppo lunghi e non usate spazi, gli unici caratteri
-                                        consentiti sono lettere, numeri e underscore.<br>
-                                        esempio: "Nickname TORtaruga".
-                                    </li>
-                                    <li>
-                                        <b>$contact_info:</b><br>
-                                        Questa sezione dovrebbe essere usata per dare un contatto con cui scrivervi in
-                                        caso di problemi sul vostro nodo molto gravi alla Tor foundation. Attenzione,
-                                        state esponendo un email online collegata ad un nodo tor. 3 opzioni potrebbero
-                                        essere: mettere un vostro contatto ma scritto in modo strano in modo che bot
-                                        online non riconoscano la scritta come email.<br>
-                                        esempio: "[turtlecute][@][horsefucker].[org]" oppure scrivere "redacted" se non
-                                        si vuole pubblicare.
-                                    </li>
-                                    <li><b>$Bandwidth:</b><br>
-                                        In questo campo dovremo esprimere la banda settimanale concessa al nodo. Le
-                                        unita di misura usabili sono (MB / GB / TB), se avete 1 TB di banda disponibile
-                                        sul vostro nodo potreste scrivere nel campo banda (che si intende come
-                                        settimanale) 250 GB (che per 4 settimane fa 1 TB al mese). rispettate la
-                                        formattatura numero, spazio, unità di misura.<br>
-                                        esempi: "700 GB", "2 TB","1200 GB", ecc..
-                                    </li>
-                                </ol>
-                                fatto il nostro caro nodino Tor è pronto!
-                                </p>
-                                <h2 style="color: greenyellow;" id="email">Verifiche post installazione</h2>
-                                <p>
-                                    Bravissimo eroe!<br>
-                                    Che tu abbia fatto tutto a manina o che tu abbia usato il mio script automatzzato hai ufficialmente creato un nodo Tor! Prima di eseguire tutti i controlli del caso iniziamo riavviando il servizio Tor sul nostro pc (ogni volta che modifichiamo il file etc/tor/torrc dobbiamo riavviare il servizio per applicare le modifiche):<br>
-                                    <code>
-                                        systemctl restart tor@default
-                                    </code>
-                                    
-                                </p>
+                                            </li>
+                                        </ul>
+                                        In entrambe le configurazioni sono presenti 3 campi che vanno modificati personalmente:
+                                        <ol>
+                                            <li>
+                                                <b>$Nickname:</b><br>
+                                                In questa sezione dobbiamo digitare il nome che vogliamo dare al nostro nodo
+                                                tor. Evitate nomi troppo lunghi e non usate spazi, gli unici caratteri
+                                                consentiti sono lettere, numeri e underscore.<br>
+                                                esempio: "Nickname TORtaruga".
+                                            </li>
+                                            <li>
+                                                <b>$contact_info:</b><br>
+                                                Questa sezione dovrebbe essere usata per dare un contatto con cui scrivervi in
+                                                caso di problemi sul vostro nodo molto gravi alla Tor foundation. Attenzione,
+                                                state esponendo un email online collegata ad un nodo tor. 3 opzioni potrebbero
+                                                essere: mettere un vostro contatto ma scritto in modo strano in modo che bot
+                                                online non riconoscano la scritta come email.<br>
+                                                esempio: "[turtlecute][@][horsefucker].[org]" oppure scrivere "redacted" se non
+                                                si vuole pubblicare.
+                                            </li>
+                                            <li><b>$Bandwidth:</b><br>
+                                                In questo campo dovremo esprimere la banda settimanale concessa al nodo. Le
+                                                unita di misura usabili sono (MB / GB / TB), se avete 1 TB di banda disponibile
+                                                sul vostro nodo potreste scrivere nel campo banda (che si intende come
+                                                settimanale) 250 GB (che per 4 settimane fa 1 TB al mese). rispettate la
+                                                formattatura numero, spazio, unità di misura.<br>
+                                                esempi: "700 GB", "2 TB","1200 GB", ecc..
+                                            </li>
+                                        </ol>
+                                        fatto il nostro caro nodino Tor è pronto!
+                                    </p>
+                                    <h2 style="color: greenyellow;" id="email">Verifiche post installazione</h2>
+                                    <p>
+                                        Bravissimo eroe!<br>
+                                        Che tu abbia fatto tutto a manina o che tu abbia usato il mio script automatzzato hai ufficialmente
+                                        creato un nodo Tor! Prima di eseguire tutti i controlli del caso iniziamo riavviando il servizio Tor sul
+                                        nostro pc (ogni volta che modifichiamo il file etc/tor/torrc dobbiamo riavviare il servizio per applicare
+                                        le modifiche):<br>
+                                        <code>
+                                            systemctl restart tor@default
+                                        </code>
+                                        Fatto questo
+                                    </p>
 
 
 
