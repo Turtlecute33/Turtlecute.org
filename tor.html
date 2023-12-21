@@ -2,17 +2,21 @@
 <html lang="it">
 
 <head>
-    <title>Turtlecute</title>
+    <title>Come creare un relay tor</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="Guida al setup di un nodo tor">
-    <meta property="og:title" content="Turtlecute " />
-    <meta name="Turtlecute" content="Nodo tor" />
-    <meta property="og:locale" content="it_IT" />
-    <meta property="og:site_name" content="Setup Nodo Tor" />
+    <meta name="description" content="Guida e tutorial su come creare un nodo tor relay e exit" />
+    <meta name="keywords" content="Tor, nodo tor, exit node tor, relay, relay tor">
+    <meta name="author" content="Turtlecute">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://turtlecute33.github.io/Turtlecute.org/images/torino.webp">
-    <meta property="twitter:title" content="Guida al setup di un nodo relay per la rete tor" />
+    <meta property="twitter:image" content="https://turtlecute33.github.io/Turtlecute.org/images/torino.webp">
+	<meta property="twitter:site" content="@turtlecute33" />
+	<meta property="og:type" content="article" />
+	<meta property="og:image" content="https://turtlecute33.github.io/Turtlecute.org/images/torino.webp">
+	<meta property="og:title" content="Guida e tutorial su come creare un nodo tor relay e exit" />
+	<meta property="og:locale" contenttup="it_IT" />
+	<meta property="og:url" content="https://turtlecute.org/tor" />
+	<meta property="og:site_name" content="Tor" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css" />
@@ -89,7 +93,7 @@
                                     ampiamente utilizzata da giornalisti, attivisti per i diritti umani e utenti che
                                     cercano di preservare la loro privacy online.<br>
 
-                                    per ulteriori informazioni consiglio caldamente l'ascolto di questa puntata:</p><br>
+                                    Per ulteriori informazioni consiglio caldamente l'ascolto di questa puntata:</p><br>
 
                                 <center><iframe style="border-radius:12px"
                                         src="https://open.spotify.com/embed/episode/2pc9gy07lJkhajX83ZaVDy?utm_source=generator"
@@ -121,10 +125,10 @@
                                         Con script automatizzato creato da me (consigliato)
                                     </li>
                                     <li>
-                                        Compilando tutto da sorgente (piu complicato)
+                                        Compilando tutto da sorgente (piú complicato)
                                     </li>
                                 </ul>
-                                prima di procedere però con l'installazione vera e propria nella prossima sezione
+                                Prima di procedere però con l'installazione vera e propria, nella prossima sezione
                                 analizziamo i rischi e benefici di installare un nodo su una propria rete domestica
                                 oppure su un server a noleggio.
                                 </p>
@@ -299,7 +303,7 @@ sudo ./tor.sh
                                     Se intraprendete questa strada perdonatemi ma non potrò assistervi in quanto i
                                     possibili errori che potete fare nel percorso sono tanti e difficili da trovare. In
                                     questa sezione della guida rifaremo tutto ciò che il mio script fa in automatico ma
-                                    a mano, questa guida è scritta per sistemi operativi basati su debia, se volete
+                                    a mano, questa guida è scritta per sistemi operativi basati su debian, se volete
                                     usare un altro tipo di OS sul <a
                                         href="https://community.torproject.org/relay/setup/">sito del TorProject</a> ci
                                     sono guide per ogni sistema. <br><br>
@@ -513,7 +517,7 @@ ExitPolicy reject *:*
                                     hai ufficialmente
                                     creato un nodo Tor! Prima di eseguire tutti i controlli del caso iniziamo riavviando
                                     il servizio Tor sul
-                                    nostro pc (ogni volta che modifichiamo il file etc/tor/torrc dobbiamo riavviare il
+                                    nostro pc (ogni volta che modifichiamo il file /etc/tor/torrc dobbiamo riavviare il
                                     servizio per applicare
                                     le modifiche):<br><br>
                                     <code>
