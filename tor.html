@@ -236,6 +236,20 @@
                                     </li>
                                 </ul>
                                 <p>
+                                    Come requisiti per dei nodi tor conviene avere:<br>
+                                <ul>
+                                    <li>
+                                        Middle relay: almeno 1 core, 512MB di ram e 2 TB di bandwidth al mese anche se è
+                                        consigliabile averne almeno almeno 5 TB. Per relay molto veloci (sopra i 40mb/s
+                                        di velocità di connesione serve almeno 1GB di ram).
+                                    </li>
+                                    <li>
+                                        Exit nodes: almeno 1 core, 1GB di ram e 2 TB di bandwidth al mese anche se è
+                                        consigliabile averne almeno almeno 5 TB. Per relay molto veloci (sopra i 40mb/s
+                                        di velocità di connesione serve almeno 2GB di ram).
+                                    </li>
+                                </ul>
+
                                 Dopo aver acquistato un eventuale VPS possiamo passare direttamente alla
                                 configurazione!<br><br>
                                 </p>
@@ -261,13 +275,16 @@ sudo ./tor.sh
                                     </code></pre>
 
                                 <p>
-                                Queste righe di codice eseguono le seguenti operazioni: aggiornano il
-                                sistema operativo (Ubuntu o derivati), installano Git, clonano il repository da github,
-                                accedono alla directory clonata, concedono i permessi di esecuzione allo script, ed
-                                infine eseguono tor.sh.<br><br>
-                                A questo punto lo script tor partirà, aggiornerà il vostro sistema operativo, installerà
-                                tutte le dipendenze, verificherà le firme pgp, installerà tor e vi chiederà alcuni input
-                                per personalizzare la vostra esperienza:<br>
+                                    Queste righe di codice eseguono le seguenti operazioni: aggiornano il
+                                    sistema operativo (Ubuntu o derivati), installano Git, clonano il repository da
+                                    github,
+                                    accedono alla directory clonata, concedono i permessi di esecuzione allo script, ed
+                                    infine eseguono tor.sh.<br><br>
+                                    A questo punto lo script tor partirà, aggiornerà il vostro sistema operativo,
+                                    installerà
+                                    tutte le dipendenze, verificherà le firme pgp, installerà tor e vi chiederà alcuni
+                                    input
+                                    per personalizzare la vostra esperienza:<br>
                                 </p>
                                 <ol>
                                     <li><b>Middle Relay o Exit?</b><br>
@@ -302,10 +319,11 @@ sudo ./tor.sh
                                     </li>
                                 </ol>
                                 <p>
-                                Complimenti avete finito! In caso di errori durante lo script potete aprire issue sul <a
-                                    href="https://github.com/Turtlecute33/Tor-node-script">mio github</a> o
-                                ricontrollare che le cose scritte nel file etc/tor/torrc siano corrette. Potete ora
-                                saltare direttamente alla sezione sui <a href="#email">controlli post installazione</a>.
+                                    Complimenti avete finito! In caso di errori durante lo script potete aprire issue
+                                    sul <a href="https://github.com/Turtlecute33/Tor-node-script">mio github</a> o
+                                    ricontrollare che le cose scritte nel file etc/tor/torrc siano corrette. Potete ora
+                                    saltare direttamente alla sezione sui <a href="#email">controlli post
+                                        installazione</a>.
                                 </p>
                                 <h2 style="color: greenyellow;" id="store">Setup del nodo da sorgente</h2>
                                 <p>
@@ -373,11 +391,14 @@ apt install tor deb.torproject.org-keyring
                                     </li>
                                 </ul>
                                 <p>
-                                A questo punto andiamo a modificare il file di configurazione di tor con il comando:
-                                nano etc/tor/torrc ed in base a se volete fare un middle o exit relay andate a copiare
-                                una delle configurazioni sottostanti.<br><br>
-                                <b> Attenzione!! </b> Dopo avere copia incollato la configurazione ci sono dei parametri
-                                da modificare, saranno elencati piu avanti dopo la sezione con i due esempi qua sotto.
+                                    A questo punto andiamo a modificare il file di configurazione di tor con il comando:
+                                    nano etc/tor/torrc ed in base a se volete fare un middle o exit relay andate a
+                                    copiare
+                                    una delle configurazioni sottostanti.<br><br>
+                                    <b> Attenzione!! </b> Dopo avere copia incollato la configurazione ci sono dei
+                                    parametri
+                                    da modificare, saranno elencati piu avanti dopo la sezione con i due esempi qua
+                                    sotto.
                                 </p>
                                 <br><br>
                                 <ul>
@@ -489,7 +510,8 @@ ExitPolicy reject *:*
                                     </li>
                                 </ul>
                                 <p>
-                                    In entrambe le configurazioni sono presenti 3 campi che vanno modificati personalmente:
+                                    In entrambe le configurazioni sono presenti 3 campi che vanno modificati
+                                    personalmente:
                                 </p>
                                 <ol>
                                     <li>
@@ -558,7 +580,7 @@ ExitPolicy reject *:*
                                     foundation con tuti i relay potete trovare <b>dopo qualche ora</b> anche il vostro
                                     nodo inserendo nella ricerca il nome o una parte di esso del vostro relay.
                                 </p>
-                                    <center><img style="width: 90%;" src="images/screen.avif"></center>
+                                <center><img style="width: 90%;" src="images/screen.avif"></center>
                                 <p>
                                     Se viene mostrato correttamente avete ufficialmente un nodo tor attivo!
                                 </p>
