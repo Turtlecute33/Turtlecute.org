@@ -120,6 +120,7 @@
                                     ufficialmente aiutando il network dando anche tu il tuo contributo rendendolo piu
                                     sicuro e resistente ad attacchi.<br>
                                     Ci saranno 2 modi per seguire questa guida:<br>
+                                </p>
                                 <ul>
                                     <li>
                                         Con script automatizzato creato da me (consigliato)
@@ -128,9 +129,10 @@
                                         Compilando tutto da sorgente (piú complicato)
                                     </li>
                                 </ul>
-                                Prima di procedere però con l'installazione vera e propria, nella prossima sezione
-                                analizziamo i rischi e benefici di installare un nodo su una propria rete domestica
-                                oppure su un server a noleggio.
+                                <p>
+                                    Prima di procedere però con l'installazione vera e propria, nella prossima sezione
+                                    analizziamo i rischi e benefici di installare un nodo su una propria rete domestica
+                                    oppure su un server a noleggio.
                                 </p>
                                 <h2 style="color: greenyellow;" id="set">Valutazione dei rischi</h2>
                                 <p>
@@ -205,6 +207,7 @@
                                     VPS che soddisfi i requisiti necessari per ospitare in modo affidabile e sicuro un
                                     nodo Tor.<br><br>
                                     Ecco un elenco di quelle a mio parere migliori per hostare un nodo:<br>
+                                </p>
                                 <ul>
                                     <li>
                                         <a href="https://www.vpsbg.eu/aff/1e5d9e">VPSbG</a> a mio parere il miglior
@@ -232,8 +235,10 @@
                                         credibili, ecc).
                                     </li>
                                 </ul>
+                                <p>
                                 Dopo aver acquistato un eventuale VPS possiamo passare direttamente alla
                                 configurazione!<br><br>
+                                </p>
                                 <h2 style="color: greenyellow;" id="store">Setup del nodo con script automatizzato
                                     (consigliato)</h2>
                                 <p>
@@ -245,6 +250,7 @@
                                     omettere la parola sudo all'inizio delle righe sottostanti. Potete ora lanciare i
                                     seguenti
                                     comandi:<br>
+                                </p>
                                 <pre><code>
 sudo apt-get update & apt-get upgrade -y
 sudo apt install git
@@ -254,6 +260,7 @@ chmod +x tor.sh
 sudo ./tor.sh
                                     </code></pre>
 
+                                <p>
                                 Queste righe di codice eseguono le seguenti operazioni: aggiornano il
                                 sistema operativo (Ubuntu o derivati), installano Git, clonano il repository da github,
                                 accedono alla directory clonata, concedono i permessi di esecuzione allo script, ed
@@ -261,6 +268,7 @@ sudo ./tor.sh
                                 A questo punto lo script tor partirà, aggiornerà il vostro sistema operativo, installerà
                                 tutte le dipendenze, verificherà le firme pgp, installerà tor e vi chiederà alcuni input
                                 per personalizzare la vostra esperienza:<br>
+                                </p>
                                 <ol>
                                     <li><b>Middle Relay o Exit?</b><br>
                                         Nella puntata del podcast affronto le differenze tra questi due tipi di nodi, il
@@ -293,6 +301,7 @@ sudo ./tor.sh
                                         formattatura numero, spazio, unità di misura.
                                     </li>
                                 </ol>
+                                <p>
                                 Complimenti avete finito! In caso di errori durante lo script potete aprire issue sul <a
                                     href="https://github.com/Turtlecute33/Tor-node-script">mio github</a> o
                                 ricontrollare che le cose scritte nel file etc/tor/torrc siano corrette. Potete ora
@@ -308,6 +317,7 @@ sudo ./tor.sh
                                         href="https://community.torproject.org/relay/setup/">sito del TorProject</a> ci
                                     sono guide per ogni sistema. <br><br>
                                     Prerequisiti:<br>
+                                </p>
                                 <ul>
                                     <li>
                                         Avere un pc debian based pronto all'uso e con shell aperta
@@ -362,17 +372,18 @@ apt install tor deb.torproject.org-keyring
                                         </ol>
                                     </li>
                                 </ul>
+                                <p>
                                 A questo punto andiamo a modificare il file di configurazione di tor con il comando:
                                 nano etc/tor/torrc ed in base a se volete fare un middle o exit relay andate a copiare
                                 una delle configurazioni sottostanti.<br><br>
                                 <b> Attenzione!! </b> Dopo avere copia incollato la configurazione ci sono dei parametri
                                 da modificare, saranno elencati piu avanti dopo la sezione con i due esempi qua sotto.
+                                </p>
                                 <br><br>
                                 <ul>
                                     <li>
                                         <b>Middle relay</b><br>
-                                        <pre>
-                                            <code>
+                                        <pre><code>
 Nickname $nickname
 ContactInfo $contact_info
 AccountingRule sum
@@ -381,13 +392,11 @@ AccountingMax $bandwidth
 ORPort 443
 ExitRelay 0
 SocksPort 0 
-                                            </code>
-                                        </pre>
+</code></pre>
                                     </li>
                                     <li>
                                         <b>Exit relay</b><br>
-                                        <pre>
-                                            <code>
+                                        <pre><code>
 Nickname $nickname
 ContactInfo $contact_info
 AccountingRule sum
@@ -476,11 +485,12 @@ ExitPolicy accept *:19638     # Ensim control panel
 ExitPolicy accept *:50001-50002     # Electrum Bitcoin SSL
 ExitPolicy accept *:64738     # Mumble
 ExitPolicy reject *:*
-                                            </code>
-                                        </pre>
+</code></pre>
                                     </li>
                                 </ul>
-                                In entrambe le configurazioni sono presenti 3 campi che vanno modificati personalmente:
+                                <p>
+                                    In entrambe le configurazioni sono presenti 3 campi che vanno modificati personalmente:
+                                </p>
                                 <ol>
                                     <li>
                                         <b>$Nickname:</b><br>
@@ -508,7 +518,8 @@ ExitPolicy reject *:*
                                         esempi: "700 GB", "2 TB","1200 GB", ecc..
                                     </li>
                                 </ol>
-                                fatto il nostro caro nodino Tor è pronto!
+                                <p>
+                                    Fatto, il nostro caro nodino Tor è pronto!
                                 </p>
                                 <h2 style="color: greenyellow;" id="email">Verifiche post installazione</h2>
                                 <p>
@@ -546,7 +557,9 @@ ExitPolicy reject *:*
                                         href="https://metrics.torproject.org/rs.html">sul sito ufficiale</a> della Tor
                                     foundation con tuti i relay potete trovare <b>dopo qualche ora</b> anche il vostro
                                     nodo inserendo nella ricerca il nome o una parte di esso del vostro relay.
+                                </p>
                                     <center><img style="width: 90%;" src="images/screen.avif"></center>
+                                <p>
                                     Se viene mostrato correttamente avete ufficialmente un nodo tor attivo!
                                 </p>
                                 <h2 style="color: greenyellow;" id="conc">Conclusioni</h2>
