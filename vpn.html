@@ -4,17 +4,17 @@
 <head>
 	<title>Come creare una propria vpn con wireguard e pihole</title>
 	<meta charset="utf-8" />
-    <meta name="description" content="Guida su come creare una vpn con wireguard che faccia da adblocker" />
-    <meta name="keywords" content="Vpn, wireguard, pihole, dns, adblock, adblocker">
-    <meta name="author" content="Turtlecute">
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="description" content="Guida su come creare una vpn con wireguard che faccia da adblocker" />
+	<meta name="keywords" content="Vpn, wireguard, pihole, dns, adblock, adblocker">
+	<meta name="author" content="Turtlecute">
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta property="twitter:image" content="https://turtlecute33.github.io/Turtlecute.org/images/vpn.jpg">
 	<meta property="twitter:site" content="@turtlecute33" />
 	<meta property="og:type" content="article" />
 	<meta property="og:image" content="https://turtlecute33.github.io/Turtlecute.org/images/vpn.jpg">
 	<meta property="og:title" content="Guida su come creare una vpn con wireguard che faccia da adblocker" />
-	<meta property="og:locale" contenttup="it_IT" />
+	<meta property="og:locale" content="it_IT" />
 	<meta property="og:url" content="https://turtlecute.org/vpn" />
 	<meta property="og:site_name" content="Vpn" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -85,8 +85,10 @@
 										Se volete darmi consigli, contribuire alla guida o effettuare traduzioni,
 										potete effettuare
 										una pull request su <a
-											href="https://github.com/Turtlecute33/Turtlecute.org">GitHub</a> e supportare
-										lo sviluppo di queste guide con una <a href="https://priorato.btcpayserver.it/i/BFg7UG7Zu8eAaRz3EiXgQJ">donazione</a>.
+											href="https://github.com/Turtlecute33/Turtlecute.org">GitHub</a> e
+										supportare
+										lo sviluppo di queste guide con una <a
+											href="https://priorato.btcpayserver.it/i/BFg7UG7Zu8eAaRz3EiXgQJ">donazione</a>.
 									</blackquote><br><br>
 								</figure>
 
@@ -190,20 +192,27 @@
 									<br />
 								<ul>
 									<li>
-										<a href="https://1984.hosting/">1984 Hosting</a> é un sito che offre
-										vari
-										servizi (domini, vps, dns, ecc), ha sede legale in Islanda (molto
-										interessante per l'aspetto di Privacy
-										informatica) e offre server con 1 core, 1 GB di ram e 1TB di banda a
-										100Mb/s
-										per circa 4.50 euro oppure lo stesso server con un po' più di ram e
-										il
-										doppio di banda a 9 euro al mese.
-										Penso che questo vps provider sia molto interessante, accetta
-										pagamenti in
-										bitcoin e il servizio clienti nelle mie esperienze passate è sempre
-										stato
-										abbastanza efficiente (24/48h per avere supporto).
+									<li>
+										<a href="https://www.vpsbg.eu/aff/1e5d9e">VPSbG</a> a mio parere il miglior
+										rapporto tra potenza, banda,
+										privacy, usabilità e metodi di pagamento accettati. Non il più economico ma
+										quello che offre la miglior esperienza d'uso. Server in bulgaria ed offrono 1
+										core con CPU AMD epyc, 1 GB di ram e 2TB di banda mensile per 8 euro al mese.
+									</li>
+									<a href="https://1984.hosting/">1984 Hosting</a> é un sito che offre
+									vari
+									servizi (domini, vps, dns, ecc), ha sede legale in Islanda (molto
+									interessante per l'aspetto di Privacy
+									informatica) e offre server con 1 core, 1 GB di ram e 1TB di banda a
+									100Mb/s
+									per circa 4.50 euro oppure lo stesso server con un po' più di ram e
+									il
+									doppio di banda a 9 euro al mese.
+									Penso che questo vps provider sia molto interessante, accetta
+									pagamenti in
+									bitcoin e il servizio clienti nelle mie esperienze passate è sempre
+									stato
+									abbastanza efficiente (24/48h per avere supporto).
 									</li>
 									<li>
 										<a href="https://njal.la/">Njalla</a> è un vecchissimo ma ancora
@@ -296,8 +305,8 @@ chmod +x wireguard-install.sh
 								ed andiamo a configurarlo con:<br><br>
 								<code>nano /etc/unbound/unbound.conf.d/pi-hole.conf</code><br><br>
 								Incollate questa configurazione all'interno del file:<br>
-								
-										<pre style:"font-size: 99%;"><code>
+
+								<pre style:"font-size: 99%;"><code>
     server:
     verbosity: 0
     interface: 127.0.0.1
@@ -330,7 +339,7 @@ chmod +x wireguard-install.sh
     private-address: fd00::/8
     private-address: fe80::/10
 										</code></pre>
-									
+
 								andiamo quindi a riavviare unbound:<br><br>
 								<code>sudo service unbound restart</code><br><br>
 								a questo punto abbiamo correttamente prepato il dns locale, andiamo a configurare
@@ -340,8 +349,8 @@ chmod +x wireguard-install.sh
 								potete editare o sostituire il vostro file di config con quello sottostante avendo
 								accortezza di
 								inserire i dati che nel box qua sotto ho inerito tra parentesi graffe:<br><br>
-								
-										<pre style:"font-size: 99%;"><code>
+
+								<pre style:"font-size: 99%;"><code>
 WEBPASSWORD=<a style="color: orange;">{lasciate quella presente nel file di default}</a>
 BLOCKING_ENABLED=true
 WEBUIBOXEDLAYOUT=traditional
@@ -361,7 +370,7 @@ REV_SERVER=false
 PIHOLE_DNS_1=127.0.0.1#5335
 
 										</code></pre>
-									
+
 								a questo punto re-buildiamo pihole con il seguente comando:<br><br>
 								<code>pihole -r</code><br>
 								</p>
@@ -394,15 +403,15 @@ PIHOLE_DNS_1=127.0.0.1#5335
 									ampliare la sezione vi lascio l'onere di farlo in autonomia in quanto in base alle
 									configurazioni ci
 									potrebbero essere diversi pro o contro.<br>
-								
-										<pre style:"font-size: 99%;"><code>
+
+								<pre style:"font-size: 99%;"><code>
 https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
 https://adaway.org/hosts.txt
 https://v.firebog.net/hosts/AdguardDNS.txt
 https://v.firebog.net/hosts/Easyprivacy.txt
 https://winhelp2002.mvps.org/hosts.txt
 										</code></pre>
-									
+
 								Una volta inserite le varie blocklist muoviamoci nella sezione: tools → update gravity
 								ed andiamo ad avviare il processo di attivazione delle varie liste. In caso di problemi
 								con
@@ -426,21 +435,30 @@ https://winhelp2002.mvps.org/hosts.txt
 									"current system resolver". Ora ci verrá mostrato un QRcode, con la nosta app mobile
 									di wireguard andiamo a scannerizzarlo, dopo averlo fatto ci dovrebbe mostrare una
 									schermata del genere:<br>
-									<center><img style="width:95%; height:95%;" src="images/wireguard.webp"></center><br>
+									<center><img style="width:95%; height:95%;" src="images/wireguard.webp"></center>
+									<br>
 									Nella sezione "DNS servers" andiamo ad inserire l'indirizzo ip della nostra VPS,
 									verifichiamo che nella sezione "Endpoint" sia presente lo stesso indirizzo IP piú la
 									scritta ":51820" che indica la porta, fatto questo ci basterá salvare e attivare la
 									VPN!<br><br>
 
-									Per i pc la procedura è simile, ci basterá installare Wireguard, generare la configurazione 
-									sulla VPS (usate il comando spiegato sopra, nella procedura android), per poi copiarla nel pc:
-									<ul>
-<li>Su Windows, la configurazione è da inserire nell'interfaccia grafica di Wireguard</li>
-<li>Su Linux, la configurazione è da salvare in un file con estensione .conf nella cartella /etc/wireguard (ad esempio, vpn.conf), per poi attivare la VPN col comando da terminale:<br><br>
-									<code>sudo wg-quick up {nome del file .conf}</code><br><br>
-									mentre per spegnerela:<br><br>
-									<code>sudo wg-quick down {nome del file .conf} </code></li></ul><br>
-									anche su pc, prestiamo attenzione ad avere modificato le sezioni 'DNS server' e 'Endpoint' con l'indirizzo IP del nostro server.
+									Per i pc la procedura è simile, ci basterá installare Wireguard, generare la
+									configurazione
+									sulla VPS (usate il comando spiegato sopra, nella procedura android), per poi
+									copiarla nel pc:
+								<ul>
+									<li>Su Windows, la configurazione è da inserire nell'interfaccia grafica di
+										Wireguard</li>
+									<li>Su Linux, la configurazione è da salvare in un file con estensione .conf nella
+										cartella /etc/wireguard (ad esempio, vpn.conf), per poi attivare la VPN col
+										comando da terminale:<br><br>
+										<code>sudo wg-quick up {nome del file .conf}</code><br><br>
+										mentre per spegnerela:<br><br>
+										<code>sudo wg-quick down {nome del file .conf} </code>
+									</li>
+								</ul><br>
+								anche su pc, prestiamo attenzione ad avere modificato le sezioni 'DNS server' e
+								'Endpoint' con l'indirizzo IP del nostro server.
 								</p>
 								<h2 style="color: greenyellow;" id="cloud">Test di funzionamento</h2>
 								<p>
@@ -457,7 +475,8 @@ https://winhelp2002.mvps.org/hosts.txt
 									temporaneamente eventuali estensioni di AdBlock del vostro browser per non avere
 									risultati falsati. Anche il browser che utilizzate potrebbe influire sui risultati
 									del test.<br><br>
-									Se entrambe le prove vengono passate correttamente sei un vero drago e sei riuscito a
+									Se entrambe le prove vengono passate correttamente sei un vero drago e sei riuscito
+									a
 									seguire perfettamente questa guida!! &#128009;
 								</p>
 								<h2 style="color: greenyellow;" id="conc">Conclusioni</h2>
